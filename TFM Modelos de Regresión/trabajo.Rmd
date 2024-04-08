@@ -1,0 +1,2368 @@
+---
+title: ""
+author: 
+date: ""
+
+
+header-includes: 
+- \usepackage{titling}
+- \usepackage{pdfpages}
+- \usepackage{tocloft}
+- \usepackage{amsmath}
+
+- \usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
+- \AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+- \usepackage[spanish]{babel}
+- \usepackage{csquotes}
+- \usepackage{setspace}
+- \usepackage{float} 
+- \floatplacement{figure}{H}
+- \usepackage[T1]{fontenc} 
+- \usepackage[utf8]{inputenc}
+- \usepackage{fancyhdr}
+- \usepackage{hanging}
+- \usepackage{amsthm,amssymb,amsfonts}
+- \usepackage{tikz,lipsum,lmodern}
+- \usepackage[most]{tcolorbox}
+- \usepackage{multicol}
+- \usepackage{fontawesome5}
+- \usepackage{multirow,booktabs,caption}
+- \usepackage{orcidlink}
+- \usepackage[style=apa,backend=biber]{biblatex}
+- \DeclareLanguageMapping{spanish}{spanish-apa}
+- \renewcommand\spanishtablename{Tabla}
+- \DeclareCaptionLabelSeparator*{spaced}{\\[1ex]}
+- \DeclareCaptionLabelSeparator{point}{. }
+- \captionsetup[table]{labelfont=bf,
+        textfont=it,
+        format=plain,
+        justification=justified,
+        singlelinecheck=false,
+        labelsep=spaced,
+        skip=5pt}
+        
+- \captionsetup[figura]{labelfont=bf,
+    format=plain,
+    justification=justified,
+    singlelinecheck=false,
+    labelsep=point,skip=5pt}
+    
+- \captionsetup[figura]{font=small}
+
+
+
+  \definecolor{caja}{RGB}{131, 131, 131}
+  \definecolor{iacoldark}{RGB}{246, 127, 17}
+  \definecolor{iacol}{RGB}{131, 131, 131}
+
+urlcolor: blue
+  
+output:
+    
+  bookdown::pdf_book:
+    citation_package: biblatex
+    number_sections: yes
+    keep_tex:  true
+    toc: no
+    fontfamily: "Arial"
+classoption: 
+      - bookmarksnumbered
+editor_options:
+  chunk_output_type: console
+  markdown: 
+    wrap: sentence
+always_allow_html: yes
+geometry: margin=1in
+
+linkcolor: black
+citecolor: iacoldark
+link-citations: true
+fontsize: 11pt
+csl: bib/apa-single-spaced.csl # referencias 
+bibliography: bib/references.bib
+---
+
+```{=latex}
+
+
+\newtcolorbox[auto counter]{ROut}[2][]{
+                lower separated=false,
+                colback=white,
+                colframe=caja,
+                fonttitle=\bfseries,
+                colbacktitle=caja,
+                coltitle=black,
+                boxrule=1pt,
+                sharp corners,
+                breakable,
+                enhanced,
+                width = 6in,
+                attach boxed title to top left={yshift=-0.1in,xshift=0.15in},
+                boxed title style={boxrule=0pt,colframe=white,},
+              title=#2,#1}
+              
+ 
+% definir lista de ecuaciones
+
+\newcommand{\listequationsname}{\large{Lista de ecuaciones}}
+\newlistof{myequations}{equ}{\listequationsname}
+\newcommand{\myequations}[1]{%
+   \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}%
+}
+
+\setlength{\cftmyequationsnumwidth}{2.3em}
+\setlength{\cftmyequationsindent}{1.5em}
+```
+```{r setup, include = FALSE}
+
+library(knitr)
+
+## aplicamos la función para crear cajas
+
+opts_chunk$set(comment = NA, warning=FALSE, 
+               message=FALSE, fig.height = 2, echo = FALSE)
+
+def_hook <- knit_hooks$get("output")
+knit_hooks$set(output = function(x, options){
+  out <- def_hook(x, options)
+  return(paste("\\begin{ROut}{Consola de R: Output~\\thetcbcounter}
+                \\begin{footnotesize}
+                \\begin{verbatim}", 
+               x,
+               "\\end{verbatim}
+                \\end{footnotesize}
+                \\end{ROut}"))
+}) 
+
+library(kableExtra)
+
+
+options(width = 20, scipen = 999)
+```
+
+```{=latex}
+
+\begin{center}
+  \includepdf{imagen-1.pdf}
+\end{center}
+
+\addtolength{\headheight}{0.6cm} 
+\fancypagestyle{plain}{} 
+\pagestyle{fancy} 
+\fancyhead{} 
+\fancyhead[L]{\includegraphics[width = 100pt]{logo.png}}
+\renewcommand{\headrulewidth}{0pt}
+
+{\normalsize
+ \setcounter{tocdepth}{5}
+ \tableofcontents
+}
+```
+\newpage
+
+```{=latex}
+\listoftables
+\listoffigures
+
+
+\listofmyequations
+```
+\newpage
+
+```{=latex}
+\begin{center}
+\textbf{Resumen}
+\end{center}
+
+\par
+\begingroup
+\leftskip1.5em
+\rightskip\leftskip
+```
+Este trabajo se enfoca en la búsqueda de la gestión del tiempo de mantenimiento correctivo en empresas industriales mediante técnicas estadísticas avanzadas, (Modelos de Regresión y Algoritmos de Maching Learning).  A diferencia de depender exclusivamente de métodos tradicionales, como la observación de patrones históricos, análisis del promedio, o valores por defecto. En el proyecto se plantean diferentes modelos, en base a una gran cantidad de datos recopilados a lo largo de varios años donde se registran las fallas correctivas y los diferentes tiempos empleados para realizar estas reparaciones al igual que otras variables propias del proceso. Con el objetivo de buscar perspectivas de análisis para aportar y contribuir a la mejora de asignación de tiempos y así optimizar procesos que van de la mano con la eficiencia operativa de la empresa.
+
+Existen diferentes clasificaciones para el mantenimiento entre estas el preventivo y correctivo, resaltar que un plan preventivo tiene su hoja de ruta donde se establecen entre otros un tiempo de reparación, proceso que no sucede con el mantenimiento correctivo, por tal caso los tiempos que se requieren son inciertos y aquí es donde nace la idea del proyecto propuesto con los modelos estadísticos mencionados.  Se realiza el tratamiento de los datos, se aplican los modelos y se validan los resultados finales, esto haciendo uso de las diferentes métricas como:  El error medio absoluto (MAE), Error Cuadrático Medio (MSE), Raíz del Error Cuadrático Medio (RMSE) y El coeficiente de determinación o R- Cuadrado.
+
+Finalmente se muestran los resultados y hallazgos del estudio, para determinar que variables afectan el modelo, que modelo se debe elegir para este proceso y sí las variables evaluadas son suficientes o se requieren mas variables para mejorar las predicciones.   Las herramientas utilizadas para este proceso es R Studio y Python.
+
+**Palabras clave**: Predicción, Mantenimiento, Industria, Técnicas Multivariadas, Evaluación de modelos.
+
+\newpage
+
+```{=latex}
+
+\begin{center}
+\textbf{abstract}
+\end{center}
+```
+This work focuses on the search for corrective maintenance time management in industrial companies by means of advanced statistical techniques (Regression Models and Maching Learning Algorithms).  As opposed to relying exclusively on traditional methods, such as the observation of historical patterns, average analysis, or default values. In the project different models are proposed, based on a large amount of data collected over several years where corrective failures and the different times used to perform these repairs as well as other variables of the process are recorded. With the objective of seeking analysis perspectives to contribute and contribute to the improvement of time allocation and thus optimize processes that go hand in hand with the operational efficiency of the company.
+
+There are different classifications for maintenance among these the preventive and corrective, highlighting that a preventive plan has its roadmap where are established among others a repair time, a process that does not happen with corrective maintenance, in this case the times required are uncertain and this is where the idea of the proposed project is born with the statistical models mentioned.  The data treatment is carried out, the models are applied and the final results are validated, making use of different metrics such as:  Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE) and The Coefficient of Determination or R- Square.
+
+Finally, the results and findings of the study are shown, to determine which variables affect the model, which model should be chosen for this process and whether the variables evaluated are sufficient or whether more variables are required to improve the predictions.   The tools used for this process are R Studio and Python.
+
+
+**Keywords**: Prediction, Maintenance, Industry, Multivariate Techniques, Model Evaluation.
+
+\newpage
+
+# Introducción
+
+El mantenimiento, frase actividad o acción que día a día es nombrada en todos los ámbitos sociales y todos una u otra vez se han implicado en temas de mantenimiento, cuando el carro, la motocicleta u otro objeto presenta una falla o talvez se requiere un cambio aceite o un ajuste general se incurre en temas de mantenimiento, si no es el carro de igual forma aplica para una propiedad o un electrodoméstico que también necesita ser mantenido para asegurar su vida útil, se define como un conjunto de actividades planificadas y sistemáticas que se realizan para asegurar que los equipos, maquinarias o instalaciones operen de manera óptima y eficiente durante su vida útil.
+Esto implica tanto acciones preventivas para evitar posibles fallas, como intervenciones correctivas cuando ocurren averías.
+
+El hacer mantenimiento involucra costos, y estos no se limitan únicamente a las reparaciones de equipos averiados, incluyen una amplia gama de actividades, como mantenimiento preventivo, inspecciones, repuestos, mano de obra (tiempos) y paradas no programadas.
+Según estudios de @Garcia2017, estos costos pueden representar hasta el 40% del presupuesto operativo de una empresa, lo que resalta su importancia en la gestión financiera y operativa.
+Ahora el tema de costos es un proceso amplio, pero se destaca la mano de obra o tiempos de mantenimiento, que pueden ser para trabajo correctivo o preventivo, de acuerdo a estudios de @Martinez2020, las organizaciones que implementan estrategias efectivas de mantenimiento logran reducir los tiempos de inactividad, aumentar la vida útil de los activos y mejorar la calidad de sus productos o servicios.
+
+La gestión de costos está relacionada ampliamente con la gestión de tiempo o productivad en el mantenimiento, una gestión eficiente del tiempo en entornos empresariales e industriales es fundamental para optimizar procesos, reducir costos y garantizar entregas puntuales de productos y servicios.
+Esta premisa subrayada en el PMBOK (Project Management Body of Knowledge), enfatiza la importancia de una administración efectiva del tiempo en proyectos, y propone diferentes técnicas para hacer los cálculos respectivos como juicio de expertos, análisis de la ruta crítica, la estimación paramétrica que implica temas de estadística y la estimación por tres valores donde utilizan una distribución beta para los cálculos de tiempo.
+Sin embargo, frente a la creciente complejidad de maquinarias y sistemas industriales, los métodos tradicionales basados en la experiencia ya no son suficientes, se necesita abordar técnicas diferentes para calcular los tiempos de mantenimiento basados en datos históricos y estadísticas.
+
+En este contexto, el presente estudio, ubicado en campo del Big Data y la Ciencia de Datos, se orienta hacia la innovación en el mantenimiento industrial mediante la aplicación de técnicas de estadística multivariante y técnicas de Maching learning para contribuir con propuestas de modelos de regresión que sean capaces de predecir el tiempo que se requiere para realizar mantenimientos correctivos en el sector industrial, todo esto analizando datos históricos de fallas con sus respectivos tiempos productivos e improductivos para lograr un acercamiento al número de horas que realmente se necesitan para atender las fallas correctivas en periodo de tiempo que puede ser diario, semanal, mensual o anual.
+La importancia de transitar hacia métodos cuantitativos avanzados para la predicción y mejora de la gestión del tiempo en el mantenimiento industrial se fundamenta en investigaciones previas.
+@Rojas en la década de los 70, subrayó la necesidad de contar con sistemas fiables para abordar la complejidad de las maquinarias industriales, destacando la importancia de modelos predictivos para anticipar el funcionamiento futuro de las máquinas.
+En una línea similar, @morochoycolegas destacaron la relevancia de aplicar modelos predictivos para mejorar la eficiencia y fiabilidad de los procesos industriales.
+@johnson2007applied aportaron al debate, explicando cómo las técnicas de estadística multivariante permiten analizar simultáneamente múltiples variables interdependientes, ofreciendo una comprensión más profunda y precisa que los enfoques univariados tradicionales.
+
+La aplicación de estadística descriptiva para limpieza y visualización de datos hacen parte de los objetivos del proyecto, ayudan a que los datos sean apropiados para los diferentes cálculos propuestos, la aplicación de modelos y algoritmos de Maching learning como árboles de decisión, ramdon Forest y máquinas de vectores SVM serán trascendentes porque al igual que los modelos estadísticos tradicionales como la regresión múltiple y los modelos lineales generalizados permiten trabajar temas de regresión para predecir datos.
+Con enfoques diferentes, pero con el mismo objetivo se abordan estas técnicas para finalmente identificar por medio de las diferentes métricas de evaluación que algoritmo o qué modelo se adapta mejor a los datos y así encontrar la cantidad de horas con el menor error para realizar mantenimiento correctivo, buscando proponer estrategias y recomendaciones específicas basadas en los resultados de los diferentes análisis propuestos.
+
+En el primer capítulo se detalla el estado del arte y marco teórico que permita referenciar y contextualizar temas de mantenimiento industrial y modelos de regresión clásicos como algoritmos de Maching learning, en el segundo capítulo se detallan el tratamiento de los datos, las técnicas realizadas para el análisis descriptivo y la limpieza de datos, planteamiento de los modelos, comparación de resultados y métricas de evaluación.
+En el apartado final se realizan las conclusiones al estudio, con lo referente a los principales hallazgos y las limitaciones del proyecto y se proponen estudios futuros para finalizar el trabajo.
+
+\newpage
+
+# Objetivos
+
+Contribuir a la mejora de asignación de tiempos correctivos y de emergencia en el proceso de mantenimiento en una empresa del sector industrial.
+
+## Objetivos Específicos:
+
+-   Realizar un análisis descriptivo y de limpieza para la preparación de los datos históricos de mantenimiento.
+
+-   Utilizar técnicas de estadística multivariante como modelos de regresión lineal múltiple y modelos lineales generalizados para la predicción de tiempos de Mantenimiento correctivo.
+
+-   Utilizar técnicas de Maching Learning en especial los algoritmos de Arboles de decisión, Random Forest y SVM, para la predicción de tiempos de mantenimiento correctivo.
+
+-   Evaluar y comparar los diversos modelos de regresión para predecir tiempos de mantenimiento correctivo, en márgenes de tiempo definidos (Diario, semanal y mensual).
+
+-   Proponer estrategias y recomendaciones específicas basadas en los resultados del análisis predictivo para optimizar los procesos de reparación y minimizar los tiempos de inactividad.
+
+\newpage
+
+# Estado del Arte y Marco teórico
+
+## El mantenimiento industrial
+
+El mantenimiento industrial se define como un conjunto de técnicas destinadas a conservar equipos e instalaciones en servicio durante el mayor tiempo posible buscando siempre la más alta disponibilidad, confiabilidad y con el máximo rendimiento (García Garrido), A lo largo de los años, diversas metodologías y técnicas se han desarrollado para mejorar la planificación y ejecución de actividades de mantenimiento industrial.
+
+García Garrido en su libro también narra que El Mantenimiento nace durante la primera revolución Industrial, periodo que se inició en la segunda mitad del siglo XVIII en Gran Bretaña, unas décadas después se extendió a gran parte de Europa occidental y América Anglosajona y finalmente concluyó entre 1820 y 1840.
+En los inicios eran los propios operarios quienes realizaban este tipo de tareas de mantenimiento, no había personal dedicado única y exclusivamente a esta actividad.
+Pero con la aparición de maquinaria más compleja se vio la necesidad de crear un departamento dedicado al mantenimiento dentro de las fábricas, se narra que en los principios las tareas de mantenimiento inicialmente eran correctivas, dedicaban todo el esfuerzo a solucionar fallas presentadas, pero no a prevenirlas.
+A inicios de la primera guerra mundial y ante todo de la segunda, García Garrido manifiesta que aparece la palabra Fiabilidad, que se define como la capacidad de un sistema, equipo o má- quina para realizar una función o tarea específica durante un período de tiempo determinado y bajo condiciones establecidas.
+
+Según @Smith2018, La fiabilidad en el mantenimiento industrial implica una serie de acciones y estrategias, como el monitoreo continuo del desempeño de los equipos, la implementación de programas de mantenimiento preventivo y predictivo, la gestión eficiente de repuestos y piezas de repuesto, así como la formación adecuada del personal encargado del mantenimiento.
+
+Para esas épocas con estos términos ya definidos y con conceptos más claros del tema, los departamentos de mantenimiento inician el proceso de no solo solucionar las fallas de sus equipos si no actuar para que no se produzcan o prevenirlas (García Garrido), de acuerdo a lo anterior la historia narra que nace una nueva figura en los departamentos de mantenimiento y es un personal destinado a estudiar diferentes tareas de mantenimiento para evitar las fallas en sus máquinas, es cuando el autor manifiesta que nacen nuevos conceptos de mantenimiento como: Mantenimiento preventivo, mantenimiento predictivo, mantenimiento proactivo, gestión de mantenimiento asistido por ordenador, mantenimiento basado en fiabilidad RCM entre otros conceptos.
+
+Para abarcar un poco más de historia en estos temas, @Carcel-Carrasco2016 Es su artículo de investigación manifiesta que en los años 1945 se crean y formalizan técnicas para conocer e identificar la probabilidad de fallas en los diferentes componentes, en los años 60 se comienza con la aplicación de las técnicas de fiabilidad permitiendo el cálculo de costos de los fallos y la rentabilidad del mantenimiento.
+Adicionalmente se inicia el análisis y estudio de las causas y efectos de las incidencias de los equipos industriales objeto básico del mantenimiento, se destaca para esas épocas la necesidad de tener estadísticas e históricas de averías para el análisis y planificación del mantenimiento.
+De acuerdo a estos descubrimientos y la necesidad de programa gar el mantenimiento aparece la publicación de Darnell y Bert en 1978 donde ellos publican una contribución en la que abogan por el mantenimiento programado como medio de aumentar la productividad y Christer, en 1981 y Boland y Proscan en 1982, insisten en la misma línea, destacando la incidencia sobre la productividad de una actitud activa y programada en mantenimiento, en contraposición con actitudes pasivas e incontroladas.
+
+Para estas épocas los conceptos de mantenimiento están bien definidos, la norma UNE-EN 13306 que establece principios generales para la creación y el uso de sistemas de clasificación y codificación de objetos técnicos.
+Proporciona directrices sobre cómo desarrollar sistemas de clasificación y cómo aplicar códigos a los objetos técnicos para facilitar su identificación y gestión.
+Ellos proponen la siguiente clasificación del mantenimiento.
+( ver figura 1).
+
+```{r echo=FALSE, fig.cap="Clasificación general del mantenimiento según UNE-EN 13306. Fuente: UNE EN 13306", fig.align='center', fig.width=2.5, fig.height=15}
+
+knitr::include_graphics("Imagenes/TiposdeMtto.png", dpi = 200)
+```
+
+\newpage
+
+Por otra parte, la norma ISO -14224, que es una norma internacional que establece los principios y prácticas para la recopilación y el intercambio de datos de fiabilidad y mantenimiento para equipos industriales.
+Esta norma proporciona un marco para la gestión de datos de fiabilidad con el objetivo de mejorar la gestión del ciclo de vida de los activos industriales.
+Dividen en mantenimiento en categorías como:
+
+-   
+
+    a)  Aquellas que se realizan para corregir un ítem después de la falla (mantenimiento correctivo).
+
+-   
+
+    b)  Aquellas que se realizan para prevenir que un ítem caiga en estado de falla (mantenimiento preventivo); parte de esto pueden ser simplemente los chequeos (inspecciones, pruebas) para verificar la condición y el rendimiento del equipo con el fin de decidir si se requiere un mantenimiento preventivo.
+
+Estas clasificaciones y categorías propuestas por esta norma se pueden evidenciar en la siguiente imagen.
+
+```{r echo=FALSE, fig.cap="Norma ISO 14224:2016", fig.align='center', fig.width=2.5, fig.height=15}
+
+knitr::include_graphics("Imagenes/categorias.png", dpi = 200)
+```
+
+Haciendo alusión a estos antecedentes históricos que han enmarcado el rumbo del mantenimiento industrial también existen otros puntos de vista interesantes de otros auntores como, @taylor1911principles aborda la necesidad de aplicar métodos científicos al proceso de trabajo para mejorar la eficiencia y la productividad en las industrias.
+Taylor propone un enfoque sistemático para analizar y estandarizar los procesos de trabajo, basado en la observación detallada y el estudio riguroso de cada tarea.
+
+Una de las contribuciones clave de Taylor en su trabajo es el desarrollo del estudio de tiempos y movimientos.
+Este método involucra la descomposición de las tareas en movimientos elementales y la determinación de los tiempos estándar para cada uno de ellos.
+Al observar y medir repetidamente el tiempo necesario para realizar cada movimiento, los gerentes pueden establecer tiempos promedio y predecir con mayor precisión la duración total de una tarea.
+
+En el contexto del mantenimiento industrial, Taylor argumenta que aplicar métodos científicos al estudio de los procesos de mantenimiento puede mejorar significativamente la eficiencia y la efectividad de las operaciones.
+Al analizar en detalle cada paso del proceso de mantenimiento Haciendo alusión a estos antecedentes históricos que han enmarcado el rumbo del mantenimiento industrial también existen otros puntos de vista interesantes de otros auntores como, @taylor1911principles aborda la necesidad de aplicar métodos científicos al proceso de trabajo para mejorar la eficiencia y la productividad en las industrias.
+Taylor propone un enfoque sistemático para analizar y estandarizar los procesos de trabajo, basado en la observación detallada y el estudio riguroso de cada tarea.
+Una de las contribuciones clave de Taylor en su trabajo es el desarrollo del estudio de tiempos y movimientos.
+Este método involucra la descomposición de las tareas en movimientos elementales y la determinación de los tiempos estándar para cada uno de ellos.
+Al observar y medir repetidamente el tiempo necesario para realizar cada movimiento, los gerentes pueden establecer tiempos promedio y predecir con mayor precisión la duración total de una tarea.
+En el contexto del mantenimiento industrial, Taylor argumenta que aplicar métodos científicos al estudio de los procesos de mantenimiento puede mejorar significativamente la eficiencia y la efectividad de las operaciones.
+Al analizar en detalle cada paso del proceso de mantenimiento y estandarizar los métodos de trabajo, las empresas pueden reducir los tiempos de inactividad y aumentar la disponibilidad de los equipos.
+
+Como a porte al proyecto el enfoque de Taylor en los principios de la administración científica proporciona un sólido marco para elevar la eficiencia y efectividad de nuestras operaciones de mantenimiento industrial.
+
+Este enfoque puede conducir a la reducción de costos, un aumento en la disponibilidad de equipos y una mejora en la competitividad de nuestra empresa.
+Para alcanzar estos objetivos, estamos empleando técnicas de estadística multivariante como herramientas fundamentales en nuestro proceso de optimización.
+
+### Planes de mantenimiento Industrial.
+
+Un plan de mantenimiento preventivo, según lo definido la norma ISO 14224, implica un enfoque sistemático y proactivo para mantener la disponibilidad y confiabilidad de los activos industriales.
+Este tipo de plan se basa en la programación regular de inspecciones, ajustes, limpiezas, lubricaciones y reemplazos de componentes con el objetivo de prevenir fallas inesperadas.
+Además, el plan incluye la recolección y el análisis de datos de fiabilidad y mantenimiento para mejorar continuamente las estrategias de mantenimiento y optimizar la vida útil de los equipos (ISO, 2016).
+Estos planes de mantenimiento preventivo generalmente tienen una hoja de ruta donde se guardar las actividades a realizar, los materiales requeridos y el tiempo necesario para realizar la actividad y de acuerdo a dicha norma todo activo debe tener un plan de mantenimiento ya se preventivo, basado en condición o a falla.
+
+Los planes de mantenimiento industrial son fundamentales en la gestión eficiente de activos en entornos productivos.
+Estos planes no solo buscan corregir fallas una vez que ocurren, sino que también tienen como objetivo principal prevenir averías y maximizar la disponibilidad de la maquinaria y equipos industriales, Según @Martinez2020 La relevancia de los planes de mantenimiento industrial radica en su capacidad para mejorar la confiabilidad de los equipos y reducir los tiempos improductivos.
+estos planes permiten realizar un seguimiento sistemático de las condiciones de los activos, anticipando posibles fallas y programando intervenciones preventivas.
+En un entorno industrial, donde el tiempo de inactividad puede resultar costoso, contar con un plan de mantenimiento adecuado puede marcar la diferencia en términos de eficiencia y rentabilidad.
+
+Gómez Poma, Jhon Angelo en su Artículo, Implementación de un plan de mantenimiento predictivo por análisis vibracional de la centrifugas continuas Broadbent y discontinuas Fives Cail de la empresa Cartavio S.A.A, menciona algunas pautas para implementar planes de mantenimientos y los problemas que causan las intervenciones no planificadas en el proceso productivo.
+En términos generales proyecto exhibe los resultados alcanzables mediante la implemen- tación de un modelo predictivo para abordar problemas de fallas en máquinas.
+Se observa que, tras la aplicación de esta técnica @gomez2022implementacion, se logra mejorar la disponibilidad y aumentar la eficiencia del proceso productivo, al mejorar la eficiencia la maquina va a presentar menos fallos lo que indica menos tiempo en intervenciones correctivas.
+
+### Estadística y tiempos de mantenimiento industrial
+
+@Assis2021 en su artículo "A Dynamic Methodology for Setting Up Inspection Time Intervals in Conditional Preventive Maintenance", manifiestan que uno de los principales problemas en el mantenimiento y especial el basado en condición es el de determinar los intervalos de tiempo de inspección y en proponen un método para determinar los tiempos requeridos utilizando técnicas estadísticas y en especial funciones de probabilidad como la distribución Weibull.
+Para citar una aparte del resumen: "Este artículo presenta un nuevo método para establecer un calendario óptimo para inspeccionar un componente crítico que falla debido al desgaste como lo describe una función de probabilidad de Weibull, Considerando un conjunto de intervalos de inspección, de modo que la confiabilidad entre cada dos inspecciones se mantenga igual o por debajo de un umbral preestablecido, manteniendo al mismo tiempo los costos totales de inspección, producción degradada, consecuencias de fallas y reparación al mínimo" El anterior estudio es un gran aporte al proceso de mantenimiento, se evidencia como aplicando estas distribuciones se puede predecir la probabilidad que el equipo falle en un periodo de tiempo que también se traduce en la confiabilidad de la máquina, que pueda dar el rendimiento esperado en un periodo de tiempo sin presentar fallas.
+Ellos hacen alusión a la distribución Weibull, de acuerdo a la literatura esta es ampliamente usada en la ingeniería como modelo para la descripción del tiempo de duración de un componente.
+Esta distribución fue introducida por el científico sueco del mismo nombre, quien demostró que el esfuerzo al que se someten los materiales puede modelarse mediante el empleo de esta distribución.
+@Castaneda2004.
+En el contexto de los Modelos Lineales Generalizados (GLM, por sus siglas en inglés), la distribución Weibull puede ser utilizada como una función de enlace para modelar variables de respuesta que no tienen una distribución normal.
+
+Otra de las investigaciones realizadas donde se usa estadística para temas de mantenimiento, se describe en el artículo "Preventive maintenance models -- higher operational reliability" de los autores @Legat2017 Los autores presentan un método para determinar el intervalo óptimo para el mantenimiento periódico preventivo y un parámetro de diagnóstico óptimo para el mantenimiento/reemplazo predictivo.
+Además, los autores plantean la pregunta: ¿cómo influye el mantenimiento preventivo en la probabilidad de falla y la confiabilidad operativa de los elementos del sistema que han sido sometidos a mantenimiento periódico preventivo?
+Responden a la pregunta utilizando enfoques informáticos analíticos y de simulación.
+Los resultados están en forma cuantitativa y dan relaciones entre los intervalos de mantenimiento preventivo y las funciones de confiabilidad.
+Los ejemplos demuestran la idoneidad del método para objetos de ingeniería típicos que utilizan una distribución de Weibull de tres parámetros.
+La aplicación del método supone un beneficio sustancial tanto para el fabricante como para el usuario del equipo técnico.
+
+Revisando mas literatura @Nardo2021 en su artículo "Development and implementation of an algorithm for preventive machine maintenance.Engineering Solid Mechanics," - Desarrollo e implementación de un algoritmo para el mantenimiento preventivo de máquinas
+
+-   **Resumen**: Este artículo tiene como objetivo desarrollar un modelo de optimización del mantenimiento para mantener un alto nivel de eficiencia y confiabilidad de la maquinaria. El enfoque metodológico se basa en el mantenimiento preventivo mediante la sustitución parcial o total de componentes críticos. Aunque se trata de un control de intervención intermedio, la atención se centra en una máquina concreta que se ha detenido varias veces, reduciendo su disponibilidad operativa y provocando un elevado coste de no producción. Este estudio utiliza un modelo de Weibull para analizar y optimizar el correcto proceso de mantenimiento de la maquinaria considerada. Luego, los datos de falla se analizan y programan. El objetivo final es estandarizar los procedimientos de intervención de los operadores para reducir el tiempo de las mismas intervenciones.
+
+En el artículo anterior lo que buscan es encontrar el tiempo en el que una maquina presenta un fallo, con el fin de realizar la intervención antes de que se presente la avería y así no incurrir en costos por horas hombre correctivas, perdida de producción y repuestos no necesarios, proponen que se debe recopilar los datos históricos de mantenimiento y por medio de distribuciones y técnicas estadísticas tratar de predecir la confiabilidad y disponibilidad del equipo en periodo x de tiempo.
+
+### Impacto del mantenimiento en la eficiencia operativa
+
+El mantenimiento en la industria desempeña un papel fundamental al asegurar que los equipos, maquinarias y sistemas funcionen de manera óptima, al funcionar bien la producción se mantiene y no se incurre en pérdidas lo menciona @Jardine2013, el mantenimiento efectivo no solo se trata de reparar equipos cuando fallan y en los tiempos efectivos, lo importante de hacer mantenimiento es por medio de planes preventivos y predictivos prevenir averías o fallas antes de que ocurran, esta idea es respaldada por estudios como el de @Kumar2018, quienes señalan que el mantenimiento preventivo puede reducir significativamente el tiempo de inactividad no planificado y mejorar la eficiencia de las operaciones industriales.
+
+La importante de hacer mantenimiento y en especial el preventivo y predictivo es destacado por varios autores, para citar algunos.
+@Olarte2010ImportanciaDM Resalta la importancia de la planificación del mantenimiento para lograr altos niveles de calidad en cualquier tipo de empresa y proporciona una descripción histórica de los cambios en la implementación del modelo de mantenimiento en la industria, cuando se menciona planificación del mantenimiento se refiere al preventivo, que generalmente tiene un periodo de ejecución o frecuencia, un tiempo de ejecución y acciones a realizar, puntualizar que siempre el objetivo de este es conservar y prevenir que se presenten fallas.
+@ARROYOVACA2022ImportanciaDL subraya los beneficios del mantenimiento preventivo, incluido el aumento de la productividad, la reducción de los costos de mantenimiento y la prolongación de la vida útil de la maquinaria.
+
+Para puntualizar de acuerdo a estos el mantenimiento industrial, con técnicas y planeación efectiva juega un papel crítico en la producción y la eficiencia operativa de las empresas industriales.
+Es crucial que aplique enfoque integral que incluya estrategias preventivas, predictivas y correctivas puede minimizar el tiempo de inactividad, optimizar los recursos, mejorar la calidad del producto y aumentar la rentabilidad.
+Estas consideraciones son fundamentales para que las empresas mantengan su competitividad en un entorno empresarial cada vez más dinámico y exigente.
+
+\newpage
+
+## Estadística y Modelos de predicción
+
+### Estadistica Multivariada
+
+"La estadística multivariada es una rama de la estadística que estudia la relación entre múltiples variables. Estos métodos permiten analizar la complejidad de los fenómenos reales, donde intervienen diversas variables que interactúan entre sí. Algunas de las técnicas multivariadas más empleadas son el análisis de componentes principales, el análisis factorial, el análisis discriminante y los modelos de ecuaciones estructurales. Estas herramientas son ampliamente utilizadas en campos como la economía, la psicología, la biología y la ingeniería para extraer información valiosa de conjuntos de datos multidimensionales" @hair.
+
+"La estadística multivariada ha demostrado ser una herramienta poderosa en diversos campos de investigación. Por ejemplo, en el ámbito de la medicina, los métodos multivariados han sido utilizados para identificar factores de riesgo asociados a enfermedades, clasificar pacientes en grupos de tratamiento y modelar la progresión de dolencias crónicas. En el campo de las ciencias sociales, estas técnicas han permitido analizar la influencia de múltiples variables socioeconómicas en el comportamiento humano" @Tabachnick2013, para afirmar estos aportes y citando otros artículos anteriores donde varios autores experimentan con estás técnicas para predecir los tiempos efectivos para realizar un mantenimiento , caso de modelos de regresión y modelos de probabilidad como la distribución Weibull.
+
+### Técnicas de estadística multivariante.
+
+Las técnicas de estadística multivariante son ideales para analizar conjuntos de datos que abarcan múltiples variables simultáneamente.
+A diferencia de los modelos univariados, que se centran en una sola variable a la vez, estas técnicas exploran las complejas interrelaciones entre varias variables.
+Esto permite una comprensión más profunda y completa de los datos.
+El autor @anderson, explica lo útiles que son para identificar interdependencias entre variables que podrían pasarse por alto en análisis univariados.
+En la investigación moderna, donde las relaciones entre variables son la norma, esta capacidad para descubrir conexiones ocultas es fundamental.
+Junto a Anderson el autor @hair resalta los beneficios de estas técnicas, como la capacidad para capturar la complejidad inherente de conjuntos de datos multidimensionales que permite comprender mejor las relaciones subyacentes.
+No obstante, a pesar de sus ventajas, las técnicas multivariadas presentan limitaciones importantes.
+La interpretación de los resultados puede ser complicada, especialmente en la gestión de grandes conjuntos de datos con numerosas variables.
+En situaciones donde la interpretación precisa es crucial, como en estudios médicos, esta complejidad puede representar un desafío significativo.
+La asunción de linealidad también constituye una limitación relevante.
+Aunque algunos métodos permiten extensiones no lineales, si las relaciones de las variables no son lineales los modelos podrían dar resultados no confiables al momento de predecir.
+En nuestro contexto, donde buscamos predecir los tiempos de reparación de máquinas con fallos, la diversidad de técnicas disponibles nos proporciona la capacidad de modelar nuestra variable dependiente mediante múltiples técnicas buscando la que mejor se acople a la naturaleza de nuestros datos.
+
+### Modelo de regresión múltiple
+
+El modelo de regresión lineal múltiple es una extensión del modelo de regresión lineal simple que permite explorar la relación entre una variable dependiente y múltiples variables independientes @montgomery2012introduction.
+En este modelo, la relación entre las variables se modela mediante un plano o un hiperplano en un espacio de varias dimensiones.
+Los coeficientes de regresión representan el efecto de cada variable independiente en la variable dependiente @fox2015applied.
+Los modelos de regresión lineal múltiple son ampliamente utilizados en diversas áreas, como la economía, la sociología, la psicología y la epidemiología, entre otros @draper2014applied.
+Se utilizan para predecir o explicar el valor de una variable dependiente en función de múltiples variables independientes.
+
+la fórmula general para un modelo de regresión lineal es la siguiente: \myequations{Modelo de regresión lineal}
+
+```{=tex}
+\begin{equation}
+\large Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_p X_p + \varepsilon\end{equation}
+```
+-   $Y$ es la variable dependiente que estamos tratando de predecir.
+-   $\beta_0$ es el intercepto o término constante.
+-   $\beta_1, \beta_2, \ldots, \beta_p$ son los coeficientes asociados con las variables predictoras $X_1, X_2, \ldots, X_p$, respectivamente.
+-   $\varepsilon$ es el término de error, que representa la variabilidad no explicada por el modelo.
+
+Los modelos de regresión lineal se basan en múltiples supuestos, como los siguientes:
+
+**Linealidad**: Se asume que la relación entre las variables predictoras y la variable dependiente es lineal.
+Esto implica que los cambios en las variables predictoras están asociados con cambios proporcionales en la variable de interés.
+
+**Independencia de errores**: Se asume que los errores (residuos) de la regresión no están correlacionados entre sí.
+
+**Homocedasticidad**: La varianza de los errores debe ser constante en todos los niveles de las variables predictoras.
+Esto significa que la dispersión de los errores es uniforme en toda la gama de valores de las variables predictoras.
+
+**Normalidad de errores**: Se asume que los errores de la regresión se distribuyen normalmente.
+Esto significa que los residuos siguen una distribución normal con una media de cero.
+
+**Independencia de variables predictoras**: Es crucial que las variables predictoras en un modelo de regresión sean independientes unas de otras.
+Una elevada correlación entre estas variables puede entorpecer la interpretación precisa de los coeficientes, afectando la validez del modelo.
+
+### Modelos Lineales Generalizados (GLM)
+
+Los Modelos Lineales Generalizados (GLM) constituyen una poderosa extensión de los modelos lineales tradicionales, permitiendo abordar una amplia gama de tipos de datos y distribuciones de error más allá de la normalidad.
+A diferencia de los modelos lineales simples que asumen que la variable dependiente es normalmente distribuida, los GLM facilitan la modelización de la relación entre una variable dependiente, que puede seguir diversas distribuciones (como binomial, Poisson, o gamma), y una o más variables independientes a través de una función de enlace.
+
+Esta capacidad para manejar diferentes distribuciones hace que los GLM sean particularmente adecuados para analizar datos donde la variable respuesta es, por ejemplo, una proporción, un conteo, o una medida de tiempo hasta un evento.
+Esta versatilidad se discute ampliamente en la literatura, con [@nelder1972generalized] siendo uno de los trabajos pioneros que estableció las bases teóricas de los GLM.
+
+Los GLM son útiles en una variedad de campos, incluyendo la biometría, la epidemiología y las ciencias sociales, donde las variables de interés no se ajustan a la distribución normal.
+Por ejemplo, en estudios de respuesta binaria como la presencia o ausencia de una enfermedad, los datos pueden modelarse efectivamente usando una distribución binomial con una función de enlace logit.
+
+Una de las principales ventajas de los GLM es su capacidad para proporcionar estimaciones y pruebas inferenciales sobre los parámetros del modelo que son interpretables y útiles para la toma de decisiones.
+
+Los GLM ofrecen un marco estadístico robusto y flexible para la modelización de relaciones entre variables, siendo capaces de abordar una amplia gama de situaciones de datos más allá de las limitaciones de los modelos lineales tradicionales.
+Su aplicación en diversas áreas testimonia su valor en la investigación cuantitativa, como destaca @mccullagh1989generalized en su obra sobre teoría y aplicaciones de los GLM.
+
+La fórmula general de los GLM es la siguiente: \myequations{Modelo GLM}
+
+```{=tex}
+\begin{equation}
+\large g(\mu) = \beta_0 + \beta_1 \cdot x_1 + \beta_2 \cdot x_2 + \ldots + \beta_n \cdot x_n\end{equation}
+```
+-   $g(\mu)$: Representa la variable dependiente, es decir, la variable que estamos tratando de predecir.
+    En el contexto de la regresión lineal, $g(\mu)$ se estima como una combinación lineal de las variables independientes.
+
+-   $\beta_0$: Es el intercepto, también conocido como el coeficiente de intersección o término constante.
+    Representa el valor esperado de la variable dependiente cuando todas las variables independientes son iguales a cero.
+
+-   $\beta_1, \beta_2, \ldots, \beta_n$: Son los coeficientes de regresión, que representan el cambio esperado en la variable dependiente debido a un cambio unitario en cada una de las variables independientes, manteniendo constantes todas las demás variables independientes.
+
+-   $x_1, x_2, \ldots, x_n$: Son las variables independientes o predictores.
+    Cada una de estas variables puede tomar diferentes valores y se utilizan para predecir el valor de la variable dependiente $g(\mu)$.
+
+### Modelo de regresión svr (Support Vector Regression, SVR)
+
+La Regresión mediante Máquinas de Vectores de Soporte (SVR) emerge como una técnica innovadora en el ámbito del aprendizaje automático, evolucionando a partir de los principios establecidos por las Máquinas de Vectores de Soporte (SVM) para enfrentar desafíos específicos asociados con tareas de regresión.
+Este enfoque se distingue por su capacidad para predecir valores continuos, aplicando un marco que equilibra la precisión predictiva con la complejidad del modelo para asegurar la generalización efectiva a datos no vistos.
+El desarrollo conceptual y teórico de la SVR se apoya en la teoría de optimización y la teoría estadística del aprendizaje, particularmente en los trabajos de Vapnik y sus colaboradores, quienes han sido fundamentales en la formulación de las SVM y, por extensión, de la SVR @Vapnik1995.
+
+Central para la metodología de la SVR es la implementación de funciones kernel, que facilitan el mapeo no lineal de los datos de entrada a un espacio de alta dimensión donde las relaciones complejas entre variables pueden ser modeladas linealmente.
+Esta característica es esencial para abordar con éxito datos que presentan patrones no lineales, permitiendo que la SVR se adapte a una amplia variedad de contextos y tipos de datos.
+La selección del kernel adecuado (e.g., lineal, polinomial, RBF) y la calibración de sus parámetros son cruciales para el rendimiento del modelo, enfatizando la importancia de una comprensión detallada de la naturaleza del conjunto de datos y el problema específico a resolver @ScholkopfSmola2002.
+
+La formulación general de la Regresión mediante Máquinas de Vectores de Soporte (SVR) busca encontrar una función $f(x)$ que tenga a lo más un $\epsilon$-desvío de los valores reales $y_i$ para todas las muestras de entrenamiento, y al mismo tiempo sea lo más plana posible.
+Matemáticamente, esto se traduce en minimizar la siguiente función objetivo:
+
+\myequations{Función objetivo de la Regresión SVR}
+
+```{=tex}
+\begin{equation}
+\large \min_{w, b, \xi, \xi^*} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} (\xi_i + \xi_i^*) \end{equation}
+```
+Sujeto a las restricciones:
+
+$$
+\begin{aligned}
+y_i - \langle w, x_i \rangle - b &\leq \epsilon + \xi_i, \\
+\langle w, x_i \rangle + b - y_i &\leq \epsilon + \xi_i^*, \\
+\xi_i, \xi_i^* &\geq 0, &\text{ para todo } i = 1, \ldots, n.
+\end{aligned}
+$$
+
+Donde:
+
+-   $x_i$ son las características de entrada
+
+-   $y_i$ son los valores objetivo
+
+-   $w$ es el vector de pesos
+
+-   $b$ es el término de sesgo
+
+-   $\xi_i$ y $\xi_i^*$ son variables de holgura que miden el grado de desviación permitido para errores por encima y por debajo de $\epsilon$, respectivamente
+
+-   $C$ es el parámetro de regularización que establece el balance entre la suavidad de la función $f(x)$ y el grado hasta el cual desviaciones mayores que $\epsilon$ son toleradas.
+
+### Modelo de Regresión con Árboles de Decisión
+
+La Regresión mediante Árboles de Decisión representa una metodología destacada en el dominio del aprendizaje supervisado, extendiendo los principios fundamentales de los árboles de decisión hacia la predicción de valores continuos.
+Este enfoque se caracteriza por su habilidad para manejar de manera intuitiva tanto relaciones lineales como no lineales entre las variables, mediante la división del espacio de características en regiones homogéneas.
+El desarrollo de los árboles de decisión para regresión se nutre de conceptos sólidos de teoría de la información y estadísticas, apoyándose en criterios de división como la reducción de la varianza y el error cuadrático medio para optimizar las decisiones de partición @Breiman1984.
+
+Un aspecto crucial de los árboles de decisión en la regresión es su capacidad para adaptarse automáticamente a las complejidades de los datos, permitiendo una modelización flexible de interacciones entre variables sin requerir especificaciones de modelo predefinidas.
+La estructura del árbol de decisión, compuesta por nodos de decisión y hojas, ofrece una representación gráfica que facilita la interpretación de cómo las características influyen en la predicción final.
+La selección de parámetros como la profundidad máxima del árbol y el mínimo número de muestras requeridas para un nodo, juegan un papel esencial en prevenir el sobreajuste y asegurar una buena generalización del modelo @Quinlan1993.
+
+La formulación general de la regresión con árboles de decisión busca construir un modelo que particione el espacio de características de manera que las predicciones en cada región sean lo más precisas posible, minimizando una función de pérdida predeterminada, típicamente el error cuadrático.
+Esta meta se consigue mediante la siguiente representación general:
+
+\myequations{Función objetivo de la Regresión con Árboles de Decisión}
+
+```{=tex}
+\begin{equation}
+\large \min_{\theta} \sum_{i=1}^{n} L(y_i, f(x_i;\theta)),
+\end{equation}
+```
+donde:
+
+-   $x_i$ son las características de entrada
+-   $y_i$ son los valores objetivo
+-   $\theta$ representa los parámetros del modelo, incluyendo las decisiones de división y las predicciones en cada hoja
+-   $L$ es la función de pérdida, usualmente el error cuadrático medio entre las predicciones y los valores reales.
+
+La construcción de un árbol de decisión implica seleccionar las divisiones que más reduzcan la función de pérdida en el conjunto de datos de entrenamiento, con un proceso iterativo de partición binaria.
+Las técnicas de poda y validación cruzada se emplean frecuentemente para afinar el modelo y evitar el sobreajuste, manteniendo un equilibrio entre la complejidad del modelo y su capacidad predictiva.
+
+### Modelo de Regresión con Random Forest
+
+La regresión con Random Forest es una técnica robusta de aprendizaje automático que construye y combina múltiples árboles de decisión para mejorar la precisión y la capacidad de generalización de las predicciones.
+A diferencia de un solo árbol de decisión, Random Forest incorpora la sabiduría de la multitud mediante la agregación de los resultados de numerosos árboles para formar la predicción final, un proceso conocido como "bagging" o "Bootstrap Aggregating" @breiman2001random .
+
+Esta técnica sobresale en su capacidad de manejar grandes conjuntos de datos con múltiples variables de entrada, siendo capaz de capturar interacciones complejas y no lineales sin necesidad de una especificación de modelo detallada.
+Random Forest es particularmente conocido por su robustez ante el sobreajuste, gracias a la aleatoriedad introducida durante la construcción de los árboles, que incluye la selección de características y muestras.
+
+Al igual que con los árboles individuales, la regresión con Random Forest opera dividiendo el espacio de las características en subespacios, pero mejora la estabilidad y precisión al promediar múltiples árboles, reduciendo la varianza sin aumentar el sesgo.
+
+El desarrollo de un modelo de Random Forest para regresión sigue principios estadísticos sólidos, empleando el promedio de las predicciones de los árboles individuales para minimizar el error total y proporcionar una estimación más fiable y precisa.
+En el corazón de Random Forest, la diversidad entre los árboles se fomenta a través de dos mecanismos principales:
+
+Bootstrap de muestras: Cada árbol se entrena con una muestra aleatoria del conjunto de datos (con reemplazo), permitiendo que diferentes árboles aprendan de distintas porciones de los datos.
+Selección aleatoria de características: En cada división, se selecciona un subconjunto aleatorio de las características disponibles, lo que obliga a los árboles a tomar decisiones basadas en diferentes combinaciones de entradas.
+Estos procesos se resumen en la siguiente fórmula general de Random Forest para regresión:
+
+\myequations{Función objetivo de la Regresión con Random Forest}
+
+```{=tex}
+\begin{equation}
+\large \min_{\{\theta_k\}} \frac{1}{K} \sum_{k=1}^{K} \sum_{i \in B_k} L(y_i, f(x_i;\theta_k)),
+\end{equation}
+```
+donde:
+
+-   $K$ es el número de árboles en el bosque.
+-   $B_k$ es el conjunto de datos bootstrap para el k-ésimo árbol.
+-   $f(x_i;\theta_k)$ es la predicción del k-ésimo árbol con parámetros $\theta_k$.
+-   $L$ es la función de pérdida, que continúa siendo comúnmente el error cuadrático medio.
+
+Los parámetros importantes de un Random Forest incluyen el número de árboles (ntree), el número de variables consideradas para dividir en cada nodo (mtry), y el tamaño mínimo de los nodos de hoja.
+La selección de estos hiperparámetros se realiza típicamente mediante técnicas de búsqueda como la validación cruzada y la búsqueda en cuadrícula o aleatoria.
+
+La interpretación de un modelo de Random Forest puede ser menos directa en comparación con un único árbol de decisión debido a la naturaleza agregada de la predicción.
+No obstante, los métodos de importancia de las variables proporcionan perspectivas significativas sobre la contribución de cada característica al modelo, ayudando a identificar los predictores más relevantes.
+
+### Otros modelos de regresión
+
+Los modelos mencionados a continuación también son capaces de predecir el valor de una variable dependiente a partir de varias variables independientes.
+No obstante, una limitación significativa de estos en comparación con los modelos previamente discutidos es su incapacidad para ofrecer de manera directa una evaluación sobre el impacto o la relevancia de cada variable independiente en el resultado de la predicción.
+Esta carencia obstaculiza la comprensión detallada de la contribución específica de cada variable al resultado final, lo cual es esencial para una interpretación profunda y la toma de decisiones informadas basadas en el modelo.
+
+#### Modelos Lineales Mixtos (LMM)
+
+Los Modelos Lineales Mixtos (LMM) son una clase de modelos estadísticos utilizados para el análisis de datos en los que las observaciones no son independientes entre sí, como es común en datos longitudinales o de panel @pinheiro2000mixed.
+Los LMM combinan elementos de los Modelos Lineales Generalizados (GLM) con la capacidad de manejar la estructura de dependencia entre las observaciones.
+
+En un LMM, se asume que los datos tienen una estructura jerárquica, donde las observaciones están agrupadas en unidades o clústeres, como en nuestro caso las diferentes disciplinas encargadas de las reparaciones.
+La inclusión de efectos aleatorios en el modelo permite capturar la variabilidad entre estos grupos, lo que mejora la precisión de las estimaciones y la capacidad de generalización del modelo @gelman2006data.
+
+Los LMM se pueden utilizar para modelar tanto respuestas continuas como categóricas, y pueden incluir tanto efectos fijos como efectos aleatorios.
+Los **efectos fijos** representan las relaciones promedio entre las variables independientes y la variable dependiente, mientras que los **efectos aleatorios** capturan la variabilidad entre los grupos o clústeres @gelman2006data.
+
+Algunas aplicaciones comunes de los LMM incluyen estudios longitudinales, para analizar datos recogidos a lo largo del tiempo, estudios multinivel, para analizar datos estructurados en múltiples niveles jerárquicos, y estudios espaciales, para analizar datos recogidos en ubicaciones geográficas diferentes @gelman2006data.
+
+Los LMM se pueden ajustar utilizando diferentes métodos de estimación, como la máxima verosimilitud restringida (REML) o la estimación de la máxima verosimilitud (MLE).
+Para trabajar con este modelo en R podemos utilizar paquetes como lme4 creado por @bates2015lme4 siendo este paquete útil para ajustar y analizar modelos lineales mixtos de manera eficiente y efectiva.
+
+La fórmula general de un modelo LMM es la siguiente:
+
+\myequations{Modelo LMM}
+
+```{=tex}
+\begin{equation}
+\large y_{ij} = \beta_0 + \beta_1 \cdot x_{ij} + u_{j} + \varepsilon_{ij}\end{equation}
+```
+-   $y_{ij}$: Representa la variable dependiente en la observación $i$ del grupo $j$.
+
+-   $\beta_0$: Es el intercepto, que representa el valor esperado de la variable dependiente cuando todas las variables explicativas son cero.
+
+-   $\beta_1$: Es el coeficiente de regresión, que indica el cambio esperado en la variable dependiente $y_{ij}$ por cada unidad de cambio en la variable explicativa $x_{ij}$.
+
+-   $x_{ij}$: Representa la variable explicativa en la observación $i$ del grupo $j$.
+
+-   $u_j$: Son los efectos fijos, que capturan las características específicas del grupo $j$ que no varían dentro de ese grupo pero pueden variar entre grupos.
+
+-   $\varepsilon_{ij}$: Es el término de error, que representa el error aleatorio en la predicción del modelo.
+
+#### Modelos Lineales Generalizados Mixtos (GLMM)
+
+Los Modelos Lineales Generalizados Mixtos (GLMM) son una extensión de los Modelos Lineales Generalizados (GLM) que permiten modelar la relación entre variables predictoras y una variable respuesta, teniendo en cuenta la estructura de dependencia entre las observaciones y la inclusión de efectos aleatorios.
+
+Estos modelos resultan especialmente valiosos cuando los datos presentan una estructura jerárquica o correlacionada, como sucede en casos de datos longitudinales, de panel o agrupados, como en nuestra situación donde podemos agrupar los datos por disciplina.
+La principal ventaja de los GLMM frente a modelos lineales y LMM radica en su capacidad para manejar datos no normales y aun así analizar sus efectos fijos, tal como aborda el autor @bolker2009generalized en su análisis sobre ecología y evolución.
+
+Además, los GLMM ofrecen una mayor flexibilidad para modelar diferentes tipos de variables respuesta y estructuras de datos, así como una mejor capacidad para capturar la variabilidad entre grupos.
+Asimismo, permiten interpretar la varianza residual y descomponerla en componentes atribuibles a los efectos fijos y aleatorios, lo que facilita la interpretación de la variabilidad observada en los datos.
+
+Para concluir los GLMM representan una herramienta estadística poderosa y flexible para modelar relaciones entre variables predictoras y una variable respuesta en presencia de estructuras de datos jerárquicas o correlacionadas, y son especialmente útiles en campos como la ecología, la biología, la epidemiología y las ciencias sociales @zuur2009mixed.
+
+La fórmula general de los glmm es la siguiente: \myequations{Modelo GLMM}
+
+```{=tex}
+\begin{equation}
+\large g(\mu_{ij}) = \beta_0 + \beta_1 \cdot x_{ij} + u_{j}\end{equation}
+```
+## Maching Learning
+
+El machine Learning o aprendizaje automático, es un subcampo de las ciencias de computación que tienen como finalidad establecer algoritmos para que las computadoras aprendan patrones de datos a gran escala con el fin de extraer información que mejoren los procesos de análisis de los datos, el Machine Learning (ML) se ha consolidado como una herramienta fundamental para extraer conocimiento y generar predicciones acertadas.
+El Machine Learning, definido por Arthur Samuel en 1959 como "el campo de estudio que da a las computadoras la habilidad de aprender sin ser explícitamente programadas" @Samuel1959, ha evolucionado rápidamente en las últimas décadas, convirtiéndose en un pilar clave para la toma de decisiones informadas en una amplia gama de industrias y campos de investigación.
+
+A diferencia de los enfoques de programación tradicionales, donde los algoritmos se basan en instrucciones y reglas definidas explícitamente, el Machine Learning permite que los sistemas aprendan y mejoren automáticamente a partir de los datos.
+Esto se logra a través de la aplicación de técnicas como el aprendizaje supervisado, el aprendizaje no supervisado y el aprendizaje por refuerzo, cada uno de los cuales aborda diferentes tipos de problemas y desafíos @Hastie2009.
+
+#### Aprendizaje Supervisado
+
+El aprendizaje supervisado se conoce por su capacidad de extraer conocimiento a partir de datos etiquetados, permitiendo a los algoritmos establecer relaciones entre variables de entrada y variables de salida para generar predicciones y clasificaciones precisas.
+
+En el aprendizaje supervisado, el algoritmo tiene acceso a un conjunto de datos de entrenamiento que contiene observaciones o instancias con valores conocidos para la variable de salida.
+Esto le permite al modelo "aprender" a reconocer patrones y construir una función que mapee adecuadamente las entradas a las salidas deseadas @Hastie2009, Por citar un ejemplo, en mantenimiento un problema de predicción de tiempos , el algoritmo utilizaría datos históricos de tiempos correctivos, con información sobre variables como total horas, estado del equipo, frecuencia de mantenimientos y tiempos empleados para reparaciones anteriores, para establecer un modelo que permita pronosticar los tiempos a futuro.
+
+Dentro del aprendizaje supervisado, existen dos tipos principales de problemas: regresión y clasificación.
+Los problemas de regresión buscan predecir una variable numérica continua, como el precio de una acción o la demanda de un producto.
+Por otro lado, los problemas de clasificación tienen como objetivo asignar instancias a categorías o clases discretas, como determinar si un correo electrónico es spam o no spam @Witten2016.
+Este se consolida como una herramienta fundamental en el campo del Machine Learning, permitiendo a los investigadores y profesionales generar predicciones y clasificaciones precisas a partir de datos etiquetados.
+A medida que la disponibilidad y complejidad de los datos continúan aumentando, el aprendizaje supervisado seguirá desempeñando un papel crucial en la toma de decisiones informadas en diversos ámbitos
+
+#### Aprendizaje No Supervisado
+
+A diferencia del aprendizaje supervisado, el aprendizaje no supervisado es una rama crucial del machine learning que se enfoca en descubrir patrones y estructuras ocultas en conjuntos de datos sin etiquetar, Según @Bishop2006, el aprendizaje no supervisado implica encontrar una representación útil o una estructura subyacente en los datos sin conocer las salidas esperadas.
+Esto es especialmente útil en situaciones donde los datos pueden no estar etiquetados o cuando se desea explorar la naturaleza intrínseca de los datos sin ninguna suposición previa sobre las relaciones entre variables.
+
+Algunos de los principales métodos de aprendizaje no supervisado incluyen el análisis de conglomerados (clustering), la reducción de dimensionalidad y la detección de anomalías @Witten2016.
+El análisis de conglomerados tiene como finalidad agrupar las observaciones en función de sus características, de manera que los elementos dentro de un mismo grupo sean similares entre sí y diferentes a los de otros grupos.
+Esto resulta útil para segmentación de clientes, identificación de tipos de consumidores, o agrupación de genes con funciones biológicas similares.
+
+Resaltar que una de las principales fortalezas del aprendizaje no supervisado es su capacidad de descubrir patrones y relaciones inesperadas en los datos, lo que puede conducir a nuevos conocimientos y oportunidades de innovación.
+Además, estas técnicas son especialmente útiles cuando los datos disponibles no cuentan con etiquetas o variables de salida claras, como en el análisis exploratorio de conjuntos de datos complejos.
+Para citar algunos algoritmos de aprendizaje No Supervisado: K-Means, DBSCAN, Algoritmos de Agrupamiento Jerárquico, Análisis de Componentes Principales (PCA), t-distributed Stochastic Neighbor Embedding, Gaussian Mixture Models (GMM), Isolation Forest.
+
+## Conceptos y definiciones
+
+### R Studio
+
+R destaca por su notable flexibilidad, permitiendo la aplicación de una amplia gama de modelos estadísticos y matemáticos.
+Desde simples modelos lineales hasta técnicas avanzadas como regresión logística, árboles de decisión, redes neuronales y análisis de series temporales, R ofrece una completa variedad de herramientas para el modelado predictivo y descriptivo.
+
+Una de las principales fortalezas de R reside en su extensa colección de paquetes especializados, los cuales abarcan una amplia diversidad de áreas, desde el análisis estadístico más básico hasta técnicas de modelado más sofisticadas.
+Estos paquetes son desarrollados y mantenidos tanto por la comunidad de usuarios como por expertos en diversos campos, asegurando una amplia disponibilidad de herramientas para abordar cualquier tarea de modelado que se presente.
+
+**Paquetes necesarios**
+
+-   **DT:** `DT` proporciona una interfaz R para las DataTables de JavaScript, permitiendo la creación de tablas HTML interactivas que pueden ser visualizadas en R Markdown y aplicaciones Shiny.
+    Este paquete es especialmente útil para la presentación de datos de forma dinámica, donde el usuario puede ordenar, filtrar y paginar la información directamente desde la visualización generada.
+
+-   **lmtest:** El paquete `lmtest` ofrece una amplia gama de pruebas estadísticas para la evaluación de modelos lineales en R.
+    Incluye herramientas para realizar pruebas de coeficientes, comparaciones de modelos, diagnósticos de residuos, entre otros.
+    `lmtest` es valioso para analistas y estadísticos que buscan validar y comparar modelos lineales mediante pruebas rigurosas y basadas en criterios estadísticos sólidos.
+
+-   **car:** `car` (Companion to Applied Regression) está diseñado para complementar el análisis de regresión aplicada en R, proporcionando una serie de funciones y conjuntos de datos útiles para el diagnóstico y la visualización de modelos lineales.
+    Desde análisis de varianza hasta gráficos de influencia y diagnóstico, `car` facilita una comprensión más profunda de los modelos lineales y sus supuestos.
+
+-   **lme4:** `lme4` se utiliza para ajustar modelos lineales mixtos y modelos lineales generalizados mixtos en R, ofreciendo una solución robusta para el análisis de datos con estructuras de dependencia complejas o agrupadas.
+    Es ideal para datos jerárquicos, longitudinales o de panel, permitiendo a los investigadores modelar efectos tanto fijos como aleatorios y entender la variabilidad en los datos a múltiples niveles.
+
+-   **lubridate:** `lubridate` simplifica el manejo de fechas y horas en R, proporcionando funciones intuitivas para la manipulación, el parseo y el cálculo con objetos de tiempo.
+    Este paquete resuelve muchos de los desafíos comunes al trabajar con datos temporales, facilitando la conversión entre formatos de fecha y hora, la gestión de zonas horarias, y la realización de operaciones aritméticas con fechas.
+
+-   **MuMIn:** `MuMIn` es un paquete en R dedicado a la selección y promedio de modelos, basado en criterios de información como el AIC o BIC.
+    Resulta especialmente útil en la comparación exhaustiva de modelos candidatos y en la síntesis de los resultados a través del promedio de modelos, proporcionando así una visión más holística de los efectos modelados y ayudando a mejorar la precisión predictiva.
+
+-   **ggthemes:** `ggthemes` extiende las capacidades de `ggplot2` al ofrecer una variedad de temas y escalas adicionales para la personalización de gráficos en R.
+    Desde estilos inspirados en medios de comunicación y software famosos hasta paletas de colores adaptadas para una visualización de datos más atractiva y profesional, `ggthemes` enriquece la presentación visual de los análisis.
+
+-   **rpart:** El paquete `rpart` facilita la implementación de árboles de decisión para clasificación y regresión en R.
+    Utilizando el enfoque CART (Árboles de Clasificación y Regresión), `rpart` permite a los usuarios explorar la estructura de los datos y hacer predicciones basadas en las relaciones identificadas entre las variables.
+    Es ampliamente utilizado tanto en análisis exploratorios como en la construcción de modelos predictivos complejos.
+
+-   **e1071:** `e1071` trae a R una serie de algoritmos de aprendizaje automático y estadística, incluyendo máquinas de vectores de soporte (SVM), clasificación Naive Bayes, y análisis de componentes principales (PCA).
+    Desarrollado inicialmente en la Universidad Tecnológica de Viena, este paquete es una herramienta esencial para tareas de clasificación, regresión y reducción de dimensionalidad en análisis de datos avanzados.
+
+```{r include=FALSE}
+library(tidyverse)
+library(readxl)
+library(DT)
+library(lmtest)
+library(car)
+library(lme4)
+library(lubridate)
+library(MuMIn)
+library(ggthemes)
+library(rpart)
+library(e1071)
+library(Metrics)
+library(e1071)
+library(randomForest)
+library(rpart)
+```
+
+### Pyhton
+
+Python es un lenguaje de programación de alto nivel, interpretado y de propósito general.
+Es conocido por su sintaxis clara y legible, lo que lo hace ideal para principiantes y programadores experimentados por igual.
+Python es ampliamente utilizado en una variedad de campos, incluyendo desarrollo web, ciencia de datos, inteligencia artificial, automatización de tareas, entre otros.
+Se destaca por su amplia biblioteca estándar y su comunidad activa que contribuye con paquetes y recursos para facilitar el desarrollo de software.
+@PythonSoftwareFoundation2022
+
+**Paquetes y librerías utilizadas**
+
+• Sckit-Learn: Scikit-Learn es una biblioteca de aprendizaje automático de código abierto para el lenguaje de programación Python.
+Proporciona una amplia gama de algoritmos de aprendizaje supervisado y no supervisado, así como herramientas para la preparación, evaluación y visualización de datos.
+Scikit-Learn es ampliamente utilizado en la comunidad de ciencia de datos y machine learning debido a su facilidad de uso, su documentación detallada y su integración con otras bibliotecas populares de Python, como NumPy, Pandas y Matplotlib
+
+• NumPy: abreviatura de "Numerical Python", es una biblioteca de código abierto para el lenguaje de programación Python.
+Proporciona soporte para arrays y matrices multidimensionales, junto con una amplia colección de funciones matemáticas de alto nivel para operar en estas estructuras de datos.
+NumPy es fundamental en el ecosistema de Python para computación científica y análisis de datos, ya que ofrece una eficiente manipulación de datos numéricos, cálculos numéricos rápidos y funciones para trabajar con arrays de manera eficiente.
+
+• Pandas: es una poderosa biblioteca de código abierto para el lenguaje de programación Python, diseñada principalmente para el análisis y manipulación de datos.
+Proporciona estructuras de datos flexibles y eficientes, como DataFrames y Series, que permiten a los usuarios trabajar con datos tabulares de una manera intuitiva y eficaz.
+Pandas es ampliamente utilizado en la comunidad de ciencia de datos y análisis de datos para tareas como limpieza, manipulación, exploración y análisis de datos.
+@McKinney2010.
+
+• Matplotlib: es una biblioteca de visualización de datos de código abierto para el lenguaje de programación Python.
+Proporciona una amplia variedad de herramientas para crear gráficos estáticos, interactivos y animados de manera sencilla y flexible.
+Matplotlib es ampliamente utilizado en la comunidad de ciencia de datos, análisis de datos, investigación científica y educación debido a su versatilidad y capacidad para producir gráficos de alta calidad en diversos formatos y estilos @Hunter2007.
+
+### Variables y Tipos de Variables
+
+En el ámbito de la investigación, el concepto de variables es fundamental para comprender y analizar datos.
+Las variables son características, propiedades o rasgos que pueden medirse, observarse o manipularse en un estudio.
+Son elementos clave que los investigadores estudian y comparan para entender las relaciones entre ellos y cómo influyen en un fenómeno o proceso.
+Una variable es cualquier cantidad que pueda tener más de un valor.
+En un estudio científico, las variables son las características o atributos que se miden para evaluar los efectos de las condiciones experimentales.
+Estas pueden ser tan simples como la edad de una persona o tan complejas como el nivel de contaminación en un área determinada.
+
+Las variables se dividen en dos categorías:
+
+**a. Variables Independientes:** Estas son las variables que un investigador manipula o cambia para observar su efecto sobre otras variables.
+En un experimento, la variable independiente es la que se controla deliberadamente para ver cómo afecta a la variable dependiente.
+Por ejemplo, en un estudio sobre el efecto de la luz en el crecimiento de las plantas, la cantidad de luz sería la variable independiente.
+
+**a. Variables Dependientes:** Son las variables que se observan y miden en respuesta a los cambios en la variable independiente.
+En el ejemplo de las plantas, el crecimiento de las plantas sería la variable dependiente, ya que se espera que cambie en respuesta a la cantidad de luz que reciben.
+
+#### Tipos de Variables
+
+Las variables pueden clasificarse aún más en diferentes tipos, lo que ayuda a los investigadores a comprender mejor cómo analizar y presentar los datos.
+Algunas de las clasificaciones comunes son:
+
+**a. Variables Categóricas o Nominales:** Estas variables representan categorías discretas que no tienen un orden inherente.
+Ejemplos incluyen el género, el estado civil, el tipo de vehículo (automóvil, camión, motocicleta), etc.
+Se pueden codificar como números, pero estos números no tienen un significado numérico intrínseco.
+
+**b. Variables Ordinales:** Las variables ordinales tienen categorías con un orden específico, pero las diferencias entre las categorías no son necesariamente iguales.
+Por ejemplo, una escala de "satisfacción" que va desde "muy insatisfecho" hasta "muy satisfecho" es una variable ordinal.
+
+**c. Variables de Intervalo:** Estas variables tienen un orden significativo entre los valores y las diferencias entre los valores son igualmente significativas.
+Sin embargo, no hay un punto cero absoluto.
+Un ejemplo común es la temperatura en grados Celsius o Fahrenheit.
+En la escala Celsius, por ejemplo, la diferencia entre 20°C y 30°C es la misma que entre 30°C y 40°C.
+
+**d. Variables de Razón:** Son similares a las variables de intervalo, pero tienen un cero absoluto, lo que significa que el valor cero representa la ausencia completa de la característica que se está midiendo.
+Por ejemplo, la altura, el peso, el tiempo y la cantidad de dinero son variables de razón.
+No tener dinero (0) es diferente de tener \$10 o \$20.
+
+### Pruebas de bondad y ajuste
+
+Las pruebas de bondad de ajuste e independencia son ampliamente utilizadas en diversas áreas de la ciencia para llevar a cabo análisis de datos.
+Una prueba de bondad de ajuste permite evaluar la hipótesis de que una variable aleatoria sigue cierta distribución de probabilidad y se utiliza en situaciones donde se requiere comparar una distribución observada con una teórica o hipotética, compararla con datos históricos o con la distribución conocida de otra población.
+
+Las pruebas más utilizadas para estudiar la independencia y la bondad de ajuste son las chicuadrado de Pearson, el estadístico de Kolmogorov-Smirnov, criterio de información de Akaike (AIC) entre otros debido a su fácil aplicación y a que se encuentran en todos los paquetes estadísticos.
+Estas pruebas asumen que todas las observaciones son independientes y que están igualmente distribuidas, supuestos que sólo se satisfacen para un muestreo aleatorio simple con reposición y se cumplen aproximadamente en una muestra aleatoria simple sin reposición para una fracción de muestreo pequeña @QuinteroM2014.
+
+### Distribución de probabilidad.
+
+En teoría de la probabilidad y estadística, la distribución de probabilidad de una variable aleatoria es una función que asigna a cada suceso definido sobre la variable la probabilidad de que dicho suceso ocurra.
+La distribución de probabilidad está definida sobre el conjunto de todos los sucesos y cada uno de los sucesos es el rango de valores de la variable aleatoria.
+También puede decirse que tiene una relación estrecha con las distribuciones de frecuencia.
+De hecho, una distribución de probabilidades puede comprenderse como una frecuencia teórica, ya que describe cómo se espera que varíen los resultados.
+
+La distribución de probabilidad está completamente especificada por la función de distribución, cuyo valor en cada x real es la probabilidad de que la variable aleatoria sea menor o igual que x.
+
+### Modelos en mantenimiento Industrial:
+
+En el contexto del mantenimiento industrial, la aplicación de modelos multivariables y de series temporales juega un papel fundamental en la predicción del tiempo necesario para reparar máquinas en un intervalo específico.
+Estos modelos contribuyen significativamente a la eficiencia y fiabilidad de los procesos industriales.
+
+### Optimización de Procesos:
+
+La optimización de tiempos de atención de fallas en redes eléctricas y en el mantenimiento industrial se enfoca en reducir los tiempos de respuesta ante situaciones de emergencia, garantizando la seguridad del personal y la eficacia en la asignación de recursos.
+
+### Limitaciones y Consideraciones:
+
+A pesar de las ventajas de las técnicas de estadística multivariante, como la capacidad para identificar interdependencias entre variables, es importante considerar las limitaciones en la interpretación de resultados, especialmente en conjuntos de datos complejos.
+La asunción de linealidad también puede ser un desafío en ciertos contextos.
+
+### Distribución Weibull
+
+La distribución Weibull es ampliamente usada en la ingeniería como modelo para la descripción del tiempo de duración de un componente.
+Esta distribución fue introducida por el científico sueco del mismo nombre, quien demostró que el esfuerzo al que se someten los materiales puede modelarsemediante el empleo de esta distribución.
+@Castaneda2004
+
+Se dice que una variable aleatoria X tiene una distribución Weibull con parámetros $\alpha$ y $\beta$ si $\alpha >0, \beta >0$ si la función de densidad de probabilidad de X es:
+
+\myequations{distribución Weibull}
+
+```{=tex}
+ \begin{equation}
+    f(x ; \alpha, \beta)=\left\{\begin{array}{cc}
+        \frac{\alpha}{\beta^{\alpha}} x^{\alpha-1} e^{-(x / \beta)^{a}} & x \geq 0 \\
+        0 & x<0
+    \end{array}\right.
+ \end{equation}
+```
+El valor esperado E(X) esta dado por la siguiente ecuación:
+
+```{=tex}
+\begin{equation}
+    \mu=\beta \Gamma\left(1+\frac{1}{\alpha}\right)
+\end{equation}
+```
+La varianza para esta distribución E(X) esta dado por la siguiente ecuación.
+
+```{=tex}
+\begin{equation}
+    \sigma^{2}=\beta^{2}\left\{\Gamma\left(1+\frac{2}{\alpha}\right)-\left[\Gamma\left(1+\frac{1}{\alpha}\right)\right]^{2}\right\}
+\end{equation}
+```
+La función de distribución acumulativa de una variable aleatoria de Weibull con parámetros $\alpha$ y $\beta$ es:
+
+```{=tex}
+\begin{equation}
+    F(x ; \alpha, \beta)=\left\{\begin{array}{cc}
+        0 & x<0 \\
+        1-e^{-(x / \beta)^{\alpha}} & x \geq 0
+    \end{array}\right.
+\end{equation}
+  La función de supervivencia o también conocida como función de confiabilidad esta dada por la ecuación.
+ \begin{equation}
+    S(t)=e^{-\left(\frac{t}{\beta}\right)^{\alpha}}
+    \label{eq:5}
+ \end{equation}
+  La función de probabilidad acumulada de falla esta dada por la siguiente ecuación.
+ \begin{equation}
+    \mathrm{F}(\mathrm{t})=1-\mathrm{S}(\mathrm{t})
+    \label{Confiabilidad}
+ \end{equation}
+```
+### Hipótesis nula (H0)
+
+Es la afirmación inicial que se quiere poner a prueba.
+Generalmente, se establece como la afirmación de que no hay efecto o diferencia entre grupos, o que una población sigue cierta distribución.
+Se denota como H0.
+
+### Hipótesis alternativa (H1)
+
+Es la afirmación opuesta a la hipótesis nula.
+Se trata de lo que se intenta probar o demostrar con los datos.
+Puede ser una afirmación de diferencia, efecto o cualquier otra condición diferente a la de la hipótesis nula.
+
+### Estadístico de prueba
+
+Es una medida calculada a partir de los datos de la muestra, que se utiliza para tomar una decisión sobre la hipótesis nula.
+Puede ser una media, una proporción, una diferencia entre medias, entre otros.
+
+### Nivel de significancia (alpha)
+
+Es la probabilidad máxima que estamos dispuestos a aceptar de cometer un error tipo I, es decir, rechazar incorrectamente la hipótesis nula cuando es verdadera.
+Es comúnmente fijado en valores como 0.05 o 0.01.
+
+### Regla de decisión
+
+Se basa en comparar el estadístico de prueba con un valor crítico, derivado de la distribución de probabilidad apropiada bajo la hipótesis nula.
+Si el estadístico de prueba cae en la región de rechazo, se rechaza la hipótesis nula a favor de la hipótesis alternativa.
+
+### P-valor
+
+Es la probabilidad, bajo la suposición de que la hipótesis nula es verdadera, de obtener un estadístico de prueba al menos tan extremo como el observado en la muestra.
+Si el p-valor es menor que el nivel de significancia, se rechaza la hipótesis nula.
+
+### Error tipo I y tipo II
+
+El error tipo I ocurre cuando se rechaza incorrectamente la hipótesis nula cuando es verdadera.
+El error tipo II ocurre cuando se acepta incorrectamente la hipótesis nula cuando es falsa.
+
+### Potencia de la prueba
+
+Es la probabilidad de rechazar la hipótesis nula cuando es falsa.
+Depende del tamaño del efecto, el tamaño de la muestra y el nivel de significancia.
+
+### Multicolinealidad
+
+Es una situación en la que dos o más variables predictoras en un modelo de regresión están altamente correlacionadas entre sí.
+Esto puede causar problemas en la interpretación de los coeficientes del modelo y puede afectar la estabilidad de las estimaciones.
+
+### VIF (Factor de Inflación de la Varianza)
+
+Es una medida que cuantifica la gravedad de la multicolinealidad.
+Un valor de VIF mayor que 10 se considera una indicación de multicolinealidad grave, lo que sugiere que las variables predictoras están muy correlacionadas y pueden estar causando problemas en el modelo.
+
+### Criterios de información
+
+Los criterios de información son herramientas estadísticas esenciales en la selección de modelos, diseñadas para evaluar la calidad de un modelo estadístico en términos de su capacidad predictiva, penalizando al mismo tiempo la complejidad del modelo para evitar el sobreajuste.
+Los tres criterios más destacados en este contexto son el Criterio de Información de Akaike (AIC), el Criterio de Información de Akaike Corregido (AICc), y el Criterio de Información Bayesiano (BIC).
+
+### AIC (Criterio de Información de Akaike)
+
+Introducido por Hirotugu Akaike en 1974, el AIC mide la pérdida de información cuando se utiliza un modelo para representar el proceso que generó los datos.
+Se fundamenta en la teoría de la información.
+
+**Fórmula:**
+
+\myequations{Formula del criterio de aic}
+
+```{=tex}
+\begin{equation} AIC = 2k - 2\ln(L) \end{equation}
+```
+donde $k$ es el número de parámetros estimados en el modelo y $L$ es la máxima verosimilitud del modelo.
+
+### AICc (Criterio de Información de Akaike Corregido)
+
+Es una versión del AIC que incluye una corrección para tamaños de muestra pequeños.
+Resulta particularmente relevante cuando el tamaño de la muestra es pequeño en comparación con el número de parámetros estimados.
+
+**Fórmula:**
+
+\myequations{Formula del criterio aic corregido}
+
+```{=tex}
+\begin{equation}
+AICc = AIC + \frac{2k^2 + 2k}{n - k - 1}\end{equation}
+```
+donde $n$ es el tamaño de la muestra, $k$ es el número de parámetros, y $L$ es la máxima verosimilitud.
+
+### BIC (Criterio de Información Bayesiano)
+
+También conocido como el Criterio de Schwarz, el BIC es otra medida de selección de modelos que incorpora tanto el número de parámetros en el modelo como el tamaño de la muestra.
+Fue desarrollado por Gideon Schwarz en 1978.
+
+**Fórmula:**
+
+\myequations{Formula del criterio de bic}
+
+```{=tex}
+\begin{equation} BIC = \ln(n)k - 2\ln(L) \end{equation}
+```
+donde $n$ es el tamaño de la muestra, $k$ es el número de parámetros estimados, y $L$ es la máxima verosimilitud.
+
+### Kernel SVR
+
+El término "kernel" en el contexto de un modelo de Máquina de Soporte Vectorial para Regresión (SVR) se refiere a una función utilizada para transformar el espacio de características de los datos a un nuevo espacio, usualmente de mayor dimensión, donde resulta más sencillo encontrar un hiperplano que se ajuste a los datos en el contexto de regresión.
+Este concepto permite a los modelos SVR manejar datos que no son linealmente separables o relaciones no lineales entre las características de manera eficiente.
+
+Los kernels más comúnmente utilizados en los modelos SVR incluyen:
+
+1.  **Kernel Lineal**: No se realiza ninguna transformación no lineal sobre los datos, útil para relaciones lineales.
+    Se define como: $$K(x, x´) = x^T x´$$
+
+2.  **Kernel Polinómico**: Permite modelar relaciones no lineales mediante un polinomio de grado $d$.
+    Se define como: $$K(x, x´) = (1 + x^T x´)^d$$
+
+3.  **Kernel RBF (Radial Basis Function) o Gaussiano**: Captura relaciones complejas no lineales y se define como: $$K(x, x´) = \exp(-\gamma \|x - x´\|^2)$$
+
+4.  **Kernel Sigmoide**: Transforma los datos de entrada de manera similar a la función sigmoide.
+    Se define como: $$K(x, x´) = \tanh(\alpha x^T x´ + c)$$
+
+### Nodos y hojas de un árbol de decisión
+
+**Nodos de decisión (o internos)**: Estos nodos realizan una pregunta sobre una o más características y dividen el conjunto de datos en dos o más subconjuntos basados en la respuesta a esta pregunta.
+La pregunta suele tomar la forma de una comparación, como "¿Es el valor de la característica X menor que un cierto umbral?".
+Cada nodo de decisión tiene dos o más ramas que representan los posibles resultados de la pregunta y conducen a otros nodos o a hojas.
+La estructura del árbol se construye a partir de estos nodos, comenzando con el nodo raíz en la parte superior, que es el primer punto de decisión.
+
+**Nodos hoja (o terminales)**: Los nodos hoja representan el resultado final del árbol de decisión.
+En problemas de clasificación, cada hoja está asociada a una clase, que es la predicción del modelo para las instancias que llegan a esa hoja.
+En problemas de regresión, los nodos hoja suelen contener un valor continuo o el promedio de los valores objetivo de las instancias que llegan a esa hoja, representando la predicción del modelo para esas instancias.
+
+\newpage
+
+# Desarrollo del proyecto y resultados
+
+En esta sección, se desarrollara la metodología utilizada, se expondrá el problema que se busca abordar y se describirán los pasos esenciales para aplicar técnicas de estadística multivariante a los datos utilizados con el fin de resolver dicho problema.
+
+## Metodología
+
+Este proyecto se centra en la creación de un modelo predictivo altamente preciso diseñado para estimar el tiempo requerido para llevar a cabo reparaciones correctivas en equipos industriales.
+La recopilación de datos históricos, que documenta las horas invertidas en reparaciones previas a lo largo de los años, constituye la base para el análisis.
+A pesar de que la base de datos es extensa, enfrenta varios desafíos como la presencia de valores faltantes, la incidencia de datos atípicos y una considerable variabilidad en las horas reportadas de reparaciones.
+
+Ante estos desafíos, se comienza con una limpieza de datos detallada y metódica.
+Este proceso crítico implica métodos sofisticados para manejar valores faltantes, técnicas robustas de filtrado para mitigar el impacto de los valores atípicos y estrategias para normalizar la dispersión de los datos.
+
+El objetivo principal es desarrollar un modelo que no solo sea preciso sino que también pueda adaptarse a diferentes marcos temporales: diario, semanal y mensual.
+Esta adaptabilidad asegura que el modelo sea una herramienta versátil para la programación eficiente de las actividades de mantenimiento, mejorando así la planificación de recursos y la estrategia de gestión en las operaciones industriales.
+El éxito de este modelo repercutirá directamente en la reducción del tiempo de inactividad de las máquinas y en la optimización del rendimiento y costos de operación.
+
+La metodología seleccionada para esta investigación se basa en CRISP-DM (Cross-Industry Standard Process for Data Mining), que proporciona una estructura sistemática para guiar el desarrollo de proyectos de análisis de datos y modelado predictivo.
+CRISP-DM consta de seis fases interconectadas y cíclicas que facilitan el abordaje claro y organizado del proyecto.
+
+```{r echo=FALSE, fig.cap="Metodología crips dm", fig.align='center', fig.width=2, fig.height=3.2}
+
+knitr::include_graphics("Imagenes/Crips-dm.png", dpi = 200)
+```
+
+La metodología CRISP-DM (Cross Industry Standard Process for Data Mining) es un marco estructurado y ampliamente reconocido que guía el proceso de desarrollo de soluciones de minería de datos y modelado de datos.
+Surgió en la década de 1990 como resultado de un esfuerzo colaborativo de expertos en minería de datos y análisis de datos para estandarizar y formalizar el proceso de minería de datos @Chapman2000.
+
+El desarrollo de CRISP-DM fue liderado por el CRISP-DM Consortium, que incluyó a empresas líderes en la industria, consultoras, universidades y organizaciones de investigación.
+El objetivo era proporcionar un enfoque común y una estructura estandarizada para proyectos de minería de datos, que pudiera ser aplicable en una amplia variedad de contextos y sectores industriales @Shearer2000.
+
+CRISP-DM consta de seis fases principales, cada una de las cuales aborda aspectos específicos del proceso de modelado de datos:
+
+-   Comprensión del negocio (Business Understanding): En esta fase, se busca comprender los objetivos del negocio y los requisitos del proyecto de minería de datos.
+    Se identifican los problemas o las oportunidades que se pretenden abordar, así como los factores críticos de éxito para el proyecto.
+
+-   Comprensión de los datos (Data Understanding): Durante esta etapa, se recopilan los datos relevantes para el proyecto y se realiza un análisis exploratorio para comprender su estructura, calidad y significado.
+
+-   Preparación de los datos (Data Preparation): En esta fase, se preparan los datos para su uso en el modelado mediante tareas de limpieza, integración, selección y transformación.
+
+-   Modelado (Modeling): Durante esta etapa, se seleccionan y desarrollan modelos predictivos o descriptivos utilizando técnicas de minería de datos y análisis estadístico.
+
+-   Evaluación (Evaluation): En esta fase, se evalúan y validan los modelos desarrollados utilizando conjuntos de datos de prueba o técnicas de validación cruzada.
+
+-   Despliegue (Deployment): Finalmente, en esta etapa, se implementan los modelos en un entorno operativo y se integran en los sistemas existentes.
+
+CRISP-DM ha sido ampliamente adoptado y utilizado en una variedad de industrias y aplicaciones @Pyle1999, incluyendo banca, telecomunicaciones, comercio electrónico, salud, manufactura, marketing y más.
+
+## Planteamiento del problema
+
+La ausencia de estimaciones precisas en el tiempo requerido para el mantenimiento correctivo en instalaciones industriales conduce a una serie de repercusiones operativas y estratégicas significativas.
+Una inadecuada previsión de las horas de labor necesarias puede desencadenar una subsecuente deficiencia en la planificación y en la programación de actividades, culminando en conflictos logísticos y posibles demoras en la producción.
+
+Los periodos de inactividad prolongados inciden directamente en la disponibilidad de maquinaria, repercutiendo en la eficiencia operativa y productiva de la planta.
+Esta situación se traduce invariablemente en un incremento de los costos operacionales, ya que se acumulan horas de trabajo no contempladas inicialmente, desencadenando, en muchas ocasidades, la necesidad de recurrir a horas extra y al empleo de recursos alternativos.
+
+A nivel financiero, la indeterminación en las labores de mantenimiento ejerce una presión considerable sobre los presupuestos establecidos, con la posibilidad de que los costos reales sobrepasen las previsiones iniciales, poniendo en juego la rentabilidad del proyecto.
+Desde la perspectiva de la cadena de valor, el mantenimiento no planificado puede tener consecuencias en cadena, afectando a varios eslabones y comprometiendo compromisos comerciales previamente acordados.
+
+La precisión en los presupuestos de proyectos de mantenimiento es vital para mantener la viabilidad financiera y la sostenibilidad de las operaciones industriales.
+Una mala predicción en las horas de mantenimiento puede llevar a exceder las estimaciones presupuestarias, afectando negativamente la rentabilidad del proyecto @Wang2017.
+Asimismo, las interrupciones en el mantenimiento tienen el potencial de afectar adversamente la cadena de suministro y comprometer las relaciones con los clientes @Cheng2019.
+
+La moral y el bienestar del personal de mantenimiento también son áreas de preocupación significativas, donde la incertidumbre y el aumento de la carga de trabajo pueden conducir a un estrés laboral incrementado y a un deterioro en la moral del equipo @TaylorSchmidt2020.
+Además, la urgencia por reanudar la producción no debe comprometer los estándares de seguridad, ya que la seguridad del personal es de suma importancia y debe ser siempre una prioridad @GonzalezMartinez2022.
+
+Para abordar estos desafíos, es esencial adoptar enfoques basados en datos para mejorar la precisión de las estimaciones de tiempo de mantenimiento correctivo.
+La implementación de herramientas de análisis predictivo y el uso estratégico de datos históricos son estrategias recomendadas para mejorar la planificación del mantenimiento y reducir los tiempos de inactividad no planificados @Morales2020.
+
+## Proceso previo al modelado
+
+Inicialmente, se realiza un proceso meticuloso de limpieza de la base de datos, que implica la eliminación rigurosa de valores atípicos, con el propósito de asegurar la integridad y fiabilidad del conjunto de datos.
+Tras refinar la base de datos y consolidar su calidad, se procede con una fase de análisis descriptivo.
+Esta etapa está orientada a adquirir una comprensión profunda del comportamiento intrínseco de las variables, así como de las interacciones potenciales que puedan existir con la variable dependiente.
+Este análisis preliminar es crucial, ya que establece la fundación para la modelización predictiva posterior y el descubrimiento de insights operativos valiosos.
+
+### Limpiando la base de datos
+
+El conjunto de datos que se empleará en este estudio comprende inicialmente 36,795 observaciones y 11 variables distintas, todas las cuales pertenecen al ámbito de las actividades de reparación industrial.
+Este voluminoso corpus de información proporcionará una base sólida para el análisis en profundidad y la modelización de las operaciones de mantenimiento correctivo, permitiendo así un entendimiento exhaustivo de las dinámicas y los patrones subyacentes a estos procesos industriales críticos.
+
+Las variables se describen a continuación:
+
+-   **Época del año**: Indica la época del año en que se llevo a cabo la reparación verano o invierno.
+
+-   **Cumplimiento de la estrategia**: Representa la ejecución de la estrategia de mantenimiento preventivo, siendo crucial cumplir con la estrategia para evitar correctivos.
+
+-   **Programa de mantenimiento**: Mensualmente se genera un programa que incluye órdenes de mantenimiento correctivas y preventivas.
+    A veces, no se cumple debido a emergencias que requieren atención inmediata.
+
+-   **Ready Backlog**: Indica la carga de trabajo en semanas, siendo un indicador de trabajos pendientes y la necesidad de más personal.
+
+-   **HH Actv Generales**: Horas dedicadas a actividades generales como charlas HSE, capacitaciones, etc.
+
+-   **HH En la Maquina**: Horas reales dedicadas a trabajos en la máquina.
+    Es la variable principal a predecir, especialmente en trabajos correctivos de emergencia.
+
+-   **Otras HH**: Horas dedicadas a actividades propias del mantenimiento, como apertura de permisos, aislamientos, etc.
+
+-   **TipoMantenimiento**: Se clasifica en preventivo, correctivo normal y correctivo de emergencia.
+    El enfoque principal es predecir el tiempo necesario para el mantenimiento correctivo, especialmente el de emergencia.
+
+-   **Disciplina**: Indica los equipos de trabajo que ejecutan los mantenimientos, permitiendo predicciones por equipo.
+
+-   **fe.CreadaOrden y fe.Ejecutada**: Fechas de creación y ejecución de la orden, respectivamente.
+
+\vspace{0.2cm}
+
+En la **tabla 1** a continuación podemos ver las primeras observaciones de nuestra base de datos
+
+```{r echo=FALSE}
+
+datos <- readxl::read_excel("datos/DataTFM.XLSX", sheet = "Base de datos")
+
+
+## organizamos la data de acuerdo a le fecha de ejecución
+
+datos <- datos[order(datos$fe.Ejecutada), ]
+
+
+## Colnames
+colnames(datos) <- c("Epoca del año", "estrategia Mtto",
+                     "Programa Mtto", "Ready back log",
+                     "HH Actv Gnerales", "HH En la Maquina", 
+                     "Otras HH", "Tipo mantenimiento", 
+                     "Disciplina", "Fecha Creada Orden", 
+                     "fecha Ejecutada")
+
+
+kable(datos[1:10,  1:9], 
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Base de Datos de Mantenimiento de Equipos") |> 
+  kable_styling(latex_options = c("HOLD_position"), 
+                full_width = F) |> column_spec(1:12,
+                                               width = "1.5cm") 
+```
+
+### Preparando los datos para el análisis estadístico
+
+Antes de proceder con la aplicación de diversas técnicas de estadística multivariante, es imperativo garantizar la adecuada preparación y limpieza de la base de datos.
+Esta etapa preliminar incluye la eliminación o imputación de valores vacíos o marcados como NA, la minimización o el tratamiento de valores atípicos en las variables para evitar distorsiones en el análisis, y la evaluación de las correlaciones entre variables para identificar y mitigar posibles problemas de multicolinealidad.
+Estas acciones son cruciales para asegurar la integridad y la calidad de los datos, sentando así una sólida fundación que permita la implementación efectiva y precisa de las técnicas estadísticas multivariantes.
+Este proceso no solo facilita un análisis más fiable y exhaustivo, sino que también potencia la capacidad de extraer insights valiosos y significativos de los datos.
+
+### Eliminando los valores vacíos
+
+Si los valores NA no se manejan adecuadamente, pueden introducir sesgos en el análisis de datos y el planteamiento de los modelos, ya sea porque los datos faltan tes se ignoran por completo o porque se imputan de manera incorrecta, lo que podría distorsionar las conclusiones y recomendaciones.
+
+```{r}
+## cantidad de datos faltantes
+
+is.na(datos) |> sum() 
+```
+
+Afortunadamente en nuestra data los valores **NA** son significativamente bajos, lo que posibilita ignorarlos sin afectar considerablemente nuestros resultados.
+
+```{r}
+## eliminar datos faltantes
+
+datos <- na.omit(datos)
+```
+
+### Valores atípicos
+
+Los datos atípicos, conocidos como outliers en inglés, son valores que se encuentran significativamente fuera del rango esperado en una variable del conjunto de datos.
+En nuestro contexto pueden haber maquinas que conlleven una cantidad significativa de horas mucho mayor a las demás, para analizarlas utilizamos gráficos de caja.
+
+Los gráficos de caja mostrados en la **figura 2** muestran estadísticas de posición clave, como los cuartiles, los valores máximos y mínimos, junto con los posibles valores atípicos.
+Se nota una gran dispersión de datos en las distintas variables numéricas que estamos analizando.
+
+```{r echo=FALSE, fig.cap="Valores atípicos iniciales", fig.height= 6}
+
+par(mfrow = c(2, 3))
+
+
+boxplot(datos$`HH Actv Gnerales`, 
+        main = "HH Actv Gnerales")
+
+
+boxplot(datos$`HH En la Maquina`, 
+        main = "HH En la Maquina")
+
+
+boxplot(datos$`Otras HH`,
+        main = "Otras HH")
+
+boxplot(datos$`Programa Mtto`, 
+        main = "Programa mantenimiento")
+
+boxplot(datos$`Ready back log`,
+        main = "Ready back log")
+
+boxplot(datos$`estrategia Mtto`,
+        main = "Estrategia de mantenimiento")
+```
+
+HH Actv Generales: Presenta varios valores que podrían considerarse atípicos, los cuales están bastante alejados de la mediana.
+
+HH En la Maquina: Hay menos valores atípicos comparados con la variable anterior, pero aún presenta algunos valores que son visiblemente diferentes del resto.
+
+Otras HH: Similarmente, se muestran varios valores atípicos.
+
+Programa Mtto: Los valores atípicos están menos dispersos que en las variables de horas; sin embargo, la mediana está más cerca del cuartil inferior, lo que podría indicar una distribución asimétrica.
+
+Ready back log: Este boxplot también presenta valores atípicos, pero en menor cantidad en comparación con las variables de horas.
+
+Estrategia de mantenimiento: Exhibe una distribución que parece ser más uniforme y simétrica; sin embargo, aún hay presencia de valores atípicos.
+
+Antes de aplicar el filtro de Hampel, es importante reconocer que estos valores atípicos pueden ser indicativos de errores de medición o entrada de datos, pero también podrían representar variaciones reales dentro del proceso de mantenimiento que son importantes para entender la variabilidad del trabajo.
+El filtro de Hampel reemplazará estos valores atípicos con la mediana, lo cual puede suavizar estas variaciones y presentar una vista más homogénea de los datos, pero también podría ocultar patrones o características importantes.
+Por ello, siempre se debe proceder con cautela y comprender el contexto de los datos antes de aplicar cualquier método de limpieza de datos.
+
+**¿Como tratar los valores atípicos?**
+
+El método, conocido como **filtro de Hampel** se basa en el concepto de la mediana absoluta de las desviaciones (MAD, por sus siglas en inglés), que es una medida robusta de la variabilidad de un conjunto de datos.
+La MAD se calcula como la mediana de las desviaciones absolutas de cada punto de datos con respecto a la mediana del conjunto de datos.
+
+El filtro de Hampel es particularmente útil cuando se trabaja con datos que pueden contener valores atípicos o cuando se requiere una medida robusta de la tendencia central y la variabilidad.
+Ayuda a mejorar la robustez de los análisis estadísticos al reducir el impacto de los valores extremos en los resultados.
+
+\myequations{Filtro de Hampel}
+
+```{=tex}
+\begin{equation}\text{Filtro de Hampel: } y_i = \begin{cases} x_i & \text{si } |x_i - \text{mediana}(X)| \leq k \times \text{MAD}(X) \\ \text{mediana} X) & \text{en otro caso} \end{cases}\end{equation}
+```
+A continuación, se detalla el proceso que describe la fórmula:
+
+-   **yi**: Representa el valor de salida para la i-ésima observación después de aplicar el Filtro de Hampel.
+    Este valor puede ser el original (x_i) si no se considera atípico, o puede ser reemplazado por la mediana del conjunto de datos si se identifica como un outlier.
+
+-   **xi**: Es el valor original de la i-ésima observación en el conjunto de datos.
+
+-   **Mediana(X)**: Es la mediana de todos los valores en el conjunto de datos X.
+    La mediana es usada como medida de tendencia central debido a su robustez frente a valores atípicos, a diferencia de la media.
+
+-   **k**: Es un factor de escala que determina el umbral de sensibilidad para identificar a un valor como atípico.
+    Un valor comúnmente usado para k está en el rango de 2.5 a 3.0, aunque puede ajustarse según las necesidades específicas del análisis para controlar la tolerancia frente a las variaciones naturales en los datos.
+
+-   **MAD(X)**: La Desviación Mediana Absoluta (MAD) de los valores en el conjunto de datos X.
+    La MAD es una medida de dispersión que, al igual que la mediana, es menos sensible a los valores extremos en comparación con la desviación estándar.
+    Proporciona una estimación de la variabilidad en torno a la mediana.
+
+La condición \|x_i - mediana(X)\| \<= k x MAD(X) se utiliza para evaluar si un valor x_i es un outlier.
+Si la diferencia absoluta entre x_i y la mediana de X es mayor que k veces la MAD, se considera que x_i es un outlier y se reemplaza por la mediana del conjunto de datos; de lo contrario, se conserva el valor original x_i.
+
+La razón por la cual un valor se considera atípico si la diferencia absoluta entre x_i y la mediana de X es mayor que k veces la MAD (Desviación Mediana Absoluta) se basa en la premisa de que la mayoría de los datos en un conjunto deberían agruparse cerca de una medida central ---en este caso, la mediana--- si los datos siguen una distribución relativamente simétrica o incluso si presentan cierto sesgo debido a la presencia de valores atípicos.
+
+La mediana es una medida de tendencia central que es más robusta frente a valores atípicos que, por ejemplo, la media.
+Esto significa que no se ve tan afectada por valores extremadamente altos o bajos.
+La MAD, por su parte, es una medida de dispersión que indica cuán dispersos están los datos alrededor de la mediana.
+Al multiplicar la MAD por un factor de escala k (comúnmente un valor entre 2.5 y 3), se establece un "umbral" que define lo que se considera variabilidad "normal" alrededor de la mediana.
+
+Si la diferencia absoluta entre un valor particular x_i y la mediana excede este umbral (k x MAD(X)), se asume que x_i es tan diferente de la mayoría de los otros valores en el conjunto de datos que no se puede atribuir simplemente a la variabilidad natural de los datos.
+En cambio, se considera un "outlier" o valor atípico, sugiriendo que podría haber sido generado por un mecanismo diferente al que produjo el resto de los datos o que podría ser el resultado de un error de medición o registro.
+
+Al reemplazar estos valores atípicos por la mediana, se intenta mitigar su impacto en análisis posteriores, evitando que estos valores extremos distorsionen los resultados, como podría ser el caso en la estimación de parámetros de modelos estadísticos o en la construcción de predicciones.
+La elección de la mediana como valor de reemplazo ayuda a mantener la estructura central de los datos sin introducir un sesgo significativo que podría resultar de utilizar, por ejemplo, la media.
+
+```{r}
+
+### función para corregir valores atipicos 
+
+reemplazar_atipicos_con_mediana <- function(x) {
+  # Calcular la mediana y los límites para identificar valores atípicos
+  mediana_x <- median(x)
+  limite_inferior <- mediana_x - 3 * mad(x, constant = 1)
+  limite_superior <- mediana_x + 3 * mad(x, constant = 1)
+  
+  # Reemplazar los valores atípicos por la mediana
+  x_atipicos_reemplazados <- ifelse(x < limite_inferior | x > limite_superior, mediana_x, x)
+  
+  return(x_atipicos_reemplazados)
+}
+
+
+```
+
+Utilizando el **k** igual a 3 aplicamos el filtro de hampel en todas las variables numéricas de nuestra base de datos:
+
+En la **figura3** se observa una reducción significa en el numero de valores atípicos, lo que indica una buena eficiencia de la técnica en eliminar los valores atípicos en la variable
+
+```{r echo=FALSE, fig.cap="Filtro de hampel aplicado", fig.height= 6}
+
+
+numericas <- c("HH Actv Gnerales", "HH En la Maquina", "Otras HH", "Programa Mtto", "Ready back log", "estrategia Mtto")
+
+
+datos <- datos %>%
+  mutate(across(numericas, reemplazar_atipicos_con_mediana))
+
+
+par(mfrow = c(2, 3))
+
+
+boxplot(datos$`HH Actv Gnerales`, 
+        main = "HH Actv Gnerales")
+
+
+boxplot(datos$`HH En la Maquina`, 
+        main = "HH En la Maquina")
+
+
+boxplot(datos$`Otras HH`,
+        main = "Otras HH")
+
+boxplot(datos$`Programa Mtto`, 
+        main = "Programa mantenimiento")
+
+boxplot(datos$`Ready back log`,
+        main = "Ready back log")
+
+boxplot(datos$`estrategia Mtto`,
+        main = "Estrategia de mantenimiento")
+```
+
+La principal diferencia visual es una reducción en la cantidad de valores atípicos visibles y una posible disminución en la longitud de los bigotes de los boxplots.
+Esto implica una apariencia más limpia y posiblemente más simétrica de la distribución de los datos, reflejando una variabilidad que se ajusta más estrechamente a la mayoría de los datos, libre de las distorsiones causadas por valores extremadamente altos o bajos.
+
+\newpage
+
+## Análisis descriptivo de los datos
+
+En esta sección, se presenta un análisis detallado de los datos utilizados para el proyecto.
+El objetivo principal es proporcionar una visión general de las características principales de la muestra, así como identificar tendencias y patrones relevantes.
+
+### Variables de tipo cuantitativo
+
+```{r echo=FALSE, fig.height=5}
+estadistica::resumen.descriptivos(datos[, c(2:7)]) |>
+  
+  kable(
+      linesep = "",
+      booktabs = TRUE,
+      caption = "estadísticas descriptivas de las variables numéricas") |> 
+  kable_styling(latex_options = c("HOLD_position"), 
+                full_width = F) |> column_spec(1:7,
+                                               width = "1.65cm") 
+
+```
+
+Al proceder con un análisis descriptivo detallado de los datos relacionados con las actividades de mantenimiento, se establece una base sólida para la construcción y formulación de modelos estadísticos avanzados.
+Las estadísticas descriptivas revelan diferencias sustanciales en las escalas de medición entre las distintas variables, lo que puede conllevar a desafíos en términos de interpretación y significancia en relación con la variable objetivo.
+
+Un aspecto notable es la variabilidad manifiesta en ciertas variables, como "Programa Mtto" y "Ready back log", donde se evidencia una dispersión considerable alrededor de la media, tal y como lo indica la magnitud de la varianza.
+De igual importancia es el reconocimiento de coeficientes de variación prominentes en las variables "HH Actv Generales", "HH En la Maquina" y "Otras HH".
+La alta variación relativa reflejada por estos coeficientes sugiere que la media no representa adecuadamente la distribución de los datos, lo cual cuestiona su utilidad como medida central para estas variables.
+
+Estas características de los datos, como las diferencias de escala y la elevada variabilidad, podrían tener implicaciones significativas en la aplicación de modelos lineales.
+En particular, los modelos que presuponen homocedasticidad y linealidad en la relación entre predictores y la variable dependiente pueden resultar inadecuados.
+Por ejemplo, la influencia desmedida de variables con mayor escala puede sesgar los coeficientes estimados, llevando a interpretaciones erróneas de su relevancia en el modelo.
+
+La precisión de las estimaciones de los coeficientes y la fiabilidad de las pruebas estadísticas subsecuentes también pueden verse afectadas por la alta variabilidad relativa.
+Los modelos lineales, que son susceptibles a la influencia de valores atípicos y a una distribución anormal de los residuos, podrían no proporcionar inferencias estadísticas confiables bajo estas condiciones.
+
+Estos problemas puede deberse a las técnicas de recolección utilizadas para recolectar los datos, según @gujarati2009basic a medida que mejoren dichas técnicas la presencia de valores atípicos y alta varianza tenderá a disminuirse.
+
+### Variables de tipo cualitativo
+
+**Época del año**
+
+```{r echo=FALSE, fig.height=3, fig.cap= "Distribución de reparaciones en las épocas del año"}
+
+
+## gráfico 
+
+## tabla de cantidad
+EpocaAño <- table(datos$`Epoca del año`) %>% as.data.frame()
+EpocaAño$porce <- (EpocaAño$Freq / sum(EpocaAño$Freq)) %>% round(2) 
+EpocaAño$porce <- paste0(EpocaAño$porce*100, "%")
+
+
+## cambiar nombre
+colnames(EpocaAño) <- c("Variable", "Cantidad", "Porcentaje")
+
+
+## gráfico ggplot2
+ggplot(EpocaAño, aes(EpocaAño$Variable, 
+                   EpocaAño$Cantidad,
+                  fill = EpocaAño$Variable)) +
+  geom_col(width = 0.5) +
+  geom_text(aes(label = EpocaAño$Cantidad), 
+            color = "white", size = 6, 
+            position = position_stack(vjust = 0.5)) +
+  geom_text(aes(label = EpocaAño$Porcentaje), 
+            color = "white", size = 6, 
+            position = position_stack(vjust = 0.2)) +
+  labs(title = "",
+       x = "", y = "") +
+  theme_minimal() + 
+  scale_fill_tableau(palette = "Classic Blue-Red 6") + 
+  theme(legend.position = "none",
+        axis.text.y = element_blank(),
+        axis.text = element_text(size = 10))
+```
+
+Se nota que la mayoría de las reparaciones se llevaron a cabo durante el verano, representando un 59% del total.
+Se sugiere que el invierno podría influir en el número de horas necesarias para completar las reparaciones, lo que potencialmente aumentaría los costos y la complejidad del proceso.
+De ser así esta variable se destacaría como significativa en nuestra base de datos.
+
+\newpage
+
+**Tipo de mantenimiento**
+
+```{r echo=FALSE, fig.height=3, fig.cap="Distribución de reparación según el tipo de mantenimiento"}
+
+## gráfico 
+
+## tabla de cantidad
+mantenimiento <- table(datos$`Tipo mantenimiento`) %>% as.data.frame()
+mantenimiento$porce <- (mantenimiento$Freq / sum(mantenimiento$Freq)) %>% round(2) 
+mantenimiento$porce <- paste0(mantenimiento$porce*100, "%")
+
+
+## cambiar nombre
+colnames(mantenimiento) <- c("Variable", "Cantidad", "Porcentaje")
+
+
+## gráfico ggplot2
+ggplot(mantenimiento, aes(mantenimiento$Variable, 
+                   mantenimiento$Cantidad,
+                  fill = mantenimiento$Variable)) +
+  geom_col(width = 0.5) +
+  geom_text(aes(label = mantenimiento$Cantidad), 
+            color = "white", size = 6, 
+            position = position_stack(vjust = 0.5)) +
+  geom_text(aes(label = mantenimiento$Porcentaje), 
+            color = "white", size = 6, 
+            position = position_stack(vjust = 0.2)) +
+  labs(title = "",
+       x = "", y = "") +
+  theme_minimal() + 
+  scale_fill_tableau(palette = "Classic Blue-Red 6") + 
+  theme(legend.position = "none",
+        axis.text.y = element_blank(),
+        axis.text = element_text(size = 10))
+```
+
+El gráfico de barras ilustra una comparativa entre las actividades de mantenimiento correctivo y preventivo.
+Los modelos predictivos se centrarán en el mantenimiento correctivo, que representa el 37% del total de las actividades, con 13,629 eventos registrados.
+Este enfoque permite especializarse en anticipar las necesidades de mantenimiento correctivo, crucial para mitigar tiempos de inactividad y optimizar recursos, a pesar de ser menos frecuente que el mantenimiento preventivo.
+Estos modelos tendrán un papel significativo en la mejora de la respuesta a fallos y en la eficiencia operativa general.
+
+\newpage
+
+**Disciplina**
+
+```{r echo=FALSE, fig.height=12, fig.width=20, fig.cap="Distribución de reparaciones según disciplina"}
+
+## gráfico 
+
+## tabla de cantidad
+Disciplina <- table(datos$Disciplina) %>% as.data.frame()
+Disciplina$porce <- (Disciplina$Freq / sum(Disciplina$Freq)) %>% round(2) 
+Disciplina$porce <- paste0(Disciplina$porce*100, "%")
+
+
+## cambiar nombre
+colnames(Disciplina) <- c("Variable", "Cantidad", "Porcentaje")
+
+
+## gráfico ggplot2
+ggplot(Disciplina, aes(Disciplina$Variable, 
+                  Disciplina$Cantidad,
+                  fill = Disciplina$Variable)) +
+  geom_col(width = 0.5) +
+  geom_text(aes(label = Disciplina$Cantidad), 
+            color = "white", size = 12, 
+            position = position_stack(vjust = 0.5)) +
+  geom_text(aes(label = Disciplina$Porcentaje), 
+            color = "white", size = 12, 
+            position = position_stack(vjust = 0.2)) +
+  labs(title = "",
+       x = "", y = "") +
+  theme_minimal() + 
+  scale_fill_tableau(palette = "Classic Blue-Red 12") + 
+  theme(legend.position = "none",
+        axis.text.y = element_blank(),
+        axis.text = element_text(size = 24))
+```
+
+**Instrumentos** es la disciplina con el mayor número de reparaciones, con un total de 9,668, lo que representa el 26% de las reparaciones en todas las disciplinas.
+Esto indica que es un área significativa de enfoque para el mantenimiento.
+
+**Electricidad** también muestra una cantidad considerable de reparaciones, 5,664 en total, constituyendo el 15% del total.
+Aunque menor que Instrumentos, sigue siendo una parte importante de las actividades de mantenimiento.
+
+**Línea de Mtto** (Mantenimiento) tiene 3,190 reparaciones, que es el 9% del total, mostrando que tiene menos reparaciones en comparación con Electricidad e Instrumentos.
+
+**Mecánica** tiene 6,910 reparaciones, un 19% del total, lo que la coloca como una disciplina significativa pero con menos incidencias que Instrumentos.
+
+**Mecánica CBM** (Condition Based Maintenance) cuenta con 4,303 reparaciones, representando el 12%, sugiriendo que esta práctica proactiva de mantenimiento está razonablemente establecida.
+
+**Mecánica VAL** (Valor Agregado de Lubricación) tiene 2,887 reparaciones, que es el 8% del total, lo cual podría indicar que es una disciplina especializada con menos frecuencia de reparaciones.
+
+**Pozos**, por último, muestra 4,164 reparaciones, equivalentes al 11% del total, situándose en un punto intermedio en términos de volumen de reparaciones.
+
+\newpage
+
+### Numero de horas en la maquina y su relación con otras variables
+
+**Análisis de correlación**
+
+```{r echo=FALSE, fig.align='center'}
+cor(datos[, c(2:7)]) |> round(2) |> 
+  kable(
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Correlación entre las variables numéricas") |> 
+   kable_styling(latex_options = c("HOLD_position"), 
+                full_width = F) |> column_spec(1:7,
+                                               width = "1.5cm")
+ 
+```
+
+Cada valor en la matriz representa el coeficiente de correlación entre dos variables específicas.
+La correlación puede variar en un rango de -1 a 1:
+
+-   Un valor de 1 indica una correlación positiva perfecta, lo que significa que las dos variables están perfectamente relacionadas de manera positiva (cuando una aumenta, la otra también aumenta en proporción constante).
+
+-   Un valor de -1 indica una correlación negativa perfecta, lo que significa que las dos variables están perfectamente relacionadas de manera negativa (cuando una aumenta, la otra disminuye en proporción constante).
+
+-   Un valor de 0 indica que no hay correlación lineal entre las dos variables.
+
+Para la variable dependiente (HH en la maquina) ninguna de las correlaciones con otras variables es significativa en términos de magnitud (cercana a 1 o -1).
+Esto sugiere que "HH En la Maquina" no está fuertemente correlacionada con ninguna de las otras variables incluidas en la matriz de correlación.
+Sin embargo, es importante considerar que la ausencia de correlaciones significativas no necesariamente implica una falta de relación entre las variables; podría haber otras formas de relación que no están capturadas por la correlación lineal.
+
+\newpage
+
+**Análisis de densidad por época del año**
+
+```{r echo=FALSE, fig.cap="Densidad de horas en la maquina por época del año"}
+
+ggplot(datos, aes(datos$`HH En la Maquina`, 
+                  fill = datos$`Epoca del año`)) + 
+  geom_density(alpha = 0.2) + 
+labs(title = "",
+       x = "", y = "", fill = "") +
+  theme_minimal() + 
+  scale_fill_tableau(palette = "Classic Blue-Red 6") + 
+  theme(axis.text.y = element_blank(),
+        plot.title = element_text(hjust = 0.5, size = 20),
+        axis.text = element_text(size = 15))
+```
+
+No se detectan diferencias significativas al comparar el número de horas requeridas para la reparación de la máquina durante el verano y el invierno.
+Los datos revelan una variación mínima, indicando una consistencia en el tiempo de reparación independientemente de la estación.
+Este patrón se mantiene constante incluso cuando el número de horas de reparación es extremadamente alto o bajo.
+Estos resultados sugieren que las condiciones estacionales no ejercen un impacto significativo en el tiempo necesario para la reparación de la máquina, una conclusión que podría ser confirmada si la variable no resulta significativa en nuestros modelos.
+
+**Análisis de densidad por tipo de mantenimiento**
+
+```{r echo=FALSE, fig.cap="Densidad de horas en la maquina por tipo de mantenimiento"}
+
+ggplot(datos, aes(datos$`HH En la Maquina`, 
+                  fill = datos$`Tipo mantenimiento`)) + 
+  geom_density(alpha = 0.2) + 
+labs(title = "",
+       x = "", y = "", fill = "") +
+  theme_minimal() + 
+  scale_fill_tableau(palette = "Classic Blue-Red 6") + 
+  theme(axis.text.y = element_blank(),
+        plot.title = element_text(hjust = 0.5, size = 20),
+        axis.text = element_text(size = 15))
+```
+
+Se evidencia que conforme aumenta el número de horas necesarias para la reparación de la máquina, se observa una clara tendencia en la naturaleza del mantenimiento requerido.
+Los datos revelan que los mantenimientos correctivos son más frecuentes cuando se necesitan entre 5 y 10 horas para la reparación.
+Este tipo de mantenimiento reactivo suele ser necesario cuando se detectan problemas más significativos que requieren una intervención inmediata para restaurar el funcionamiento adecuado de la máquina.
+
+Por otro lado, se observa que los mantenimientos preventivos son más comunes cuando las reparaciones duran entre 0 y 5 horas.
+Estos mantenimientos planificados se realizan de manera regular y sistemática para evitar la aparición de problemas mayores y mantener el equipo en óptimas condiciones de funcionamiento.
+Su implementación oportuna puede reducir la necesidad de intervenciones correctivas costosas y prolongadas en el futuro.
+
+Estos hallazgos subrayan la importancia de una gestión efectiva del mantenimiento, donde la combinación adecuada de mantenimiento preventivo y correctivo puede maximizar la disponibilidad y confiabilidad de la maquinaria, al tiempo que se minimizan los costos operativos y de reparación.
+
+\newpage
+
+**Análisis de densidad por disciplina**
+
+```{r echo=FALSE, fig.cap="Densidad de horas en la maquina por disciplina", fig.height=5}
+
+
+ggplot(datos, aes(datos$`HH En la Maquina`, 
+                  fill = datos$Disciplina)) + 
+  geom_density(alpha = 0.2) + facet_wrap(~datos$Disciplina)+
+labs(title = "",
+       x = "", y = "", fill = "") +
+  theme_minimal() + 
+  scale_fill_tableau() + 
+  theme(axis.text.y = element_blank(),
+        legend.position = "none",
+        plot.title = element_text(hjust = 0.5, size = 20),
+        axis.text = element_text(size = 15))
+```
+
+Se pueden observar distintas densidades según el tipo de disciplina, y es evidente que en la mayoría de los casos las horas de reparación son menores a 10 horas.
+Sin embargo, se destaca la disciplina VAL, donde los tiempos de reparación son significativamente mayores y se concentran en el rango de 5 a 15 horas.
+Esto sugiere que esta disciplina tiende a requerir un mayor número de horas para completar las reparaciones en comparación con otras disciplinas.
+
+\newpage
+
+## Planteando los modelos
+
+En esta sección, nos centraremos en el análisis de los técnicas de estadística multivariante discutidos previamente en nuestro marco teórico.
+Estos modelos serán aplicados en diversos contextos temporales, incluyendo el análisis diario, semanal y mensual.
+El objetivo de este espacio es profundizar en la comprensión y explicación de los resultados obtenidos a partir de dichos modelos en cada una de estas escalas temporales.
+Buscamos así obtener una comprensión exhaustiva de sus dinámicas, así como de los impactos que todas las variables en nuestra base de datos pueden tener en el numero de horas necesarias para reparar las maquinas.
+
+**Base de datos agrupada de manera diaria**
+
+En esta base de datos, organizamos la información agrupándola por día y también según la temporada del año y la disciplina de reparación.
+El objetivo es calcular la media de cada variable numérica.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+## filtramos los datos unicamente por el mantenimiento correctivo
+
+
+datos <- datos[datos$`Tipo mantenimiento` == "Correctivo", ]
+
+### creamos 
+diario <- datos %>%
+  group_by(`fecha Ejecutada`, Disciplina, `Epoca del año`) %>%
+  summarize(
+    Cumplimiento_Estrategia =
+      mean(`estrategia Mtto`),
+    Cumplimiento_Programa = mean(`Programa Mtto`),
+    Ready_Backlog = mean(`Ready back log`),
+    HH_Actv_Gnerales = mean(`HH Actv Gnerales`),
+    HH_En_la_Maquina = mean(`HH En la Maquina`),
+    Otras_HH = mean(`Otras HH`)
+  )
+
+
+
+diario[, 4:9] <- round(diario[, 4:9], 2)
+
+
+
+```
+
+**Base de datos agrupada de manera semanal**
+
+Inicialmente creamos una variable llamada "semana", que consiste en la combinación del año extraído de la fecha de ejecución utilizando la función *year*, junto con la semana extraída de la misma fecha mediante la función *week*.
+Posteriormente, agrupamos los datos por esta variable, la época del año y la disciplina.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+## creamos una variable de año y semana
+
+## usamos las funciones de week y year
+
+datos$semana <- paste0(year(datos$`fecha Ejecutada`), "-",
+                       week(datos$`fecha Ejecutada`))
+
+
+### creamos 
+semana <- datos %>%
+  group_by(semana, Disciplina, `Epoca del año`) %>%
+  summarize(
+    Cumplimiento_Estrategia =
+      mean(`estrategia Mtto`),
+    Cumplimiento_Programa = mean(`Programa Mtto`),
+    Ready_Backlog = mean(`Ready back log`),
+    HH_Actv_Gnerales = mean(`HH Actv Gnerales`),
+    HH_En_la_Maquina = mean(`HH En la Maquina`),
+    Otras_HH = mean(`Otras HH`)
+  )
+
+
+## eliminamos posibles valores atípicos de las variables numéricas
+
+semana[, 4:9] <- round(semana[, 4:9], 2)
+
+
+```
+
+**Base de datos agrupada de manera mensual**
+
+Inicialmente creamos una variable llamada "mes", que consiste en la combinación del año extraído de la fecha de ejecución utilizando la función *year*, junto con el mes extraído de la misma fecha mediante la función *month*.
+Posteriormente, agrupamos los datos por esta variable, la época del año y la disciplina.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+## creamos una variable de año y mes
+
+## usamos las funciones de month y year
+
+datos$mes <- paste0(year(datos$`fecha Ejecutada`), "-",
+                        month(datos$`fecha Ejecutada`))
+
+
+### creamos 
+mes <- datos %>%
+  group_by(mes, Disciplina, `Epoca del año`) %>%
+  summarize(
+    Cumplimiento_Estrategia =
+      mean(`estrategia Mtto`),
+    Cumplimiento_Programa = mean(`Programa Mtto`),
+    Ready_Backlog = mean(`Ready back log`),
+    HH_Actv_Gnerales = mean(`HH Actv Gnerales`),
+    HH_En_la_Maquina = mean(`HH En la Maquina`),
+    Otras_HH = mean(`Otras HH`)
+  )
+
+
+
+
+## eliminamos posibles valores atípicos de las variables numéricas
+
+mes[, 4:9] <- round(mes[, 4:9], 2)
+
+
+
+```
+
+**Desarrollo de las predicciones**
+
+Es crucial tener presente que nos enfrentamos a la tarea de modelar tres variaciones temporales distintas, las cuales son segmentos fundamentales de nuestro conjunto de datos que abarcan diversos aspectos temporales que buscamos pronosticar.
+Al utilizar los modelos discutidos en el marco teórico, nuestro objetivo radica en comprender y anticipar cómo varían nuestras variables con cambios en las variables independientes a lo largo de estas diferentes escalas temporales.
+
+Una vez que hemos ajustado nuestros modelos a cada una de estas variaciones temporales, se torna imperativo evaluar su rendimiento y capacidad explicativa.
+Para ello, recurrimos a una serie de criterios de información, tales como el criterio de información de Akaike (AIC) o el criterio de información bayesiano (BIC), entre otros.
+Estos criterios nos permiten comparar los modelos entre sí y determinar cuál de ellos se ajusta mejor a nuestros datos, teniendo en cuenta la complejidad inherente de cada modelo.
+
+\newpage
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+
+
+
+kable(diario[1:15, ], 
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Base de Datos agrupada de manera diaria") |> 
+  kable_styling(latex_options = c("HOLD_position", "scale_down"),
+                font_size = 20)
+
+
+kable(semana[1:15, ], 
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Base de Datos agrupada de manera semanal") |> 
+  kable_styling(latex_options = c("HOLD_position", "scale_down"),
+                font_size = 20)
+
+
+
+kable(mes[1:15, ], 
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Base de Datos agrupada de manera mensual") |> 
+  kable_styling(latex_options = c("HOLD_position", "scale_down"),
+                font_size = 20)
+```
+
+\newpage
+
+### Predicción de manera diaria
+
+**Segmentación de datos**
+
+Segmentamos los datos en un 90% para entrenamiento y un 10% para realizar las pruebas, lo cual deja 1295 obs para entrenar y 144 obs para probar los modelos entrenados.
+
+```{r}
+
+## redondear datos
+
+diario <- diario[, -c(1:3)]
+
+set.seed(123) # Fijar una semilla para reproducibilidad
+
+indices <- sample(seq_len(nrow(diario)),
+                  size = floor(0.9 * nrow(diario)))
+
+# Crear los subconjuntos de datos
+traindiario <- diario[indices, ]
+testdiario <- diario[-indices, ]
+
+
+## datos de entrenamiento
+kable(traindiario[1:15, ], 
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Base de Datos entrenamiento diario") |> 
+  kable_styling(latex_options = c("HOLD_position", "scale_down"),
+                font_size = 20)
+
+
+## datos de prueba
+kable(testdiario[1:15, ], 
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Base de Datos de prueba diario") |> 
+  kable_styling(latex_options = c("HOLD_position", "scale_down"),
+                font_size = 20)
+
+```
+
+**Modelos a entrenar**
+
+En este análisis, exploramos diferentes modelos estadísticos para predecir la variable HH_En_la_Maquina utilizando un conjunto de datos de entrenamiento diario llamado traindiario.
+
+Comenzamos ajustando un modelo lineal utilizando la función lm.
+Este modelo considera una relación lineal entre la variable objetivo y las variables predictoras en el conjunto de datos.
+
+Continuamos con la exploración de modelos lineales generalizados mediante la función glm.
+Estos modelos permiten modelar relaciones entre variables predictoras y la respuesta que pueden no ser lineales, y también pueden manejar variables de respuesta con distribuciones no normales.
+
+Luego, ajustamos un modelo de regresión utilizando el método de Regresión de Soporte Vectorial (SVR).
+Este modelo busca encontrar la mejor función lineal para predecir la variable objetivo HH_En_la_Maquina, utilizando una función de pérdida epsilon-insensible.
+
+Exploramos también los Bosques Aleatorios, un método de aprendizaje conjunto que construye múltiples árboles de decisión durante el entrenamiento y produce la predicción promedio de los árboles individuales.
+
+Finalmente, ajustamos un modelo de Árboles de Decisión utilizando el método de partición recursiva (RPART), que divide iterativamente los datos en subconjuntos basados en ciertos criterios, buscando maximizar la homogeneidad dentro de los grupos resultantes.
+
+```{r}
+
+### predicción con los modelos estadisticos
+
+## modelos lineales
+modelo_lineal <- lm(`HH_En_la_Maquina` ~ .,
+   data = traindiario)
+
+### modelos lineales generalizados
+modelo_glm <- glm(`HH_En_la_Maquina` ~ .,
+                  data = traindiario)
+
+
+
+## modelo de regresión svr
+
+modelo_svr <- svm(`HH_En_la_Maquina` ~ .,
+                  data = traindiario,
+    type = "eps-regression",
+    kernel = "linear",
+    cost = 0.1,
+    epsilon = 0.1)
+
+
+## modelo de random forest
+modelo_rf <- randomForest(`HH_En_la_Maquina` ~ ., data = traindiario,
+                             ntree = 500, mtry = sqrt(ncol(traindiario)))
+
+
+modelo_arbol <- rpart(`HH_En_la_Maquina` ~ ., data = traindiario, 
+                      method = "anova",
+      control = rpart.control(minsplit = 10, cp = 0.001, maxdepth = 5))
+
+
+```
+
+**Que modelo elegir**
+
+-   El modelo rf (Random Forest) tiene los valores más bajos de RMSE y MSE, lo que indica que generalmente ha tenido un mejor desempeño en términos de minimizar los errores cuadrados.
+    También tiene el MAE más bajo, lo que sugiere que tiene una buena precisión en términos de errores absolutos.
+
+-   Los modelos lineal y glm tienen valores idénticos para todas las métricas, lo que podría indicar que tienen un rendimiento muy similar en este conjunto de datos o que podrían estar utilizando la misma fórmula subyacente para la predicción.
+
+-   El svr y el arbol tienen un rendimiento ligeramente mejor que los modelos lineales en términos de RMSE y MSE, pero no superan al rf.
+
+Estos resultados sugieren que el modelo de Random Forest es el más adecuado para los datos y el problema en cuestión, seguido por el modelo SVR, el árbol de decisión y, por último, los modelos lineales y GLM que presentan un rendimiento similar entre sí.
+
+```{r}
+## modelos 
+
+
+modelos <- list(modelo_lineal, modelo_glm, modelo_svr, 
+                modelo_arbol, modelo_rf)
+
+
+
+resultados <- lapply(modelos, function(modelo) {
+  predicciones <- predict(modelo, newdata = testdiario)
+  real <- testdiario$HH_En_la_Maquina  # Asegúrate de reemplazar 'respuesta_real' con el nombre real de tu columna
+  
+  rmse <- rmse(predicciones, real)
+  mse <- mean((predicciones - real)^2)
+  mae <- mae(predicciones, real)
+  
+  return(list(RMSE = rmse, MSE = mse, MAE = mae))
+})
+
+
+# Convertir la lista en un data frame
+df <- do.call(rbind, lapply(resultados, function(x) unlist(x))) |> as.data.frame()
+
+# Agregar nombres a las filas y columnas
+rownames(df) <- NULL
+colnames(df) <- c("RMSE", "MSE", "MAE")
+
+df$MODELO <- c("lineal", "glm", "svr", "arbol", "rf")
+
+kable(df,
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Comparación de los modelos (base de datos diaria)") |> 
+  kable_styling(latex_options = c("HOLD_position"), 
+                full_width = F) |> column_spec(1:4,
+                                               width = "2.0cm")
+```
+
+**Comparación entre valores reales y predichos**
+
+La Tabla 10 presenta una comparativa detallada entre los valores estimados por un modelo de regresión random forest y las cifras reales observadas.
+
+El MAE de 2.74 indica que, en promedio, las predicciones del modelo se desvían alrededor de 2.74 horas de los tiempos reales observados.
+Esta discrepancia se evidencia claramente en los datos, donde las horas estimadas a menudo difieren de las horas reales dedicadas a las actividades.
+Esta tendencia sugiere una posible sobrevaloración sistemática por parte del modelo, lo que lleva a la asignación excesiva o insuficiente de recursos por parte de la empresa.
+Esta discrepancia media implica que, en promedio, la empresa podría estar asignando 2.75 horas más o menos de lo necesario para completar las actividades.
+Esta ineficiencia en el uso de recursos, tanto económicos como humanos, subraya la necesidad de ajustar el modelo para optimizar la planificación y el despliegue de recursos.
+
+```{r}
+
+predichos <- predict(modelo_rf, testdiario) |> round(2)
+
+
+resultados <- data.frame(predichos  = predichos, 
+                         reales = testdiario$HH_En_la_Maquina)
+
+
+
+kable(head(resultados, 10),
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Predichos vs reales (base de datos diaria)") |> 
+  kable_styling(latex_options = c("HOLD_position"), 
+                full_width = F) |> column_spec(1:4,
+                                               width = "2.0cm")
+```
+
+\newpage
+
+### Predicción de manera semanal
+
+**Segmentación de datos**
+
+Segmentamos los datos en un 90% para entrenamiento y un 10% para realizar las pruebas, lo cual deja 885 obs para entrenar y 99 obs para probar los modelos entrenados.
+
+```{r}
+
+semana <- semana[, -c(1:3)]
+
+set.seed(123) # Fijar una semilla para reproducibilidad
+
+indices <- sample(seq_len(nrow(semana)),
+                  size = floor(0.9 * nrow(semana)))
+
+# Crear los subconjuntos de datos
+trainsemana <- semana[indices, ] 
+testsemana <- semana[-indices, ]
+
+
+
+## datos de entrenamiento
+kable(trainsemana[1:15, ], 
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Base de Datos entrenamiento semanal") |> 
+  kable_styling(latex_options = c("HOLD_position", "scale_down"),
+                font_size = 20)
+
+
+## datos de prueba
+kable(testdiario[1:15, ], 
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Base de Datos de prueba semanal") |> 
+  kable_styling(latex_options = c("HOLD_position", "scale_down"),
+                font_size = 20)
+
+```
+
+```{r}
+
+
+### predicción con los modelos estadisticos
+
+## modelos lineales
+modelo_lineal <- lm(`HH_En_la_Maquina` ~ .,
+                    data = trainsemana)
+
+### modelos lineales generalizados
+modelo_glm <- glm(`HH_En_la_Maquina` ~ .,
+                  data = trainsemana)
+
+
+
+## modelo de regresión svr
+
+modelo_svr <- svm(`HH_En_la_Maquina` ~ .,
+                  data = trainsemana,
+                  type = "eps-regression",
+                  kernel = "linear",
+                  cost = 0.1,
+                  epsilon = 0.1)
+
+
+## modelo de random forest
+modelo_rf <- randomForest(`HH_En_la_Maquina` ~ ., data = trainsemana,
+                          ntree = 500, mtry = sqrt(ncol(trainsemana)))
+
+
+modelo_arbol <- rpart(`HH_En_la_Maquina` ~ ., data = trainsemana, 
+                      method = "anova",
+                      control = rpart.control(minsplit = 10, cp = 0.001, maxdepth = 5))
+
+
+```
+
+**Que modelo elegir**
+
+-   El modelo rf (Random Forest) tiene los valores más bajos de RMSE y MSE, lo que indica que generalmente ha tenido un mejor desempeño en términos de minimizar los errores cuadrados.
+    También tiene el MAE más bajo, lo que sugiere que tiene una buena precisión en términos de errores absolutos.
+
+-   Los modelos lineal y glm tienen valores idénticos para todas las métricas, lo que podría indicar que tienen un rendimiento muy similar en este conjunto de datos o que podrían estar utilizando la misma fórmula subyacente para la predicción.
+
+-   El svr y el arbol tienen un rendimiento ligeramente mejor que los modelos lineales en términos de RMSE y MSE, pero no superan al rf.
+
+Estos resultados sugieren que el modelo de Random Forest es el más adecuado para los datos y el problema en cuestión, seguido por el modelo SVR, el árbol de decisión y, por último, los modelos lineales y GLM que presentan un rendimiento similar entre sí.
+
+```{r}
+
+## modelos 
+
+modelos <- list(modelo_lineal, modelo_glm, modelo_svr, 
+                modelo_arbol, modelo_rf)
+
+
+
+resultados <- lapply(modelos, function(modelo) {
+  predicciones <- predict(modelo, newdata = testsemana)
+  real <- testsemana$HH_En_la_Maquina  # Asegúrate de reemplazar 'respuesta_real' con el nombre real de tu columna
+  
+  rmse <- rmse(predicciones, real)
+  mse <- mean((predicciones - real)^2)
+  mae <- mae(predicciones, real)
+  
+  return(list(RMSE = rmse, MSE = mse, MAE = mae))
+})
+
+
+# Convertir la lista en un data frame
+df <- do.call(rbind, lapply(resultados, function(x) unlist(x))) |> as.data.frame()
+
+# Agregar nombres a las filas y columnas
+rownames(df) <- NULL
+colnames(df) <- c("RMSE", "MSE", "MAE")
+
+df$MODELO <- c("lineal", "glm", "svr", "arbol", "rf")
+
+kable(df,
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Comparación de los modelos (base de datos semana)") |> 
+  kable_styling(latex_options = c("HOLD_position"), 
+                full_width = F) |> column_spec(1:4,
+                                               width = "2.0cm")
+
+```
+
+**Comparación entre valores reales y predichos**
+
+La Tabla 14 presenta una comparativa detallada entre los valores estimados por un modelo de regresión random forest y las cifras reales observadas.
+
+El MAE de 2.38 indica que, en promedio, las predicciones del modelo se desvían alrededor de 2.38 horas de los tiempos reales observados.
+
+```{r}
+
+predichos <- predict(modelo_rf, testsemana) |> round(2)
+
+
+resultados <- data.frame(predichos  = predichos, 
+                         reales = testsemana$HH_En_la_Maquina)
+
+
+
+kable(head(resultados, 10),
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Predichos vs reales (base de datos semanal)") |> 
+  kable_styling(latex_options = c("HOLD_position"), 
+                full_width = F) |> column_spec(1:4,
+                                               width = "2.0cm")
+```
+
+\newpage
+
+### Predicción de manera mensual
+
+**Segmentación de datos**
+
+Segmentamos los datos en un 90% para entrenamiento y un 10% para realizar las pruebas, lo cual deja 157 obs para entrenar y 18 obs para probar los modelos entrenados.
+
+```{r}
+
+mes <- mes[, -c(1:3)]
+
+set.seed(123) # Fijar una semilla para reproducibilidad
+
+indices <- sample(seq_len(nrow(mes)),
+                  size = floor(0.9 * nrow(mes)))
+
+# Crear los subconjuntos de datos
+trainmes <- mes[indices, ] 
+testmes <- mes[-indices, ]
+
+## datos de entrenamiento
+kable(trainmes[1:15, ], 
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Base de Datos entrenamiento mensual") |> 
+  kable_styling(latex_options = c("HOLD_position", "scale_down"),
+                font_size = 20)
+
+
+## datos de prueba
+kable(testmes[1:15, ], 
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Base de Datos de prueba mensual") |> 
+  kable_styling(latex_options = c("HOLD_position", "scale_down"),
+                font_size = 20)
+```
+
+```{r}
+
+### predicción con los modelos estadisticos
+
+## modelos lineales
+modelo_lineal <- lm(`HH_En_la_Maquina` ~ .,
+                    data = trainmes)
+
+### modelos lineales generalizados
+modelo_glm <- glm(`HH_En_la_Maquina` ~ .,
+                  data = trainmes)
+
+
+
+## modelo de regresión svr
+
+modelo_svr <- svm(`HH_En_la_Maquina` ~ .,
+                  data = trainmes,
+                  type = "eps-regression",
+                  kernel = "linear",
+                  cost = 0.1,
+                  epsilon = 0.1)
+
+
+## modelo de random forest
+modelo_rf <- randomForest(`HH_En_la_Maquina` ~ ., data = trainmes,
+                          ntree = 500, mtry = sqrt(ncol(trainmes)))
+
+
+modelo_arbol <- rpart(`HH_En_la_Maquina` ~ ., data = trainmes, 
+                      method = "anova",
+                      control = rpart.control(minsplit = 10, cp = 0.001, maxdepth = 5))
+
+
+```
+
+**Que modelo elegir**
+
+-   El modelo rf (Random Forest) tiene los valores más bajos de RMSE y MSE, lo que indica que generalmente ha tenido un mejor desempeño en términos de minimizar los errores cuadrados.
+    También tiene el MAE más bajo, lo que sugiere que tiene una buena precisión en términos de errores absolutos.
+
+-   Los modelos lineal y glm tienen valores idénticos para todas las métricas, lo que podría indicar que tienen un rendimiento muy similar en este conjunto de datos o que podrían estar utilizando la misma fórmula subyacente para la predicción.
+
+-   El svr y el arbol tienen un rendimiento ligeramente mejor que los modelos lineales en términos de RMSE y MSE, pero no superan al rf.
+
+Estos resultados sugieren que el modelo de Random Forest es el más adecuado para los datos y el problema en cuestión, seguido por el modelo SVR, el árbol de decisión y, por último, los modelos lineales y GLM que presentan un rendimiento similar entre sí.
+
+```{r}
+
+
+## modelos 
+
+modelos <- list(modelo_lineal, modelo_glm, modelo_svr, 
+                modelo_arbol, modelo_rf)
+
+
+
+resultados <- lapply(modelos, function(modelo) {
+  predicciones <- predict(modelo, newdata = testmes)
+  real <- testmes$HH_En_la_Maquina  # Asegúrate de reemplazar 'respuesta_real' con el nombre real de tu columna
+  
+  rmse <- rmse(predicciones, real)
+  mse <- mean((predicciones - real)^2)
+  mae <- mae(predicciones, real)
+  
+  return(list(RMSE = rmse, MSE = mse, MAE = mae))
+})
+
+
+# Convertir la lista en un data frame
+df <- do.call(rbind, lapply(resultados, function(x) unlist(x))) |> as.data.frame()
+
+# Agregar nombres a las filas y columnas
+rownames(df) <- NULL
+colnames(df) <- c("RMSE", "MSE", "MAE")
+
+df$MODELO <- c("lineal", "glm", "svr", "arbol", "rf")
+
+
+kable(df,
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Comparación de los modelos (base de datos mensual)") |> 
+  kable_styling(latex_options = c("HOLD_position"), 
+                full_width = F) |> column_spec(1:4,
+                                               width = "2.0cm")
+```
+
+**Comparación entre valores reales y predichos**
+
+La Tabla 18 presenta una comparativa detallada entre los valores estimados por un modelo de regresión random forest y las cifras reales observadas.
+
+El MAE de 2.38 indica que, en promedio, las predicciones del modelo se desvían alrededor de 2.38 horas de los tiempos reales observados.
+
+```{r}
+
+predichos <- predict(modelo_rf, testmes) |> round(2)
+
+
+resultados <- data.frame(predichos  = predichos, 
+                         reales = testmes$HH_En_la_Maquina)
+
+
+
+kable(head(resultados, 10),
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Predichos vs reales (base de datos mensual)") |> 
+  kable_styling(latex_options = c("HOLD_position"), 
+                full_width = F) |> column_spec(1:4,
+                                               width = "2.0cm")
+```
+
+\newpage
+
+# Conclusiones
+
+## Resultados
+
+Al examinar los resultados del modelo de Random Forest, se destaca su desempeño, especialmente en el análisis mensual, donde registra un MAE de 1.981288 horas.
+Este valor más bajo indica una mayor precisión en la predicción del tiempo requerido para realizar mantenimientos correctivos en un periodo prolongado.
+La consistencia en este rendimiento sugiere que el modelo es especialmente eficaz cuando se consideran períodos extensos.
+
+La ventaja del análisis mensual puede atribuirse a varios factores.
+En primer lugar, al agrupar datos en un periodo más largo, se pueden eliminar ciertas fluctuaciones o variaciones aleatorias que podrían afectar las predicciones diarias o semanales.
+Además, al analizar tendencias durante un mes, el modelo puede capturar patrones más estables y significativos en los datos, lo que resulta en predicciones más precisas.
+
+Por lo tanto, al planificar actividades de mantenimiento a largo plazo, el análisis mensual proporcionado por el modelo de Random Forest emerge como la opción más confiable y precisa.
+
+El modelo de Random Forest sobresale entre otros enfoques de modelado, como modelos lineales, GLM (Modelos Lineales Generalizados), SVR (Máquinas de Vectores de Soporte para Regresión) y árboles de decisión, por varias razones:
+
+Robustez frente a datos complejos: Mientras que los modelos lineales y GLM son eficientes bajo ciertas suposiciones sobre la linealidad y la independencia de las variables, los datos en la práctica suelen ser más complejos, exhibiendo relaciones no lineales que podrían limitar la capacidad de estos modelos para capturar patrones subyacentes.
+En contraste, el modelo de Random Forest, al emplear múltiples árboles de decisión y combinar sus predicciones, puede manejar con mayor eficacia esta complejidad inherente en los datos.
+
+Capacidad para manejar multicolinealidad y características no lineales: En escenarios donde las variables predictoras están altamente correlacionadas o muestran relaciones no lineales con la variable objetivo, los modelos lineales y GLM pueden enfrentar dificultades para capturar estas relaciones de manera efectiva.
+Por el contrario, los árboles de decisión, incluido el modelo de Random Forest, poseen la capacidad inherente de manejar multicolinealidad y relaciones no lineales sin necesidad de preprocesamiento adicional de datos.
+
+Regularización implícita: A diferencia de los modelos lineales y SVR, que a menudo requieren técnicas de regularización para evitar el sobreajuste, el modelo de Random Forest tiende a ser menos propenso a este fenómeno debido a la naturaleza de ensamblaje de múltiples árboles de decisión.
+Esto implica que el modelo puede generalizar mejor a datos no vistos, lo que se traduce en predicciones más robustas y confiables.
+
+Manejo efectivo de variables categóricas y no lineales: Los árboles de decisión, incluido Random Forest, son intrínsecamente capaces de manejar variables categóricas sin necesidad de transformaciones adicionales, lo que simplifica el proceso de modelado y reduce la necesidad de preprocesamiento de datos.
+Además, estos modelos pueden identificar interacciones no lineales entre variables predictoras, permitiendo la captura de patrones más complejos en los datos.
+
+\newpage
+
+## Dificultades
+
+La predicción del tiempo necesario para reparar máquinas es fundamental en la gestión eficiente del mantenimiento industrial.
+Sin embargo, este proceso presenta una serie de desafíos que deben abordarse para desarrollar modelos predictivos precisos y útiles.
+
+Uno de los principales desafíos es la variabilidad inherente en el tiempo de reparación, que puede ser influenciada por una multitud de factores, como la complejidad de la falla, la disponibilidad de repuestos y la experiencia del técnico @montgomery2012introduction.
+Además, la falta de datos completos sobre reparaciones anteriores puede dificultar la construcción de modelos predictivos robustos.
+
+La relación entre las variables predictoras y el tiempo de reparación también puede ser no lineal, lo que requiere el uso de técnicas avanzadas de modelado, como modelos no lineales y de regresión robustos @gelman2013bayesian.
+Además, los efectos aleatorios, como la variabilidad entre técnicos o máquinas, pueden introducir una fuente adicional de variabilidad en el modelo.
+
+Para abordar estos desafíos, se pueden emplear una variedad de enfoques estadísticos.
+Por ejemplo, los modelos mixtos o jerárquicos pueden capturar efectos aleatorios y variabilidad no observada @agresti2015foundations, mientras que las técnicas de imputación de datos pueden ayudar a manejar la falta de datos completos.
+Asimismo, los métodos de validación cruzada y las técnicas de selección de modelos pueden utilizarse para evaluar y comparar diferentes modelos y determinar el más adecuado para un conjunto de datos dado.
+
+A pesar de los desafíos, el modelado preciso del tiempo de reparación de máquinas puede tener un impacto significativo en la eficiencia operativa y la planificación del mantenimiento, lo que hace que valga la pena abordar estos desafíos con determinación y utilizando enfoques estadísticos adecuados.
+
+## Trabajos futuros
+
+El tema de la predicción del tiempo de reparación mediante modelos estadísticos es una área de investigación en constante evolución que tiene aplicaciones importantes en diversos campos, desde la industria manufacturera hasta el mantenimiento de equipos de infraestructura.
+Uno de los principales objetivos de esta investigación es desarrollar modelos predictivos precisos que puedan estimar con precisión el tiempo necesario para completar una reparación en función de una serie de variables predictoras.
+
+Los avances en este campo han permitido la aplicación de una amplia gama de técnicas estadísticas, desde modelos de regresión lineal hasta métodos más sofisticados como el aprendizaje automático y la inteligencia artificial.
+Estos modelos pueden tener en cuenta una variedad de factores que pueden influir en el tiempo de reparación, como la complejidad de la avería, la disponibilidad de piezas de repuesto, las habilidades del personal de mantenimiento y las condiciones ambientales.
+
+Por ejemplo, en un estudio reciente realizado por @smith2020predicting, se utilizó un modelo de regresión lineal para predecir el tiempo de reparación de equipos industriales en función de la edad del equipo, la gravedad de la avería y la experiencia del técnico de mantenimiento.
+Los resultados mostraron una correlación significativa entre estas variables y el tiempo de reparación, lo que sugiere que el modelo podría ser útil para planificar de manera más eficiente las tareas de mantenimiento.
+
+Además, investigaciones como la de @liu2019predicting han explorado el uso de técnicas de aprendizaje automático, como los árboles de decisión y las redes neuronales, para predecir el tiempo de reparación de vehículos en función de datos históricos de mantenimiento.
+Estos modelos han demostrado ser capaces de capturar patrones complejos en los datos y proporcionar predicciones precisas del tiempo de reparación.
+
+\newpage
+
+# Referencias {.unnumbered}
+
+```{=tex}
+\AtNextBibliography{\normalsize}
+\printbibliography[heading=none]
+\normalsize
+```
+\def\printbibliography{}
+
+------------------------------------------------------------------------
+
+# APÉNDICES {.unnumbered}
+
+# (APPENDIX) Apéndice {.unnumbered}
+
+## *Apéndice A.* Paquetes de R usados para crear este documento {#paquetes-list .unnumbered}
+
+Los archivos y el código necesarios para crear este documento están disponibles en el siguiente github:
+
+A continuación se muestra la información del sistema, versión de R, y lista de paquetes usados con sus versiones:
+
+```{r echo = FALSE}
+pander::pander(sessionInfo(), locale = FALSE)
+```
+
+## *Apéndice B.* Citas y referencias de paquetes de R {#paquetes-cit .unnumbered}
+
+Es crucial citar los paquetes de R que se utilicen en un proyecto.
+Para encontrar la cita recomendada por los autores de un paquete en particular, se puede emplear la función *citation()* de R.
+Basta con proporcionar el nombre del paquete deseado como argumento entre comillas para acceder a la información de cita correspondiente.
+
+```{=latex}
+
+\begin{thebibliography}{99}
+
+\bibitem{tidyverse}
+Hadley Wickham et al. \emph{tidyverse: Easily Install and Load the 'Tidyverse'}. 2020. R package version 1.3.0. \url{https://CRAN.R-project.org/package=tidyverse}
+
+\bibitem{readxl}
+Hadley Wickham and Jennifer Bryan. \emph{readxl: Read Excel Files}. 2019. R package version 1.3.1. \url{https://CRAN.R-project.org/package=readxl}
+
+\bibitem{DT}
+Yihui Xie et al. \emph{DT: A Wrapper of the JavaScript Library 'DataTables'}. 2020. R package version 0.18. \url{https://CRAN.R-project.org/package=DT}
+
+\bibitem{lmtest}
+Torsten Hothorn and Achim Zeileis. \emph{lmtest: Testing Linear Regression Models}. 2020. R package version 0.9-38. \url{https://CRAN.R-project.org/package=lmtest}
+
+\bibitem{car}
+John Fox et al. \emph{car: Companion to Applied Regression}. 2021. R package version 3.0-12. \url{https://CRAN.R-project.org/package=car}
+
+\end{thebibliography}
+```
