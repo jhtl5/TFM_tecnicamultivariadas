@@ -1,0 +1,2632 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.5)  15 APR 2024 13:09
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**trabajo.tex
+(./trabajo.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-03-14>
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+For additional information on amsmath, use the `?' option.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen141
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen142
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count196
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count197
+\leftroot@=\count198
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count199
+\DOTSCASE@=\count266
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count267
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count268
+\dotsspace@=\muskip16
+\c@parentequation=\count269
+\dspbrk@lvl=\count270
+\tag@help=\toks18
+\row@=\count271
+\column@=\count272
+\maxfields@=\count273
+\andhelp@=\toks19
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks20
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 112.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks22
+\inpenc@posthook=\toks23
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2024/03/29 v3.1b Micro-typographical refinements (RS)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks24
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count274
+)
+\MT@toks=\toks25
+\MT@tempbox=\box53
+\MT@count=\count275
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1061.
+LaTeX Info: Redefining \leftprotrusion on input line 1062.
+\MT@prot@toks=\toks26
+LaTeX Info: Redefining \rightprotrusion on input line 1081.
+LaTeX Info: Redefining \textls on input line 1392.
+\MT@outer@kern=\dimen150
+LaTeX Info: Redefining \textmicrotypecontext on input line 2013.
+\MT@listname@count=\count276
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2024/03/29 v3.1b Definitions specific to pdftex (RS)
+LaTeX Info: Redefining \lsstyle on input line 902.
+LaTeX Info: Redefining \lslig on input line 902.
+\MT@outer@space=\skip53
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2024/03/29 v3.1b microtype main configuration file (RS)
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/svgnam.def
+File: svgnam.def 2023/11/15 v3.01 Predefined colors according to SVG 1.1 (UK)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/x11nam.def
+File: x11nam.def 2023/11/15 v3.01 Predefined colors according to Unix/X11 (UK)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count277
+\Gm@cntv=\count278
+\c@Gm@tempcnt=\count279
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks27
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
+\LTleft=\skip54
+\LTright=\skip55
+\LTpre=\skip56
+\LTpost=\skip57
+\LTchunksize=\count280
+\LTcapwidth=\dimen159
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@gbox=\box58
+\LT@cols=\count281
+\LT@rows=\count282
+\c@LT@tables=\count283
+\c@LT@chunks=\count284
+\LT@p@ftn=\toks28
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen160
+\lightrulewidth=\dimen161
+\cmidrulewidth=\dimen162
+\belowrulesep=\dimen163
+\belowbottomsep=\dimen164
+\aboverulesep=\dimen165
+\abovetopsep=\dimen166
+\cmidrulesep=\dimen167
+\cmidrulekern=\dimen168
+\defaultaddspace=\dimen169
+\@cmidla=\count285
+\@cmidlb=\count286
+\@aboverulesep=\dimen170
+\@belowrulesep=\dimen171
+\@thisruleclass=\count287
+\@lastruleclass=\count288
+\@thisrulewidth=\dimen172
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen173
+\ar@mcellbox=\box59
+\extrarowheight=\dimen174
+\NC@list=\toks29
+\extratabsurround=\skip58
+\backup@length=\skip59
+\ar@cellbox=\box60
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count289
+\calc@Bcount=\count290
+\calc@Adimen=\dimen175
+\calc@Bdimen=\dimen176
+\calc@Askip=\skip60
+\calc@Bskip=\skip61
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count291
+\calc@Cskip=\skip62
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/footnotehyper/footnotehyper.sty
+Package: footnotehyper 2021/08/13 v1.1e hyperref aware footnote.sty (JFB)
+\FNH@notes=\box61
+\FNH@width=\dimen177
+\FNH@toks=\toks30
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+)
+\Gin@req@height=\dimen178
+\Gin@req@width=\dimen179
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/titling/titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip63
+\thanksmargin=\skip64
+\droptitle=\skip65
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2024/01/21 v0.5y Insert pages of external PDF documents (AM)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
+\ESO@tempdima=\dimen180
+\ESO@tempdimb=\dimen181
+)
+\AM@pagewidth=\dimen182
+\AM@pageheight=\dimen183
+\AM@fboxrule=\dimen184
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2024/01/21 v0.5y Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count292
+\AM@pagebox=\box62
+\AM@global@opts=\toks31
+\AM@pagecnt=\count293
+\AM@toc@title=\toks32
+\AM@lof@heading=\toks33
+\c@AM@survey=\count294
+\AM@templatesizebox=\box63
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip66
+\cftbeforetoctitleskip=\skip67
+\cftaftertoctitleskip=\skip68
+\cftbeforepartskip=\skip69
+\cftpartnumwidth=\skip70
+\cftpartindent=\skip71
+\cftbeforesecskip=\skip72
+\cftsecindent=\skip73
+\cftsecnumwidth=\skip74
+\cftbeforesubsecskip=\skip75
+\cftsubsecindent=\skip76
+\cftsubsecnumwidth=\skip77
+\cftbeforesubsubsecskip=\skip78
+\cftsubsubsecindent=\skip79
+\cftsubsubsecnumwidth=\skip80
+\cftbeforeparaskip=\skip81
+\cftparaindent=\skip82
+\cftparanumwidth=\skip83
+\cftbeforesubparaskip=\skip84
+\cftsubparaindent=\skip85
+\cftsubparanumwidth=\skip86
+\cftbeforeloftitleskip=\skip87
+\cftafterloftitleskip=\skip88
+\cftbeforefigskip=\skip89
+\cftfigindent=\skip90
+\cftfignumwidth=\skip91
+\c@lofdepth=\count295
+\c@lotdepth=\count296
+\cftbeforelottitleskip=\skip92
+\cftafterlottitleskip=\skip93
+\cftbeforetabskip=\skip94
+\cfttabindent=\skip95
+\cfttabnumwidth=\skip96
+
+Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing out. on input line 1156.
+
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/03/29 v24.3 The Babel package
+\babel@savecnt=\count297
+\U@D=\dimen185
+\l@unhyphenated=\language7
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count298
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
+\es@quottoks=\toks34
+\es@quotdepth=\count299
+Package babel Info: Making " an active character on input line 570.
+Package babel Info: Making . an active character on input line 675.
+Package babel Info: Making < an active character on input line 722.
+Package babel Info: Making > an active character on input line 722.
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex
+Package babel Info: Importing font and identification data for spanish
+(babel)             from babel-es.ini. Reported on input line 11.
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+\csq@reset=\count300
+\csq@gtype=\count301
+\csq@glevel=\count302
+\csq@qlevel=\count303
+\csq@maxlvl=\count304
+\csq@tshold=\count305
+\csq@ltx@everypar=\toks35
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count306
+\float@exts=\toks36
+\float@box=\box64
+\@float@everytoks=\toks37
+\@floatcapt=\box65
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+\f@nch@headwidth=\skip97
+\f@nch@O@elh=\skip98
+\f@nch@O@erh=\skip99
+\f@nch@O@olh=\skip100
+\f@nch@O@orh=\skip101
+\f@nch@O@elf=\skip102
+\f@nch@O@erf=\skip103
+\f@nch@O@olf=\skip104
+\f@nch@O@orf=\skip105
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hanging/hanging.sty
+Package: hanging 2009/09/02 v1.2b hanging paragraphs and punctuation
+\h@ngcommawd=\skip106
+\h@ngfstopwd=\skip107
+\h@ngquotewd=\skip108
+\h@ngdquotewd=\skip109
+\h@ngquerywd=\skip110
+\h@ngexclwd=\skip111
+\h@ngcolonwd=\skip112
+\h@ngscolonwd=\skip113
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks38
+\thm@bodyfont=\toks39
+\thm@headfont=\toks40
+\thm@notefont=\toks41
+\thm@headpunct=\toks42
+\thm@preskip=\skip114
+\thm@postskip=\skip115
+\thm@headsep=\skip116
+\dth@everypar=\toks43
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks44
+\pgfutil@tempdima=\dimen186
+\pgfutil@tempdimb=\dimen187
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box66
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks45
+\pgfkeys@temptoks=\toks46
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks47
+))
+\pgf@x=\dimen188
+\pgf@y=\dimen189
+\pgf@xa=\dimen190
+\pgf@ya=\dimen191
+\pgf@xb=\dimen192
+\pgf@yb=\dimen193
+\pgf@xc=\dimen194
+\pgf@yc=\dimen195
+\pgf@xd=\dimen196
+\pgf@yd=\dimen197
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count307
+\c@pgf@countb=\count308
+\c@pgf@countc=\count309
+\c@pgf@countd=\count310
+\t@pgf@toka=\toks48
+\t@pgf@tokb=\toks49
+\t@pgf@tokc=\toks50
+\pgf@sys@id@count=\count311
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+))) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count312
+\pgfsyssoftpath@bigbuffer@items=\count313
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen198
+\pgfmath@count=\count314
+\pgfmath@box=\box67
+\pgfmath@toks=\toks51
+\pgfmath@stack@operand=\toks52
+\pgfmath@stack@operation=\toks53
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count315
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen199
+\pgf@picmaxx=\dimen256
+\pgf@picminy=\dimen257
+\pgf@picmaxy=\dimen258
+\pgf@pathminx=\dimen259
+\pgf@pathmaxx=\dimen260
+\pgf@pathminy=\dimen261
+\pgf@pathmaxy=\dimen262
+\pgf@xx=\dimen263
+\pgf@xy=\dimen264
+\pgf@yx=\dimen265
+\pgf@yy=\dimen266
+\pgf@zx=\dimen267
+\pgf@zy=\dimen268
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen269
+\pgf@path@lasty=\dimen270
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen271
+\pgf@shorten@start@additional=\dimen272
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box68
+\pgf@hbox=\box69
+\pgf@layerbox@main=\box70
+\pgf@picture@serial@count=\count316
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen273
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen274
+\pgf@pt@y=\dimen275
+\pgf@pt@temp=\dimen276
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen277
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen278
+\pgf@sys@shading@range@num=\count317
+\pgf@shadingcount=\count318
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box71
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box72
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen279
+\pgf@nodesepend=\dimen280
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmath.sty (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen281
+\pgffor@skip=\dimen282
+\pgffor@stack=\toks54
+\pgffor@toks=\toks55
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count319
+\pgfplotmarksize=\dimen283
+)
+\tikz@lastx=\dimen284
+\tikz@lasty=\dimen285
+\tikz@lastxsaved=\dimen286
+\tikz@lastysaved=\dimen287
+\tikz@lastmovetox=\dimen288
+\tikz@lastmovetoy=\dimen289
+\tikzleveldistance=\dimen290
+\tikzsiblingdistance=\dimen291
+\tikz@figbox=\box73
+\tikz@figbox@bg=\box74
+\tikz@tempbox=\box75
+\tikz@tempbox@bg=\box76
+\tikztreelevel=\count320
+\tikznumberofchildren=\count321
+\tikznumberofcurrentchild=\count322
+\tikz@fig@count=\count323
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count324
+\pgfmatrixcurrentcolumn=\count325
+\pgf@matrix@numberofcolumns=\count326
+)
+\tikz@expandcount=\count327
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lipsum/lipsum.sty (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-03-14 L3 programming layer (loader) 
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-03-14 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count328
+\l__pdf_internal_box=\box77
+))
+Package: l3keys2e 2024-03-14 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count329
+\l__lipsum_a_int=\count330
+\l__lipsum_b_int=\count331
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks56
+\verbatim@line=\toks57
+\verbatim@in@stream=\read4
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box78
+\tcb@upperbox=\box79
+\tcb@lowerbox=\box80
+\tcb@phantombox=\box81
+\c@tcbbreakpart=\count332
+\c@tcblayer=\count333
+\c@tcolorbox@number=\count334
+\l__tcobox_tmpa_box=\box82
+\l__tcobox_tmpa_dim=\dimen292
+\tcb@temp=\box83
+\tcb@temp=\box84
+\tcb@temp=\box85
+\tcb@temp=\box86
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.2.0'
+\c@tcbrastercolumn=\count335
+\c@tcbrasterrow=\count336
+\c@tcbrasternum=\count337
+\c@tcbraster=\count338
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.2.0'
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
+Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty
+Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex
+File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
+\l__tikzfill_img_box=\box87
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.2.0'
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.2.0'
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdfcol/pdfcol.sty
+Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+))
+Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
+\tcb@testbox=\box88
+\tcb@totalupperbox=\box89
+\tcb@totallowerbox=\box90
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.2.0'
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.2.0'
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.2.0'
+\tcbfitdim=\dimen293
+\tcb@lowerfitdim=\dimen294
+\tcb@upperfitdim=\dimen295
+\tcb@cur@hbadness=\count339
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.2.0'
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '6.2.0'
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count340
+\lst@gtempboxa=\box91
+\lst@token=\toks58
+\lst@length=\count341
+\lst@currlwidth=\dimen296
+\lst@column=\count342
+\lst@pos=\count343
+\lst@lostspace=\dimen297
+\lst@width=\dimen298
+\lst@newlines=\count344
+\lst@lineno=\count345
+\lst@maxwidth=\dimen299
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/03/11 1.10a (Carsten Heinz)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/03/11 1.10a (Carsten Heinz)
+\c@lstnumber=\count346
+\lst@skipnumbers=\count347
+\lst@framebox=\box92
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/03/11 1.10a listings configuration
+))
+Package: listings 2024/03/11 1.10a (Carsten Heinz)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.2.0'
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.2.0'
+)
+\c@tcblisting=\count348
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
+Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)))) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.2.0'
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbmagazine.code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.2.0'
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbvignette.code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.2.0'
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.2.0'
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
+\c@tracingmulticols=\count349
+\mult@box=\box93
+\multicol@leftmargin=\dimen300
+\c@unbalance=\count350
+\c@collectmore=\count351
+\doublecol@number=\count352
+\multicoltolerance=\count353
+\multicolpretolerance=\count354
+\full@width=\dimen301
+\page@free=\dimen302
+\premulticols=\dimen303
+\postmulticols=\dimen304
+\multicolsep=\skip117
+\multicolbaselineskip=\skip118
+\partial@page=\box94
+\last@line=\box95
+\mc@boxedresult=\box96
+\maxbalancingoverflow=\dimen305
+\mult@rightbox=\box97
+\mult@grightbox=\box98
+\mult@firstbox=\box99
+\mult@gfirstbox=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\@tempa=\box120
+\@tempa=\box121
+\@tempa=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\@tempa=\box127
+\@tempa=\box128
+\@tempa=\box129
+\@tempa=\box130
+\@tempa=\box131
+\@tempa=\box132
+\@tempa=\box133
+\@tempa=\box134
+\@tempa=\box135
+\@tempa=\box136
+\c@minrows=\count355
+\c@columnbadness=\count356
+\c@finalcolumnbadness=\count357
+\last@try=\dimen306
+\multicolovershoot=\dimen307
+\multicolundershoot=\dimen308
+\mult@nat@firstbox=\box137
+\colbreak@box=\box138
+\mc@col@check@num=\count358
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontawesome5/fontawesome5.sty
+Package: fontawesome5 2022/05/02 v5.15.4 Font Awesome 5
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2024-03-14 L3 Experimental document command parser
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontawesome5/fontawesome5-generic-helper.sty
+Package: fontawesome5-generic-helper 2022/05/02 v5.15.4 non-uTeX helper for fontawesome5
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontawesome5/fontawesome5-mapping.def))) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip119
+\multirow@cntb=\count359
+\multirow@dima=\skip120
+\bigstrutjot=\dimen309
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen310
+\captionmargin=\dimen311
+\caption@leftmargin=\dimen312
+\caption@rightmargin=\dimen313
+\caption@width=\dimen314
+\caption@indent=\dimen315
+\caption@parindent=\dimen316
+\caption@hangindent=\dimen317
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count360
+\c@continuedfloat=\count361
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/orcidlink/orcidlink.sty
+Package: orcidlink 2023/12/30 v1.0.5 Linked ORCiD logo macro package
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count362
+)
+\@linkdim=\dimen318
+\Hy@linkcounter=\count363
+\Hy@pagecounter=\count364
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count365
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4062.
+Package hyperref Info: Option `unicode' set `true' on input line 4062.
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count366
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen319
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count367
+\Field@Width=\dimen320
+\Fld@charsize=\dimen321
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+\Hy@abspage=\count368
+\c@Item=\count369
+\c@Hfootnote=\count370
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count371
+\c@bookmark@seq@number=\count372
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip121
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysvg.path.code.tex
+File: tikzlibrarysvg.path.code.tex 2023-01-15 v3.1.10 (3.1.10)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibrarysvg.path.code.tex
+File: pgflibrarysvg.path.code.tex 2023-01-15 v3.1.10 (3.1.10)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleparser.code.tex
+File: pgfmoduleparser.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfparserdef@arg@count=\count373
+)
+\pgf@lib@svg@last@x=\dimen322
+\pgf@lib@svg@last@y=\dimen323
+\pgf@lib@svg@last@c@x=\dimen324
+\pgf@lib@svg@last@c@y=\dimen325
+\pgf@lib@svg@count=\count374
+\pgf@lib@svg@max@num=\count375
+))
+\@curXheight=\skip122
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count376
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count377
+\c@listtotal=\count378
+\c@listcount=\count379
+\c@liststart=\count380
+\c@liststop=\count381
+\c@citecount=\count382
+\c@citetotal=\count383
+\c@multicitecount=\count384
+\c@multicitetotal=\count385
+\c@instcount=\count386
+\c@maxnames=\count387
+\c@minnames=\count388
+\c@maxitems=\count389
+\c@minitems=\count390
+\c@citecounter=\count391
+\c@maxcitecounter=\count392
+\c@savedcitecounter=\count393
+\c@uniquelist=\count394
+\c@uniquename=\count395
+\c@refsection=\count396
+\c@refsegment=\count397
+\c@maxextratitle=\count398
+\c@maxextratitleyear=\count399
+\c@maxextraname=\count400
+\c@maxextradate=\count401
+\c@maxextraalpha=\count402
+\c@abbrvpenalty=\count403
+\c@highnamepenalty=\count404
+\c@lownamepenalty=\count405
+\c@maxparens=\count406
+\c@parenlevel=\count407
+\blx@tempcnta=\count408
+\blx@tempcntb=\count409
+\blx@tempcntc=\count410
+\c@blx@maxsection=\count411
+\blx@maxsegment@0=\count412
+\blx@notetype=\count413
+\blx@parenlevel@text=\count414
+\blx@parenlevel@foot=\count415
+\blx@sectionciteorder@0=\count416
+\blx@sectionciteorderinternal@0=\count417
+\blx@entrysetcounter=\count418
+\blx@biblioinstance=\count419
+\labelnumberwidth=\skip123
+\labelalphawidth=\skip124
+\biblabelsep=\skip125
+\bibitemsep=\skip126
+\bibnamesep=\skip127
+\bibinitsep=\skip128
+\bibparsep=\skip129
+\bibhang=\skip130
+\blx@bcfin=\read5
+\blx@bcfout=\write4
+\blx@langwohyphens=\language8
+\c@mincomprange=\count420
+\c@maxcomprange=\count421
+\c@mincompwidth=\count422
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'apa.dbx' found.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.dbx
+File: apa.dbx 2023/03/20 v9.17 APA biblatex style data model
+)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count423
+\c@savedafterword=\count424
+\c@annotator=\count425
+\c@savedannotator=\count426
+\c@author=\count427
+\c@savedauthor=\count428
+\c@bookauthor=\count429
+\c@savedbookauthor=\count430
+\c@commentator=\count431
+\c@savedcommentator=\count432
+\c@editor=\count433
+\c@savededitor=\count434
+\c@editora=\count435
+\c@savededitora=\count436
+\c@editorb=\count437
+\c@savededitorb=\count438
+\c@editorc=\count439
+\c@savededitorc=\count440
+\c@foreword=\count441
+\c@savedforeword=\count442
+\c@holder=\count443
+\c@savedholder=\count444
+\c@introduction=\count445
+\c@savedintroduction=\count446
+\c@namea=\count447
+\c@savednamea=\count448
+\c@nameb=\count449
+\c@savednameb=\count450
+\c@namec=\count451
+\c@savednamec=\count452
+\c@translator=\count453
+\c@savedtranslator=\count454
+\c@shortauthor=\count455
+\c@savedshortauthor=\count456
+\c@shorteditor=\count457
+\c@savedshorteditor=\count458
+\c@narrator=\count459
+\c@savednarrator=\count460
+\c@execproducer=\count461
+\c@savedexecproducer=\count462
+\c@execdirector=\count463
+\c@savedexecdirector=\count464
+\c@with=\count465
+\c@savedwith=\count466
+\c@labelname=\count467
+\c@savedlabelname=\count468
+\c@institution=\count469
+\c@savedinstitution=\count470
+\c@lista=\count471
+\c@savedlista=\count472
+\c@listb=\count473
+\c@savedlistb=\count474
+\c@listc=\count475
+\c@savedlistc=\count476
+\c@listd=\count477
+\c@savedlistd=\count478
+\c@liste=\count479
+\c@savedliste=\count480
+\c@listf=\count481
+\c@savedlistf=\count482
+\c@location=\count483
+\c@savedlocation=\count484
+\c@organization=\count485
+\c@savedorganization=\count486
+\c@origlocation=\count487
+\c@savedoriglocation=\count488
+\c@origpublisher=\count489
+\c@savedorigpublisher=\count490
+\c@publisher=\count491
+\c@savedpublisher=\count492
+\c@language=\count493
+\c@savedlanguage=\count494
+\c@origlanguage=\count495
+\c@savedoriglanguage=\count496
+\c@citation=\count497
+\c@savedcitation=\count498
+\c@pageref=\count499
+\c@savedpageref=\count500
+\shorthandwidth=\skip131
+\shortjournalwidth=\skip132
+\shortserieswidth=\skip133
+\shorttitlewidth=\skip134
+\shortauthorwidth=\skip135
+\shorteditorwidth=\skip136
+\locallabelnumberwidth=\skip137
+\locallabelalphawidth=\skip138
+\localshorthandwidth=\skip139
+\localshortjournalwidth=\skip140
+\localshortserieswidth=\skip141
+\localshorttitlewidth=\skip142
+\localshortauthorwidth=\skip143
+\localshorteditorwidth=\skip144
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+\c@textcitecount=\count501
+\c@textcitetotal=\count502
+\c@textcitemaxnames=\count503
+\c@biburlbigbreakpenalty=\count504
+\c@biburlbreakpenalty=\count505
+\c@biburlnumpenalty=\count506
+\c@biburlucpenalty=\count507
+\c@biburllcpenalty=\count508
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count509
+)
+Package biblatex Info: Trying to load bibliography style 'apa'...
+Package biblatex Info: ... file 'apa.bbx' found.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.bbx
+File: apa.bbx 2023/03/20 v9.17 APA biblatex references style
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count510
+\c@bbx:relatedtotal=\count511
+)
+Package biblatex Info: Delimiter 'nameyeardelim' in context 'bib' already defined, overwriting.
+Package biblatex Info: Delimiter 'nameyeardelim' in context 'biblist' already defined, overwriting.
+Package biblatex Info: Delimiter 'nonameyeardelim' in context 'bib' already defined, overwriting.
+Package biblatex Info: Delimiter 'nonameyeardelim' in context 'biblist' already defined, overwriting.
+)
+Package biblatex Info: Trying to load citation style 'apa'...
+Package biblatex Info: ... file 'apa.cbx' found.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.cbx
+File: apa.cbx 2023/03/20 v9.17 APA biblatex citation style
+Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined, overwriting.
+Package biblatex Info: Delimiter 'andothersdelim' in context '' already defined, overwriting.
+Package biblatex Info: Redefining '\fullcite'.
+Package biblatex Info: Redefining '\citeauthor'.
+Package biblatex Info: Redefining '\citeyear'.
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcites'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\footcitetexts'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\smartcites'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2024-03-14 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen326
+\WF@size=\dimen327
+\c@WF@wrappedlines=\count512
+\WF@box=\box139
+\WF@everypar=\toks59
+Package: wrapfig 2003/01/31  v 3.6
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2024/02/20 v1.0g Color table columns (DPC)
+\everycr=\toks60
+\minrowclearance=\skip145
+\rownum=\count513
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF (HO)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box140
+\sift@deathcycles=\count514
+\@vwid@loff=\dimen328
+\@vwid@roff=\dimen329
+)
+\c@taburow=\count515
+\tabu@nbcols=\count516
+\tabu@cnt=\count517
+\tabu@Xcol=\count518
+\tabu@alloc=\count519
+\tabu@nested=\count520
+\tabu@target=\dimen330
+\tabu@spreadtarget=\dimen331
+\tabu@naturalX=\dimen332
+\tabucolX=\dimen333
+\tabu@Xsum=\dimen334
+\extrarowdepth=\dimen335
+\abovetabulinesep=\dimen336
+\belowtabulinesep=\dimen337
+\tabustrutrule=\dimen338
+\tabu@thebody=\toks61
+\tabu@footnotes=\toks62
+\tabu@box=\box141
+\tabu@arstrutbox=\box142
+\tabu@hleads=\box143
+\tabu@vleads=\box144
+\tabu@cellskip=\skip146
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box145
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+\TPTL@width=\skip147
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box146
+\UL@hyphenbox=\box147
+\UL@skip=\skip148
+\UL@hook=\toks63
+\UL@height=\dimen339
+\UL@pe=\count521
+\UL@pixel=\dimen340
+\ULC@box=\box148
+Package: ulem 2019/11/18
+\ULdepth=\dimen341
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen342
+\c@nlinenum=\count522
+\TeXr@lab=\toks64
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
+\BKM@id=\count523
+)) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+xurl: Set penalties for biblatex
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 127.
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'spanish'.
+(./trabajo.aux
+
+LaTeX Warning: Label `tab:unnamed-chunk-22' multiply defined.
+
+
+LaTeX Warning: Label `tab:unnamed-chunk-22' multiply defined.
+
+
+LaTeX Warning: Label `tab:unnamed-chunk-23' multiply defined.
+
+
+LaTeX Warning: Label `tab:unnamed-chunk-27' multiply defined.
+
+
+LaTeX Warning: Label `tab:unnamed-chunk-31' multiply defined.
+
+)
+\openout1 = `trabajo.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Info: Redefining \microtypecontext on input line 132.
+Package microtype Info: Applying patch `item' on input line 132.
+Package microtype Info: Applying patch `toc' on input line 132.
+Package microtype Info: Applying patch `eqnum' on input line 132.
+Package microtype Info: Applying patch `footnote' on input line 132.
+Package microtype Info: Applying patch `verbatim' on input line 132.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+LaTeX Info: Redefining \showhyphens on input line 132.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count524
+\scratchdimen=\dimen343
+\scratchbox=\box149
+\nofMPsegments=\count525
+\nofMParguments=\count526
+\everyMPshowfont=\toks65
+\MPscratchCnt=\count527
+\MPscratchDim=\dimen344
+\MPnumerator=\count528
+\makeMPintoPDFobject=\count529
+\everyMPtoPDFconversion=\toks66
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Info: Redefining \. on input line 132.
+LaTeX Info: Redefining \% on input line 132.
+\c@lstlisting=\count530
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: threeparttable package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring ON on input line 132.
+Package biblatex Info: Trying to load language 'spanish' -> 'spanish-apa'...
+Package biblatex Info: ... file 'spanish-apa.lbx' found.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex-apa/spanish-apa.lbx
+File: spanish-apa.lbx 2023/03/20 v9.17 APA biblatex localisation
+Package biblatex Info: Trying to load language 'spanish'...
+Package biblatex Info: ... file 'spanish.lbx' found.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/spanish.lbx
+File: spanish.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'spanish'...
+Package biblatex Info: ... file 'spanish.lbx' found.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/spanish.lbx
+File: spanish.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout4 = `trabajo.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'trabajo.bbl' found.
+(./trabajo.bbl)
+Package biblatex Info: Reference section=0 on input line 132.
+Package biblatex Info: Reference segment=0 on input line 132.
+\c@tcb@cnt@ROut=\count531
+\c@myequations=\count532
+\cftbeforemyequationsskip=\skip149
+\cftmyequationsindent=\skip150
+\cftmyequationsnumwidth=\skip151
+\c@equdepth=\count533
+\cftbeforeequtitleskip=\skip152
+\cftafterequtitleskip=\skip153
+
+
+pdfTeX warning: pdflatex.exe (file ./imagen-1.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imagen-1.pdf, id=43, 614.295pt x 794.97pt>
+File: imagen-1.pdf Graphic file (type pdf)
+<use imagen-1.pdf>
+Package pdftex.def Info: imagen-1.pdf  used on input line 165.
+(pdftex.def)             Requested size: 469.75604pt x 607.9196pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./imagen-1.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+File: imagen-1.pdf Graphic file (type pdf)
+<use imagen-1.pdf>
+Package pdftex.def Info: imagen-1.pdf  used on input line 165.
+(pdftex.def)             Requested size: 469.75604pt x 607.9196pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./imagen-1.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./imagen-1.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imagen-1.pdf, id=46, page=1, 614.295pt x 794.97pt>
+File: imagen-1.pdf Graphic file (type pdf)
+<use imagen-1.pdf, page 1>
+Package pdftex.def Info: imagen-1.pdf , page1 used on input line 165.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: imagen-1.pdf Graphic file (type pdf)
+<use imagen-1.pdf, page 1>
+Package pdftex.def Info: imagen-1.pdf , page1 used on input line 165.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+LaTeX Info: Completed page discarded.
+File: imagen-1.pdf Graphic file (type pdf)
+<use imagen-1.pdf, page 1>
+Package pdftex.def Info: imagen-1.pdf , page1 used on input line 165.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: imagen-1.pdf Graphic file (type pdf)
+<use imagen-1.pdf, page 1>
+Package pdftex.def Info: imagen-1.pdf , page1 used on input line 165.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: imagen-1.pdf Graphic file (type pdf)
+<use imagen-1.pdf, page 1>
+Package pdftex.def Info: imagen-1.pdf , page1 used on input line 165.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+[2
+
+ <./imagen-1.pdf>] (./trabajo.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 1.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 1.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 1.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+<logo.png, id=115, 129.8451pt x 65.043pt>
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 46.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[3{c:/Users/57312/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./logo.png>])
+\tf@toc=\write5
+\openout5 = `trabajo.toc'.
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 180.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[4] (./trabajo.lot)
+\tf@lot=\write6
+\openout6 = `trabajo.lot'.
+
+(./trabajo.lof)
+\tf@lof=\write7
+\openout7 = `trabajo.lof'.
+
+(./trabajo.equ)
+\tf@equ=\write8
+\openout8 = `trabajo.equ'.
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 188.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[5]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 209.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[6]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 227.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[7]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 248.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[8]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 255.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[9]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 278.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[10]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 300.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[11]
+<Imagenes/TiposdeMtto.png, id=355, 586.44093pt x 317.68687pt>
+File: Imagenes/TiposdeMtto.png Graphic file (type png)
+<use Imagenes/TiposdeMtto.png>
+Package pdftex.def Info: Imagenes/TiposdeMtto.png  used on input line 308.
+(pdftex.def)             Requested size: 281.84637pt x 152.68185pt.
+<Imagenes/categorias.png, id=356, 808.52063pt x 414.79968pt>
+File: Imagenes/categorias.png Graphic file (type png)
+<use Imagenes/categorias.png>
+Package pdftex.def Info: Imagenes/categorias.png  used on input line 341.
+(pdftex.def)             Requested size: 388.09784pt x 199.10791pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 347.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[12 <./Imagenes/TiposdeMtto.png>]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 369.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[13 <./Imagenes/categorias.png>]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 390.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[14]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 409.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[15]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 418.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[16]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 459.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[17]
+
+LaTeX Font Warning: Command \large invalid in math mode on input line 463.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 463.
+LaTeX Font Info:    Calculating math sizes for size <> on input line 463.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <> on input line 463.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <0.7> on input line 463.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <0.5> on input line 463.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 501.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[18{c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+
+LaTeX Font Warning: Command \large invalid in math mode on input line 513.
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 540.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[19{c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 603.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[20{c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+
+LaTeX Font Warning: Command \large invalid in math mode on input line 610.
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 649.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[21]
+
+LaTeX Font Warning: Command \large invalid in math mode on input line 656.
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 690.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[22]
+
+LaTeX Font Warning: Command \large invalid in math mode on input line 697.
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 733.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[23]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 758.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[24]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 773.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 792.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[25]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 814.
+(c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 826.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[26{c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 867.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[27]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 901.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[28]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 953.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[29]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1001.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[30]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1053.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[31]
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1085.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1085.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1085.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1085.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1088.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1088.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1088.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1088.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1090.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1090.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1090.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1090.
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1093.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[32]
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1093.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1093.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1093.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 1093.
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1108.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[33]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1134.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[34]
+<Imagenes/Crips-dm.png, id=598, 390.70969pt x 384.6872pt>
+File: Imagenes/Crips-dm.png Graphic file (type png)
+<use Imagenes/Crips-dm.png>
+Package pdftex.def Info: Imagenes/Crips-dm.png  used on input line 1139.
+(pdftex.def)             Requested size: 187.90218pt x 185.00581pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1165.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[35 <./Imagenes/Crips-dm.png>]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1186.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[36]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1217.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[37]
+Overfull \hbox (2.71931pt too wide) in paragraph at lines 1232--1232
+ []|\T1/lmr/m/n/10.95 (-20) estrategia
+ []
+
+
+Overfull \hbox (3.4339pt too wide) in paragraph at lines 1232--1232
+ []|\T1/lmr/m/n/10.95 (-20) Programa
+ []
+
+
+Overfull \hbox (3.7324pt too wide) in paragraph at lines 1232--1233
+[]|\T1/lmr/m/n/10.95 (-20) Disciplina|  
+ []
+
+
+Overfull \hbox (6.26024pt too wide) in paragraph at lines 1234--1234
+[]|\T1/lmr/m/n/10.95 (-20) Correctivo|  
+ []
+
+
+Overfull \hbox (18.86862pt too wide) in paragraph at lines 1234--1235
+[]|\T1/lmr/m/n/10.95 (-20) Instrumentos|  
+ []
+
+
+Overfull \hbox (6.26024pt too wide) in paragraph at lines 1235--1235
+[]|\T1/lmr/m/n/10.95 (-20) Correctivo|  
+ []
+
+
+Overfull \hbox (18.86862pt too wide) in paragraph at lines 1235--1236
+[]|\T1/lmr/m/n/10.95 (-20) Instrumentos|  
+ []
+
+
+Overfull \hbox (6.26024pt too wide) in paragraph at lines 1236--1236
+[]|\T1/lmr/m/n/10.95 (-20) Correctivo|  
+ []
+
+
+Overfull \hbox (18.86862pt too wide) in paragraph at lines 1236--1237
+[]|\T1/lmr/m/n/10.95 (-20) Instrumentos|  
+ []
+
+
+Overfull \hbox (6.26024pt too wide) in paragraph at lines 1237--1237
+[]|\T1/lmr/m/n/10.95 (-20) Correctivo|  
+ []
+
+
+Overfull \hbox (18.86862pt too wide) in paragraph at lines 1237--1238
+[]|\T1/lmr/m/n/10.95 (-20) Instrumentos|  
+ []
+
+
+Overfull \hbox (6.26024pt too wide) in paragraph at lines 1238--1238
+[]|\T1/lmr/m/n/10.95 (-20) Correctivo|  
+ []
+
+
+Overfull \hbox (18.86862pt too wide) in paragraph at lines 1238--1239
+[]|\T1/lmr/m/n/10.95 (-20) Instrumentos|  
+ []
+
+
+Overfull \hbox (6.26024pt too wide) in paragraph at lines 1239--1239
+[]|\T1/lmr/m/n/10.95 (-20) Correctivo|  
+ []
+
+
+Overfull \hbox (6.26024pt too wide) in paragraph at lines 1240--1240
+[]|\T1/lmr/m/n/10.95 (-20) Correctivo|  
+ []
+
+
+Overfull \hbox (18.86862pt too wide) in paragraph at lines 1240--1241
+[]|\T1/lmr/m/n/10.95 (-20) Instrumentos|  
+ []
+
+
+Overfull \hbox (6.26024pt too wide) in paragraph at lines 1241--1241
+[]|\T1/lmr/m/n/10.95 (-20) Correctivo|  
+ []
+
+
+Overfull \hbox (6.26024pt too wide) in paragraph at lines 1242--1242
+[]|\T1/lmr/m/n/10.95 (-20) Correctivo|  
+ []
+
+
+Overfull \hbox (18.86862pt too wide) in paragraph at lines 1242--1243
+[]|\T1/lmr/m/n/10.95 (-20) Instrumentos|  
+ []
+
+
+Overfull \hbox (6.26024pt too wide) in paragraph at lines 1243--1243
+[]|\T1/lmr/m/n/10.95 (-20) Correctivo|  
+ []
+
+
+Overfull \hbox (18.86862pt too wide) in paragraph at lines 1243--1244
+[]|\T1/lmr/m/n/10.95 (-20) Instrumentos|  
+ []
+
+
+Overfull \hbox (22.35709pt too wide) in paragraph at lines 1230--1246
+ [][] 
+ []
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1262.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[38]
+<trabajo_files/figure-latex/unnamed-chunk-8-1.pdf, id=637, 469.755pt x 433.62pt>
+File: trabajo_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
+<use trabajo_files/figure-latex/unnamed-chunk-8-1.pdf>
+Package pdftex.def Info: trabajo_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 1274.
+(pdftex.def)             Requested size: 469.75386pt x 433.61894pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1280.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[39 <./trabajo_files/figure-latex/unnamed-chunk-8-1.pdf>]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1322.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[40]
+<trabajo_files/figure-latex/unnamed-chunk-10-1.pdf, id=655, 469.755pt x 433.62pt>
+File: trabajo_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type pdf)
+<use trabajo_files/figure-latex/unnamed-chunk-10-1.pdf>
+Package pdftex.def Info: trabajo_files/figure-latex/unnamed-chunk-10-1.pdf  used on input line 1349.
+(pdftex.def)             Requested size: 469.75386pt x 433.61894pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1352.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[41]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1356.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[42 <./trabajo_files/figure-latex/unnamed-chunk-10-1.pdf>]
+Overfull \hbox (1.10435pt too wide) in paragraph at lines 1381--1381
+[]|\T1/lmr/m/n/10.95 (-20) desviación 
+ []
+
+
+Overfull \hbox (16.56877pt too wide) in paragraph at lines 1382--1382
+[]|\T1/lmr/m/n/10.95 (-20) coef.variación|  
+ []
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1404.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[43]
+<trabajo_files/figure-latex/unnamed-chunk-12-1.pdf, id=676, 469.755pt x 216.81pt>
+File: trabajo_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
+<use trabajo_files/figure-latex/unnamed-chunk-12-1.pdf>
+Package pdftex.def Info: trabajo_files/figure-latex/unnamed-chunk-12-1.pdf  used on input line 1413.
+(pdftex.def)             Requested size: 469.75386pt x 216.80946pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1421.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[44 <./trabajo_files/figure-latex/unnamed-chunk-12-1.pdf>]
+<trabajo_files/figure-latex/unnamed-chunk-13-1.pdf, id=688, 469.755pt x 216.81pt>
+File: trabajo_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type pdf)
+<use trabajo_files/figure-latex/unnamed-chunk-13-1.pdf>
+Package pdftex.def Info: trabajo_files/figure-latex/unnamed-chunk-13-1.pdf  used on input line 1427.
+(pdftex.def)             Requested size: 469.75386pt x 216.80946pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1436.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[45 <./trabajo_files/figure-latex/unnamed-chunk-13-1.pdf>]
+<trabajo_files/figure-latex/unnamed-chunk-14-1.pdf, id=698, 1445.4pt x 867.24pt>
+File: trabajo_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type pdf)
+<use trabajo_files/figure-latex/unnamed-chunk-14-1.pdf>
+Package pdftex.def Info: trabajo_files/figure-latex/unnamed-chunk-14-1.pdf  used on input line 1442.
+(pdftex.def)             Requested size: 469.74944pt x 281.84967pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1462.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[46 <./trabajo_files/figure-latex/unnamed-chunk-14-1.pdf>]
+Overfull \hbox (2.71931pt too wide) in paragraph at lines 1474--1474
+ []|\T1/lmr/m/n/10.95 (-20) estrategia
+ []
+
+
+Overfull \hbox (3.4339pt too wide) in paragraph at lines 1474--1474
+ []|\T1/lmr/m/n/10.95 (-20) Programa
+ []
+
+
+Overfull \hbox (2.71931pt too wide) in paragraph at lines 1476--1476
+[]|\T1/lmr/m/n/10.95 (-20) estrategia 
+ []
+
+
+Overfull \hbox (3.4339pt too wide) in paragraph at lines 1477--1477
+[]|\T1/lmr/m/n/10.95 (-20) Programa 
+ []
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1502.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[47]
+<trabajo_files/figure-latex/unnamed-chunk-16-1.pdf, id=712, 469.755pt x 144.54pt>
+File: trabajo_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (type pdf)
+<use trabajo_files/figure-latex/unnamed-chunk-16-1.pdf>
+Package pdftex.def Info: trabajo_files/figure-latex/unnamed-chunk-16-1.pdf  used on input line 1508.
+(pdftex.def)             Requested size: 469.75386pt x 144.53963pt.
+<trabajo_files/figure-latex/unnamed-chunk-17-1.pdf, id=713, 469.755pt x 144.54pt>
+File: trabajo_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type pdf)
+<use trabajo_files/figure-latex/unnamed-chunk-17-1.pdf>
+Package pdftex.def Info: trabajo_files/figure-latex/unnamed-chunk-17-1.pdf  used on input line 1521.
+(pdftex.def)             Requested size: 469.75386pt x 144.53963pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1532.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[48 <./trabajo_files/figure-latex/unnamed-chunk-16-1.pdf> <./trabajo_files/figure-latex/unnamed-chunk-17-1.pdf>]
+<trabajo_files/figure-latex/unnamed-chunk-18-1.pdf, id=735, 469.755pt x 289.08pt>
+File: trabajo_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
+<use trabajo_files/figure-latex/unnamed-chunk-18-1.pdf>
+Package pdftex.def Info: trabajo_files/figure-latex/unnamed-chunk-18-1.pdf  used on input line 1539.
+(pdftex.def)             Requested size: 469.75386pt x 289.07928pt.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1547.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[49 <./trabajo_files/figure-latex/unnamed-chunk-18-1.pdf>]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1579.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[50]
+LaTeX Font Info:    Calculating math sizes for size <20> on input line 1607.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <20> on input line 1607.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.99994> on input line 1607.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 1607.
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1675.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[51]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1697.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[52]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1789.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[53]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1822.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[54]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1916.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[55]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 1947.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[56]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2041.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[57]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2070.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[58]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2119.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[59]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2143.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[60]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2170.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[61]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2183.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[62]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2190.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[63]
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2190.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[64]
+Underfull \hbox (badness 2932) in paragraph at lines 2222--2224
+ \T1/lmr/m/it/10.95 (+20) rpart(v.4.1.19)\T1/lmr/m/n/10.95 (+20) , \T1/lmr/m/it/10.95 (+20) ggthe-mes(v.5.1.0)\T1/lmr/m/n/10.95 (+20) , \T1/lmr/m/it/10.95 (+20) Mu-MIn(v.1.47.5)\T1/lmr/m/n/10.95 (+20) , \T1/lmr/m/it/10.95 (+20) lme4(v.1.1-32)\T1/lmr/m/n/10.95 (+20) , \T1/lmr/m/it/10.95 (+20) Matrix(v.1.5-3)\T1/lmr/m/n/10.95 (+20) , 
+ []
+
+
+Underfull \hbox (badness 1189) in paragraph at lines 2225--2227
+ \T1/lmr/m/it/10.95 (+20) html-tools(v.0.5.5)\T1/lmr/m/n/10.95 (+20) , \T1/lmr/m/it/10.95 (+20) fast-map(v.1.1.1)\T1/lmr/m/n/10.95 (+20) , \T1/lmr/m/it/10.95 (+20) highr(v.0.10)\T1/lmr/m/n/10.95 (+20) , \T1/lmr/m/it/10.95 (+20) html-wid-gets(v.1.6.2)\T1/lmr/m/n/10.95 (+20) , \T1/lmr/m/it/10.95 (+20) rlang(v.1.1.0)\T1/lmr/m/n/10.95 (+20) , 
+ []
+
+
+Underfull \hbox (badness 2717) in paragraph at lines 2225--2227
+ \T1/lmr/m/it/10.95 (+20) rs-tu-dioa-pi(v.0.14)\T1/lmr/m/n/10.95 (+20) , \T1/lmr/m/it/10.95 (+20) shiny(v.1.7.4)\T1/lmr/m/n/10.95 (+20) , \T1/lmr/m/it/10.95 (+20) far-ver(v.2.1.1)\T1/lmr/m/n/10.95 (+20) , \T1/lmr/m/it/10.95 (+20) ge-ne-rics(v.0.1.3)\T1/lmr/m/n/10.95 (+20) , \T1/lmr/m/it/10.95 (+20) ma-grittr(v.2.0.3)\T1/lmr/m/n/10.95 (+20) , 
+ []
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2235.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[65]
+
+Package caption Warning: Unused \captionsetup[figura] on input line 94.
+See the caption package documentation for explanation.
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 2257.
+(pdftex.def)             Requested size: 99.99884pt x 50.09218pt.
+
+Package fancyhdr Warning: \headheight is too small (29.07182pt): 
+(fancyhdr)                Make it at least 54.17221pt, for example:
+(fancyhdr)                \setlength{\headheight}{54.17221pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-25.10039pt}.
+
+[66] (./trabajo.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-03-14>
+ ***********
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package logreq Info: Writing requests to 'trabajo.run.xml'.
+\openout1 = `trabajo.run.xml'.
+
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 195 (\begingroup)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 49868 strings out of 476032
+ 1003910 string characters out of 5789523
+ 2044805 words of memory out of 5000000
+ 70686 multiletter control sequences out of 15000+600000
+ 651717 words of font info for 221 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 86i,17n,96p,1793b,2818s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/57312/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on trabajo.pdf (65 pages, 1403738 bytes).
+PDF statistics:
+ 1249 PDF objects out of 1440 (max. 8388607)
+ 1078 compressed objects within 11 object streams
+ 317 named destinations out of 1000 (max. 500000)
+ 49981 words of extra memory for PDF output out of 51595 (max. 10000000)
+
