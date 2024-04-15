@@ -1,0 +1,946 @@
+---
+title: "Estudio de modelos de 
+predicción, para la gestión 
+de tiempos correctivos en 
+una empresa Industrial"
+date: "`r Sys.Date()`"
+author: "Torres Lombana, Jose Humberto"
+output:
+  rmdformats::robobook:
+    
+    highlight: kate
+toc-depth: 4
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r setup, include=FALSE}
+## Global options
+knitr::opts_chunk$set(cache = TRUE, comment = NA, warning = FALSE, message = FALSE)
+
+options(scipen = 999, digits = 4)
+```
+
+# Objetivo
+Contribuir a la mejora de asignación de tiempos correctivos y de emergencia en el proceso de mantenimiento en una empresa del sector industrial.
+
+## Objetivos Específicos:
+
+-   Realizar un análisis descriptivo y de limpieza para la preparación de los datos históricos de mantenimiento.
+
+-   Utilizar técnicas de estadística multivariante como modelos de regresión lineal múltiple y modelos lineales generalizados para la predicción de tiempos de Mantenimiento correctivo.
+
+-   Utilizar técnicas de Maching Learning en especial los algoritmos de Arboles de decisión, Random Forest y SVM, para la predicción de tiempos de mantenimiento correctivo.
+
+-   Evaluar y comparar los diversos modelos de regresión para predecir tiempos de mantenimiento correctivo, en márgenes de tiempo definidos (Diario, semanal y mensual).
+
+-   Proponer estrategias y recomendaciones específicas basadas en los resultados del análisis predictivo para optimizar los procesos de reparación y minimizar los tiempos de inactividad.
+
+# Paquetes necesarios
+
+-   **readxl**: Este paquete permite leer datos en formato Excel (.xls y .xlsx) directamente en R.
+    Proporciona funciones simples y eficientes para importar hojas de cálculo de Excel en R.
+
+-   **DT**: Este paquete proporciona una interfaz fácil de usar para crear y visualizar tablas de datos interactivas en R utilizando el paquete DataTables de JavaScript.
+    Es útil para explorar y presentar datos de manera dinámica.
+
+-   **lmtest**: Este paquete proporciona herramientas para realizar pruebas de hipótesis y diagnósticos en modelos de regresión lineal.
+    Incluye una variedad de pruebas estadísticas para evaluar la validez de los supuestos del modelo de regresión.
+
+-   **car**: Este paquete ofrece varias funciones para el análisis de regresión y modelado de datos, incluyendo diagnósticos de regresión, gráficos y pruebas para la detección de problemas en modelos de regresión.
+
+-   **lme4**: Este paquete se utiliza para ajustar modelos lineales mixtos (también conocidos como modelos de efectos mixtos) en R.
+    Es especialmente útil cuando se trabaja con datos que tienen estructuras de correlación o agrupación, como datos longitudinales o datos de paneles.
+
+-   **lubridate**: Este paquete facilita la manipulación de fechas y horas en R.
+    Proporciona funciones simples y consistentes para realizar operaciones comunes con fechas, como extracción de componentes de fecha, cálculos de diferencia entre fechas y manipulación de zonas horarias.
+
+-   **MuMIn**: Este paquete se utiliza para realizar la selección de modelos en análisis de regresión.
+    Proporciona funciones para calcular criterios de selección de modelos, como AIC y BIC, y para comparar modelos utilizando técnicas de selección de modelos como el enfoque de modelado de información.
+
+-   **ggthemes**: Este paquete proporciona temas adicionales para ggplot2, un paquete ampliamente utilizado para la creación de gráficos en R.
+    Permite personalizar la apariencia de los gráficos generados con ggplot2, incluyendo colores, fuentes y estilos de línea.
+
+-   **rpart**: Este paquete se utiliza para ajustar árboles de decisión en R.
+    Los árboles de decisión son modelos predictivos que dividen el espacio de características en regiones y asignan una etiqueta a cada región.
+
+-   **e1071**: Este paquete proporciona funciones para realizar análisis de aprendizaje automático, incluyendo algoritmos de clasificación y regresión.
+    Incluye implementaciones de algoritmos como SVM (Support Vector Machines) y Naive Bayes.
+
+-   **Metrics**: Este paquete proporciona funciones para calcular métricas de evaluación de modelos, como el error cuadrático medio, el coeficiente de determinación y el área bajo la curva ROC.
+
+-   **randomForest**: Este paquete implementa el algoritmo Random Forest, que es un método de aprendizaje automático para clasificación y regresión.
+    Random Forest construye múltiples árboles de decisión y combina sus predicciones para mejorar la precisión del modelo.
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(DT)
+library(lmtest)
+library(car)
+library(lme4)
+library(lubridate)
+library(MuMIn)
+library(ggthemes)
+library(rpart)
+library(e1071)
+library(Metrics)
+library(e1071)
+library(randomForest)
+library(rpart)
+```
+
+# Base de datos a utilizar
+
+La base de datos a utilizar en este trabajo tiene un total de 36795 obs y 11 variables sobre las actividades de reparación entre las cuales podemos encontrar las siguientes:
+
+-   **Epoca del año**: Indica la época del año, siendo el invierno un período en el que se gasta más tiempo debido a las condiciones climáticas.
+
+-   **Cumplimiento de la estrategia**: Representa la ejecución de la estrategia de mantenimiento preventivo, siendo crucial cumplir con la estrategia para evitar correctivos.
+
+-   **Programa de mantenimiento**: Mensualmente se genera un programa que incluye órdenes de mantenimiento correctivas y preventivas.
+    A veces, no se cumple debido a emergencias que requieren atención inmediata.
+
+-   **Ready Backlog**: Indica la carga de trabajo en semanas, siendo un indicador de trabajos pendientes y la necesidad de más personal.
+
+-   **HH Actv Generales**: Horas dedicadas a actividades generales como charlas HSE, capacitaciones, etc.
+
+-   **HH En la Maquina**: Horas reales dedicadas a trabajos en la máquina.
+    Es la variable principal a predecir, especialmente en trabajos correctivos de emergencia.
+
+-   **Otras HH**: Horas dedicadas a actividades propias del mantenimiento, como apertura de permisos, aislamientos, etc.
+
+-   **TipoMantenimiento**: Se clasifica en preventivo, correctivo normal y correctivo de emergencia.
+    El enfoque principal es predecir el tiempo necesario para el mantenimiento correctivo, especialmente el de emergencia.
+
+-   **Disciplina**: Indica los equipos de trabajo que ejecutan los mantenimientos, permitiendo predicciones por equipo.
+
+-   **fe.CreadaOrden y fe.Ejecutada**: Fechas de creación y ejecución de la orden, respectivamente.
+
+```{r}
+
+datos <- readxl::read_excel("../datos/DataTFM.XLSX", sheet = "Base de datos")
+
+
+## organizamos la data de acuerdo a le fecha de ejecución
+
+datos <- datos[order(datos$fe.Ejecutada), ]
+
+
+## redondear datos
+datos[, c(2:7)] <- round(datos[, c(2:7)], 2)
+
+
+## Colnames
+colnames(datos) <- c("Epoca del año", "estrategia Mtto",
+                     "Programa Mtto", "Ready back log",
+                     "HH Actv Gnerales", "HH En la Maquina", 
+                     "Otras HH", "Tipo mantenimiento", 
+                     "Disciplina", "Fecha Creada Orden", 
+                     "fecha Ejecutada")
+
+DT::datatable(head(datos))
+```
+
+# Análisis descriptivo de los datos
+
+En esta sección, se presenta un análisis detallado de los datos utilizados para el proyecto.
+El objetivo principal es proporcionar una visión general de las características principales de la muestra, así como identificar tendencias y patrones relevantes.
+
+### Variables de tipo cuantitativo
+
+```{r echo=FALSE, fig.height=5}
+estadistica::resumen.descriptivos(datos[, c(2:7)]) |>
+  
+  kable(
+      linesep = "",
+      booktabs = TRUE,
+      caption = "estadísticas descriptivas de las variables numéricas") |> 
+  kable_styling(latex_options = c("HOLD_position"), 
+                full_width = F) |> column_spec(1:7,
+                                               width = "1.65cm") 
+
+```
+
+Al proceder con un análisis descriptivo detallado de los datos relacionados con las actividades de mantenimiento, se establece una base sólida para la construcción y formulación de modelos estadísticos avanzados.
+Las estadísticas descriptivas revelan diferencias sustanciales en las escalas de medición entre las distintas variables, lo que puede conllevar a desafíos en términos de interpretación y significancia en relación con la variable objetivo.
+
+Un aspecto notable es la variabilidad manifiesta en ciertas variables, como "Programa Mtto" y "Ready back log", donde se evidencia una dispersión considerable alrededor de la media, tal y como lo indica la magnitud de la varianza.
+De igual importancia es el reconocimiento de coeficientes de variación prominentes en las variables "HH Actv Generales", "HH En la Maquina" y "Otras HH".
+La alta variación relativa reflejada por estos coeficientes sugiere que la media no representa adecuadamente la distribución de los datos, lo cual cuestiona su utilidad como medida central para estas variables.
+
+Estas características de los datos, como las diferencias de escala y la elevada variabilidad, podrían tener implicaciones significativas en la aplicación de modelos lineales.
+En particular, los modelos que presuponen homocedasticidad y linealidad en la relación entre predictores y la variable dependiente pueden resultar inadecuados.
+Por ejemplo, la influencia desmedida de variables con mayor escala puede sesgar los coeficientes estimados, llevando a interpretaciones erróneas de su relevancia en el modelo.
+
+La precisión de las estimaciones de los coeficientes y la fiabilidad de las pruebas estadísticas subsecuentes también pueden verse afectadas por la alta variabilidad relativa.
+Los modelos lineales, que son susceptibles a la influencia de valores atípicos y a una distribución anormal de los residuos, podrían no proporcionar inferencias estadísticas confiables bajo estas condiciones.
+
+Estos problemas puede deberse a las técnicas de recolección utilizadas para recolectar los datos, según @gujarati2009basic a medida que mejoren dichas técnicas la presencia de valores atípicos y alta varianza tenderá a disminuirse.
+
+### Variables de tipo cualitativo
+
+**Época del año**
+
+```{r echo=FALSE, fig.height=3, fig.cap= "Distribución de reparaciones en las épocas del año"}
+
+
+## gráfico 
+
+## tabla de cantidad
+EpocaAño <- table(datos$`Epoca del año`) %>% as.data.frame()
+EpocaAño$porce <- (EpocaAño$Freq / sum(EpocaAño$Freq)) %>% round(2) 
+EpocaAño$porce <- paste0(EpocaAño$porce*100, "%")
+
+
+## cambiar nombre
+colnames(EpocaAño) <- c("Variable", "Cantidad", "Porcentaje")
+
+
+## gráfico ggplot2
+ggplot(EpocaAño, aes(EpocaAño$Variable, 
+                   EpocaAño$Cantidad,
+                  fill = EpocaAño$Variable)) +
+  geom_col(width = 0.5) +
+  geom_text(aes(label = EpocaAño$Cantidad), 
+            color = "white", size = 6, 
+            position = position_stack(vjust = 0.5)) +
+  geom_text(aes(label = EpocaAño$Porcentaje), 
+            color = "white", size = 6, 
+            position = position_stack(vjust = 0.2)) +
+  labs(title = "",
+       x = "", y = "") +
+  theme_minimal() + 
+  scale_fill_tableau(palette = "Classic Blue-Red 6") + 
+  theme(legend.position = "none",
+        axis.text.y = element_blank(),
+        axis.text = element_text(size = 10))
+```
+
+Se nota que la mayoría de las reparaciones se llevaron a cabo durante el verano, representando un 59% del total.
+Se sugiere que el invierno podría influir en el número de horas necesarias para completar las reparaciones, lo que potencialmente aumentaría los costos y la complejidad del proceso.
+De ser así esta variable se destacaría como significativa en nuestra base de datos.
+
+**Tipo de mantenimiento**
+
+```{r echo=FALSE, fig.height=3, fig.cap="Distribución de reparación según el tipo de mantenimiento"}
+
+## gráfico 
+
+## tabla de cantidad
+mantenimiento <- table(datos$`Tipo mantenimiento`) %>% as.data.frame()
+mantenimiento$porce <- (mantenimiento$Freq / sum(mantenimiento$Freq)) %>% round(2) 
+mantenimiento$porce <- paste0(mantenimiento$porce*100, "%")
+
+
+## cambiar nombre
+colnames(mantenimiento) <- c("Variable", "Cantidad", "Porcentaje")
+
+
+## gráfico ggplot2
+ggplot(mantenimiento, aes(mantenimiento$Variable, 
+                   mantenimiento$Cantidad,
+                  fill = mantenimiento$Variable)) +
+  geom_col(width = 0.5) +
+  geom_text(aes(label = mantenimiento$Cantidad), 
+            color = "white", size = 6, 
+            position = position_stack(vjust = 0.5)) +
+  geom_text(aes(label = mantenimiento$Porcentaje), 
+            color = "white", size = 6, 
+            position = position_stack(vjust = 0.2)) +
+  labs(title = "",
+       x = "", y = "") +
+  theme_minimal() + 
+  scale_fill_tableau(palette = "Classic Blue-Red 6") + 
+  theme(legend.position = "none",
+        axis.text.y = element_blank(),
+        axis.text = element_text(size = 10))
+```
+
+El gráfico de barras ilustra una comparativa entre las actividades de mantenimiento correctivo y preventivo.
+Los modelos predictivos se centrarán en el mantenimiento correctivo, que representa el 37% del total de las actividades, con 13,629 eventos registrados.
+Este enfoque permite especializarse en anticipar las necesidades de mantenimiento correctivo, crucial para mitigar tiempos de inactividad y optimizar recursos, a pesar de ser menos frecuente que el mantenimiento preventivo.
+Estos modelos tendrán un papel significativo en la mejora de la respuesta a fallos y en la eficiencia operativa general.
+
+**Disciplina**
+
+```{r echo=FALSE, fig.height=12, fig.width=20, fig.cap="Distribución de reparaciones según disciplina"}
+
+## gráfico 
+
+## tabla de cantidad
+Disciplina <- table(datos$Disciplina) %>% as.data.frame()
+Disciplina$porce <- (Disciplina$Freq / sum(Disciplina$Freq)) %>% round(2) 
+Disciplina$porce <- paste0(Disciplina$porce*100, "%")
+
+
+## cambiar nombre
+colnames(Disciplina) <- c("Variable", "Cantidad", "Porcentaje")
+
+
+## gráfico ggplot2
+ggplot(Disciplina, aes(Disciplina$Variable, 
+                  Disciplina$Cantidad,
+                  fill = Disciplina$Variable)) +
+  geom_col(width = 0.5) +
+  geom_text(aes(label = Disciplina$Cantidad), 
+            color = "white", size = 12, 
+            position = position_stack(vjust = 0.5)) +
+  geom_text(aes(label = Disciplina$Porcentaje), 
+            color = "white", size = 12, 
+            position = position_stack(vjust = 0.2)) +
+  labs(title = "",
+       x = "", y = "") +
+  theme_minimal() + 
+  scale_fill_tableau(palette = "Classic Blue-Red 12") + 
+  theme(legend.position = "none",
+        axis.text.y = element_blank(),
+        axis.text = element_text(size = 24))
+```
+
+**Instrumentos** es la disciplina con el mayor número de reparaciones, con un total de 9,668, lo que representa el 26% de las reparaciones en todas las disciplinas.
+Esto indica que es un área significativa de enfoque para el mantenimiento.
+
+**Electricidad** también muestra una cantidad considerable de reparaciones, 5,664 en total, constituyendo el 15% del total.
+Aunque menor que Instrumentos, sigue siendo una parte importante de las actividades de mantenimiento.
+
+**Línea de Mtto** (Mantenimiento) tiene 3,190 reparaciones, que es el 9% del total, mostrando que tiene menos reparaciones en comparación con Electricidad e Instrumentos.
+
+**Mecánica** tiene 6,910 reparaciones, un 19% del total, lo que la coloca como una disciplina significativa pero con menos incidencias que Instrumentos.
+
+**Mecánica CBM** (Condition Based Maintenance) cuenta con 4,303 reparaciones, representando el 12%, sugiriendo que esta práctica proactiva de mantenimiento está razonablemente establecida.
+
+**Mecánica VAL** (Valor Agregado de Lubricación) tiene 2,887 reparaciones, que es el 8% del total, lo cual podría indicar que es una disciplina especializada con menos frecuencia de reparaciones.
+
+**Pozos**, por último, muestra 4,164 reparaciones, equivalentes al 11% del total, situándose en un punto intermedio en términos de volumen de reparaciones.
+
+
+### Numero de horas en la maquina y su relación con otras variables
+
+**Análisis de correlación**
+
+```{r echo=FALSE, fig.align='center'}
+cor(datos[, c(2:7)]) |> round(2) |> 
+  kable(
+      linesep = "",
+      booktabs = TRUE,
+      caption = "Correlación entre las variables numéricas") |> 
+   kable_styling(latex_options = c("HOLD_position"), 
+                full_width = F) |> column_spec(1:7,
+                                               width = "1.5cm")
+ 
+```
+
+Cada valor en la matriz representa el coeficiente de correlación entre dos variables específicas.
+La correlación puede variar en un rango de -1 a 1:
+
+-   Un valor de 1 indica una correlación positiva perfecta, lo que significa que las dos variables están perfectamente relacionadas de manera positiva (cuando una aumenta, la otra también aumenta en proporción constante).
+
+-   Un valor de -1 indica una correlación negativa perfecta, lo que significa que las dos variables están perfectamente relacionadas de manera negativa (cuando una aumenta, la otra disminuye en proporción constante).
+
+-   Un valor de 0 indica que no hay correlación lineal entre las dos variables.
+
+Para la variable dependiente (HH en la maquina) ninguna de las correlaciones con otras variables es significativa en términos de magnitud (cercana a 1 o -1).
+Esto sugiere que "HH En la Maquina" no está fuertemente correlacionada con ninguna de las otras variables incluidas en la matriz de correlación.
+Sin embargo, es importante considerar que la ausencia de correlaciones significativas no necesariamente implica una falta de relación entre las variables; podría haber otras formas de relación que no están capturadas por la correlación lineal.
+
+**Análisis de densidad por época del año**
+
+```{r echo=FALSE, fig.cap="Densidad de horas en la maquina por época del año"}
+
+ggplot(datos, aes(datos$`HH En la Maquina`, 
+                  fill = datos$`Epoca del año`)) + 
+  geom_density(alpha = 0.2) + 
+labs(title = "",
+       x = "", y = "", fill = "") +
+  theme_minimal() + 
+  scale_fill_tableau(palette = "Classic Blue-Red 6") + 
+  theme(axis.text.y = element_blank(),
+        plot.title = element_text(hjust = 0.5, size = 20),
+        axis.text = element_text(size = 15))
+```
+
+No se detectan diferencias significativas al comparar el número de horas requeridas para la reparación de la máquina durante el verano y el invierno.
+Los datos revelan una variación mínima, indicando una consistencia en el tiempo de reparación independientemente de la estación.
+Este patrón se mantiene constante incluso cuando el número de horas de reparación es extremadamente alto o bajo.
+Estos resultados sugieren que las condiciones estacionales no ejercen un impacto significativo en el tiempo necesario para la reparación de la máquina, una conclusión que podría ser confirmada si la variable no resulta significativa en nuestros modelos.
+
+**Análisis de densidad por tipo de mantenimiento**
+
+```{r echo=FALSE, fig.cap="Densidad de horas en la maquina por tipo de mantenimiento"}
+
+ggplot(datos, aes(datos$`HH En la Maquina`, 
+                  fill = datos$`Tipo mantenimiento`)) + 
+  geom_density(alpha = 0.2) + 
+labs(title = "",
+       x = "", y = "", fill = "") +
+  theme_minimal() + 
+  scale_fill_tableau(palette = "Classic Blue-Red 6") + 
+  theme(axis.text.y = element_blank(),
+        plot.title = element_text(hjust = 0.5, size = 20),
+        axis.text = element_text(size = 15))
+```
+
+Se evidencia que conforme aumenta el número de horas necesarias para la reparación de la máquina, se observa una clara tendencia en la naturaleza del mantenimiento requerido.
+Los datos revelan que los mantenimientos correctivos son más frecuentes cuando se necesitan entre 5 y 10 horas para la reparación.
+Este tipo de mantenimiento reactivo suele ser necesario cuando se detectan problemas más significativos que requieren una intervención inmediata para restaurar el funcionamiento adecuado de la máquina.
+
+Por otro lado, se observa que los mantenimientos preventivos son más comunes cuando las reparaciones duran entre 0 y 5 horas.
+Estos mantenimientos planificados se realizan de manera regular y sistemática para evitar la aparición de problemas mayores y mantener el equipo en óptimas condiciones de funcionamiento.
+Su implementación oportuna puede reducir la necesidad de intervenciones correctivas costosas y prolongadas en el futuro.
+
+Estos hallazgos subrayan la importancia de una gestión efectiva del mantenimiento, donde la combinación adecuada de mantenimiento preventivo y correctivo puede maximizar la disponibilidad y confiabilidad de la maquinaria, al tiempo que se minimizan los costos operativos y de reparación.
+
+
+**Análisis de densidad por disciplina**
+
+```{r echo=FALSE, fig.cap="Densidad de horas en la maquina por disciplina", fig.height=5}
+
+
+ggplot(datos, aes(datos$`HH En la Maquina`, 
+                  fill = datos$Disciplina)) + 
+  geom_density(alpha = 0.2) + facet_wrap(~datos$Disciplina)+
+labs(title = "",
+       x = "", y = "", fill = "") +
+  theme_minimal() + 
+  scale_fill_tableau() + 
+  theme(axis.text.y = element_blank(),
+        legend.position = "none",
+        plot.title = element_text(hjust = 0.5, size = 20),
+        axis.text = element_text(size = 15))
+```
+
+Se pueden observar distintas densidades según el tipo de disciplina, y es evidente que en la mayoría de los casos las horas de reparación son menores a 10 horas.
+Sin embargo, se destaca la disciplina VAL, donde los tiempos de reparación son significativamente mayores y se concentran en el rango de 5 a 15 horas.
+Esto sugiere que esta disciplina tiende a requerir un mayor número de horas para completar las reparaciones en comparación con otras disciplinas.
+
+
+
+
+# Modelos a utilizar
+
+## Modelo de regresión múltiple
+
+```{=tex}
+\begin{equation}
+\large Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_p X_p + \varepsilon\end{equation}
+```
+
+## Modelos Lineales Generalizados (GLM)
+
+```{=tex}
+\begin{equation}
+\large g(\mu) = \beta_0 + \beta_1 \cdot x_1 + \beta_2 \cdot x_2 + \ldots + \beta_n \cdot x_n\end{equation}
+```
+
+## Modelo de regresión svr (Support Vector Regression, SVR)
+
+
+```{=tex}
+\begin{equation}
+\large \min_{w, b, \xi, \xi^*} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} (\xi_i + \xi_i^*) \end{equation}
+```
+
+Sujeto a las restricciones:
+
+$$
+\begin{aligned}
+y_i - \langle w, x_i \rangle - b &\leq \epsilon + \xi_i, \\
+\langle w, x_i \rangle + b - y_i &\leq \epsilon + \xi_i^*, \\
+\xi_i, \xi_i^* &\geq 0, &\text{ para todo } i = 1, \ldots, n.
+\end{aligned}
+$$
+
+## Modelo de Regresión con Árboles de Decisión
+
+
+```{=tex}
+\begin{equation}
+\large \min_{\theta} \sum_{i=1}^{n} L(y_i, f(x_i;\theta)),
+\end{equation}
+```
+
+## Modelo de Regresión con Random Forest
+
+```{=tex}
+\begin{equation}
+\large \min_{\{\theta_k\}} \frac{1}{K} \sum_{k=1}^{K} \sum_{i \in B_k} L(y_i, f(x_i;\theta_k)),
+\end{equation}
+
+
+```
+
+# Predicción con los modelos
+
+## Predicción de manera diaria
+
+### Segmentación de datos
+
+Segmentamos los datos en un 90% para entrenamiento y un 10% para realizar las pruebas, lo cual deja 1295 obs para entrenar y 144 obs para probar los modelos entrenados.
+
+```{r}
+
+diario <- read.csv("../Scripts/datos/diario.csv")
+
+## redondear datos
+
+diario <- diario[, -c(1:3)]
+
+set.seed(123) # Fijar una semilla para reproducibilidad
+
+indices <- sample(seq_len(nrow(diario)),
+                  size = floor(0.9 * nrow(diario)))
+
+# Crear los subconjuntos de datos
+traindiario <- diario[indices, ]
+testdiario <- diario[-indices, ]
+
+
+## datos de prueba
+datatable(traindiario)
+datatable(testdiario)
+
+```
+
+
+* Modelo de regresión lineal 
+```{r}
+## modelos lineales
+modelo_lineal <- lm(`HH_En_la_Maquina` ~ .,
+   data = traindiario)
+```
+
+
+* Modelo lineal generalizado
+
+```{r}
+modelo_glm <- glm(`HH_En_la_Maquina` ~ .,
+                  data = traindiario)
+```
+
+
+
+* Modelo svr
+
+```{r}
+modelo_svr <- svm(`HH_En_la_Maquina` ~ .,
+                  data = traindiario,
+    type = "eps-regression",
+    kernel = "linear",
+    cost = 0.1,
+    epsilon = 0.1)
+```
+
+
+* Modelo arbol 
+
+```{r}
+
+modelo_arbol <- rpart(`HH_En_la_Maquina` ~ ., data = traindiario, 
+                      method = "anova",
+      control = rpart.control(minsplit = 10, cp = 0.001, maxdepth = 5))
+
+```
+
+
+* Modelo random forest
+
+```{r}
+
+## modelo de random forest
+modelo_rf <- randomForest(`HH_En_la_Maquina` ~ ., data = traindiario,
+                             ntree = 500, mtry = sqrt(ncol(traindiario)))
+
+```
+
+### Comparación de modelos
+
+* El modelo rf (Random Forest) tiene los valores más bajos de RMSE y MSE, lo que indica que generalmente ha tenido un mejor desempeño en términos de minimizar los errores cuadrados.
+También tiene el MAE más bajo, lo que sugiere que tiene una buena precisión en términos de errores absolutos.
+
+* Los modelos lineal y glm tienen valores idénticos para todas las métricas, lo que podría indicar que tienen un rendimiento muy similar en este conjunto de datos o que podrían estar utilizando la misma fórmula subyacente para la predicción.
+
+* El svr y el arbol tienen un rendimiento ligeramente mejor que los modelos lineales en términos de RMSE y MSE, pero no superan al rf.
+
+En general, estos resultados sugieren que el modelo de Random Forest es el más adecuado para los datos y el problema en cuestión, seguido por el modelo SVR, el árbol de decisión y, por último, los modelos lineales y GLM que presentan un rendimiento similar entre sí.
+
+```{r}
+## modelos 
+
+
+## modelos 
+
+modelos <- list(modelo_lineal, modelo_glm, modelo_svr, 
+                modelo_arbol, modelo_rf)
+
+
+
+resultados <- lapply(modelos, function(modelo) {
+  predicciones <- predict(modelo, newdata = testdiario)
+  real <- testdiario$HH_En_la_Maquina  # Asegúrate de reemplazar 'respuesta_real' con el nombre real de tu columna
+  
+  rmse <- rmse(predicciones, real)
+  mse <- mean((predicciones - real)^2)
+  mae <- mae(predicciones, real)
+  
+  return(list(RMSE = rmse, MSE = mse, MAE = mae))
+})
+
+
+# Convertir la lista en un data frame
+df <- do.call(rbind, lapply(resultados, function(x) unlist(x))) |> as.data.frame()
+
+# Agregar nombres a las filas y columnas
+rownames(df) <- NULL
+colnames(df) <- c("RMSE", "MSE", "MAE")
+
+## modelo 
+
+df <- round(df, 2)
+
+df$MODELO <- c("lineal", "glm", "svr", "arbol", "rf")
+
+
+datatable(df)
+```
+
+
+### Comparación valores reales y predichos
+
+Se presenta una comparativa detallada entre los valores estimados por un modelo de regresión random forest y las cifras reales observadas. 
+
+un MAE de 2.75 revela que, en promedio, las estimaciones del modelo se desvían en aproximadamente 2.75 horas de los tiempos reales medidos. Esta tendencia se manifiesta claramente en los datos, donde las horas predichas frecuentemente superan a las invertidas efectivamente en las actividades. Tal discrepancia sugiere una posible sobreestimación sistemática por parte del modelo, llevando a la empresa a asignar, en promedio, 2.75 horas más de lo necesario. Este excedente conlleva un uso ineficiente de recursos económicos y humanos, resaltando la importancia de afinar el modelo para optimizar la planificación y el despliegue de recursos.
+
+```{r}
+
+predichos <- predict(modelo_rf, testdiario) |> round(2)
+
+data.frame(predichos = predichos,
+           reales = testdiario$HH_En_la_Maquina) |> head()
+```
+
+
+## Predicción de manera semanal 
+
+### Segmentación de datos
+
+Segmentamos los datos en un 90% para entrenamiento y un 10% para realizar las pruebas, lo cual deja 885 obs para entrenar y 99 obs para probar los modelos entrenados.
+
+```{r}
+
+semana <- read.csv("../Scripts/datos/semana.csv")
+
+## redondear datos
+
+semana <- semana[, -c(1:3)]
+
+set.seed(123) # Fijar una semilla para reproducibilidad
+
+indices <- sample(seq_len(nrow(semana)),
+                  size = floor(0.9 * nrow(semana)))
+
+# Crear los subconjuntos de datos
+trainsemana <- semana[indices, ]
+testsemana <- semana[-indices, ]
+
+
+## datos de prueba
+datatable(trainsemana)
+datatable(testsemana)
+
+```
+
+
+* Modelo de regresión lineal 
+```{r}
+## modelos lineales
+modelo_lineal <- lm(`HH_En_la_Maquina` ~ .,
+   data = trainsemana)
+```
+
+
+* Modelo lineal generalizado
+
+```{r}
+modelo_glm <- glm(`HH_En_la_Maquina` ~ .,
+                  data = trainsemana)
+```
+
+
+
+* Modelo svr
+
+```{r}
+modelo_svr <- svm(`HH_En_la_Maquina` ~ .,
+                  data = trainsemana,
+    type = "eps-regression",
+    kernel = "linear",
+    cost = 0.1,
+    epsilon = 0.1)
+```
+
+
+* Modelo arbol 
+
+```{r}
+
+modelo_arbol <- rpart(`HH_En_la_Maquina` ~ ., data = traindiario, 
+                      method = "anova",
+      control = rpart.control(minsplit = 10, cp = 0.001, maxdepth = 5))
+
+```
+
+
+* Modelo random forest
+
+```{r}
+
+## modelo de random forest
+modelo_rf <- randomForest(`HH_En_la_Maquina` ~ ., data = trainsemana,
+                             ntree = 500, mtry = sqrt(ncol(trainsemana)))
+
+```
+
+
+
+### Comparación de modelos
+
+* El modelo rf (Random Forest) tiene los valores más bajos de RMSE y MSE, lo que indica que generalmente ha tenido un mejor desempeño en términos de minimizar los errores cuadrados.
+También tiene el MAE más bajo, lo que sugiere que tiene una buena precisión en términos de errores absolutos.
+
+* Los modelos lineal y glm tienen valores idénticos para todas las métricas, lo que podría indicar que tienen un rendimiento muy similar en este conjunto de datos o que podrían estar utilizando la misma fórmula subyacente para la predicción.
+
+* El svr y el arbol tienen un rendimiento ligeramente mejor que los modelos lineales en términos de RMSE y MSE, pero no superan al rf.
+
+En general, estos resultados sugieren que el modelo de Random Forest es el más adecuado para los datos y el problema en cuestión, seguido por el modelo SVR, el árbol de decisión y, por último, los modelos lineales y GLM que presentan un rendimiento similar entre sí.
+
+```{r}
+## modelos 
+
+
+## modelos 
+
+modelos <- list(modelo_lineal, modelo_glm, modelo_svr, 
+                modelo_arbol, modelo_rf)
+
+
+
+resultados <- lapply(modelos, function(modelo) {
+  predicciones <- predict(modelo, newdata = testsemana)
+  real <- testdiario$HH_En_la_Maquina  # Asegúrate de reemplazar 'respuesta_real' con el nombre real de tu columna
+  
+  rmse <- rmse(predicciones, real)
+  mse <- mean((predicciones - real)^2)
+  mae <- mae(predicciones, real)
+  
+  return(list(RMSE = rmse, MSE = mse, MAE = mae))
+})
+
+
+# Convertir la lista en un data frame
+df <- do.call(rbind, lapply(resultados, function(x) unlist(x))) |> as.data.frame()
+
+# Agregar nombres a las filas y columnas
+rownames(df) <- NULL
+colnames(df) <- c("RMSE", "MSE", "MAE")
+
+## modelo 
+
+df <- round(df, 2)
+
+df$MODELO <- c("lineal", "glm", "svr", "arbol", "rf")
+
+
+datatable(df)
+```
+
+
+
+### Comparación valores reales y predichos
+
+Se presenta una comparativa detallada entre los valores estimados por un modelo de regresión random forest y las cifras reales observadas. 
+
+un MAE de 2.16 revela que, en promedio, las estimaciones del modelo se desvían en aproximadamente 2.16 horas de los tiempos reales medidos. Esta tendencia se manifiesta claramente en los datos, donde las horas predichas frecuentemente superan a las invertidas efectivamente en las actividades. Tal discrepancia sugiere una posible sobreestimación sistemática por parte del modelo, llevando a la empresa a asignar, en promedio, 2.16 horas más de lo necesario. 
+
+```{r}
+
+predichos <- predict(modelo_rf, testsemana) |> round(2)
+
+data.frame(predichos = predichos,
+           reales = testsemana$HH_En_la_Maquina) |> head()
+```
+
+
+## Predicción de manera mensual
+
+
+### Segmentación de datos
+
+Segmentamos los datos en un 90% para entrenamiento y un 10% para realizar las pruebas, lo cual deja 157 obs para entrenar y 18 obs para probar los modelos entrenados.
+
+```{r}
+
+mes <- read.csv("../Scripts/datos/mes.csv")
+
+## redondear datos
+
+mes <- mes[, -c(1:3)]
+
+set.seed(123) # Fijar una semilla para reproducibilidad
+
+indices <- sample(seq_len(nrow(mes)),
+                  size = floor(0.9 * nrow(mes)))
+
+# Crear los subconjuntos de datos
+trainmes <- mes[indices, ]
+testmes <- mes[-indices, ]
+
+
+## datos de prueba
+datatable(trainmes)
+datatable(testmes)
+
+```
+
+
+
+* Modelo de regresión lineal 
+```{r}
+## modelos lineales
+modelo_lineal <- lm(`HH_En_la_Maquina` ~ .,
+   data = trainmes)
+```
+
+
+* Modelo lineal generalizado
+
+```{r}
+modelo_glm <- glm(`HH_En_la_Maquina` ~ .,
+                  data = trainmes)
+```
+
+
+
+* Modelo svr
+
+```{r}
+modelo_svr <- svm(`HH_En_la_Maquina` ~ .,
+                  data = trainmes,
+    type = "eps-regression",
+    kernel = "linear",
+    cost = 0.1,
+    epsilon = 0.1)
+```
+
+
+* Modelo arbol 
+
+```{r}
+
+modelo_arbol <- rpart(`HH_En_la_Maquina` ~ ., data = trainmes, 
+                      method = "anova",
+      control = rpart.control(minsplit = 10, cp = 0.001, maxdepth = 5))
+
+```
+
+
+* Modelo random forest
+
+```{r}
+
+## modelo de random forest
+modelo_rf <- randomForest(`HH_En_la_Maquina` ~ ., 
+                          data = trainmes,
+                             ntree = 500, mtry = sqrt(ncol(trainsemana)))
+
+```
+
+
+
+### Comparación de modelos
+
+* El modelo rf (Random Forest) tiene los valores más bajos de RMSE y MSE, lo que indica que generalmente ha tenido un mejor desempeño en términos de minimizar los errores cuadrados.
+También tiene el MAE más bajo, lo que sugiere que tiene una buena precisión en términos de errores absolutos.
+
+* Los modelos lineal y glm tienen valores idénticos para todas las métricas, lo que podría indicar que tienen un rendimiento muy similar en este conjunto de datos o que podrían estar utilizando la misma fórmula subyacente para la predicción.
+
+* El svr y el arbol tienen un rendimiento ligeramente mejor que los modelos lineales en términos de RMSE y MSE, pero no superan al rf.
+
+En general, estos resultados sugieren que el modelo de Random Forest es el más adecuado para los datos y el problema en cuestión, seguido por el modelo SVR, el árbol de decisión y, por último, los modelos lineales y GLM que presentan un rendimiento similar entre sí.
+
+```{r}
+## modelos 
+
+
+## modelos 
+
+modelos <- list(modelo_lineal, modelo_glm, modelo_svr, 
+                modelo_arbol, modelo_rf)
+
+
+
+resultados <- lapply(modelos, function(modelo) {
+  predicciones <- predict(modelo, newdata = testmes)
+  real <- testdiario$HH_En_la_Maquina  # Asegúrate de reemplazar 'respuesta_real' con el nombre real de tu columna
+  
+  rmse <- rmse(predicciones, real)
+  mse <- mean((predicciones - real)^2)
+  mae <- mae(predicciones, real)
+  
+  return(list(RMSE = rmse, MSE = mse, MAE = mae))
+})
+
+
+# Convertir la lista en un data frame
+df <- do.call(rbind, lapply(resultados, function(x) unlist(x))) |> as.data.frame()
+
+# Agregar nombres a las filas y columnas
+rownames(df) <- NULL
+colnames(df) <- c("RMSE", "MSE", "MAE")
+
+## modelo 
+
+df <- round(df, 2)
+
+df$MODELO <- c("lineal", "glm", "svr", "arbol", "rf")
+
+
+datatable(df)
+```
+
+
+
+### Comparación valores reales y predichos
+
+Se presenta una comparativa detallada entre los valores estimados por un modelo de regresión random forest y las cifras reales observadas. 
+
+un MAE de 2.16 revela que, en promedio, las estimaciones del modelo se desvían en aproximadamente 2.16 horas de los tiempos reales medidos. Esta tendencia se manifiesta claramente en los datos, donde las horas predichas frecuentemente superan a las invertidas efectivamente en las actividades. Tal discrepancia sugiere una posible sobreestimación sistemática por parte del modelo, llevando a la empresa a asignar, en promedio, 2.16 horas más de lo necesario. 
+
+```{r}
+
+predichos <- predict(modelo_rf, testmes) |> round(2)
+
+data.frame(predichos = predichos,
+           reales = testmes$HH_En_la_Maquina) |> head()
+```
+
+# Conclusiones
+
+Al examinar los resultados del modelo de Random Forest, se destaca su desempeño, especialmente en el análisis mensual, donde registra un MAE de 1.981288 horas. Este valor más bajo indica una mayor precisión en la predicción del tiempo requerido para realizar mantenimientos correctivos en un periodo prolongado. La consistencia en este rendimiento sugiere que el modelo es especialmente eficaz cuando se consideran períodos extensos.
+
+La ventaja del análisis mensual puede atribuirse a varios factores. En primer lugar, al agrupar datos en un periodo más largo, se pueden eliminar ciertas fluctuaciones o variaciones aleatorias que podrían afectar las predicciones diarias o semanales. Además, al analizar tendencias durante un mes, el modelo puede capturar patrones más estables y significativos en los datos, lo que resulta en predicciones más precisas.
+
+Por lo tanto, al planificar actividades de mantenimiento a largo plazo, el análisis mensual proporcionado por el modelo de Random Forest emerge como la opción más confiable y precisa.
+
+El modelo de Random Forest sobresale entre otros enfoques de modelado, como modelos lineales, GLM (Modelos Lineales Generalizados), SVR (Máquinas de Vectores de Soporte para Regresión) y árboles de decisión, por varias razones:
+
+Robustez frente a datos complejos: Mientras que los modelos lineales y GLM son eficientes bajo ciertas suposiciones sobre la linealidad y la independencia de las variables, los datos en la práctica suelen ser más complejos, exhibiendo relaciones no lineales que podrían limitar la capacidad de estos modelos para capturar patrones subyacentes. En contraste, el modelo de Random Forest, al emplear múltiples árboles de decisión y combinar sus predicciones, puede manejar con mayor eficacia esta complejidad inherente en los datos.
+
+Capacidad para manejar multicolinealidad y características no lineales: En escenarios donde las variables predictoras están altamente correlacionadas o muestran relaciones no lineales con la variable objetivo, los modelos lineales y GLM pueden enfrentar dificultades para capturar estas relaciones de manera efectiva. Por el contrario, los árboles de decisión, incluido el modelo de Random Forest, poseen la capacidad inherente de manejar multicolinealidad y relaciones no lineales sin necesidad de preprocesamiento adicional de datos.
+
+Regularización implícita: A diferencia de los modelos lineales y SVR, que a menudo requieren técnicas de regularización para evitar el sobreajuste, el modelo de Random Forest tiende a ser menos propenso a este fenómeno debido a la naturaleza de ensamblaje de múltiples árboles de decisión. Esto implica que el modelo puede generalizar mejor a datos no vistos, lo que se traduce en predicciones más robustas y confiables.
+
+Manejo efectivo de variables categóricas y no lineales: Los árboles de decisión, incluido Random Forest, son intrínsecamente capaces de manejar variables categóricas sin necesidad de transformaciones adicionales, lo que simplifica el proceso de modelado y reduce la necesidad de preprocesamiento de datos. Además, estos modelos pueden identificar interacciones no lineales entre variables predictoras, permitiendo la captura de patrones más complejos en los datos.
+
+
